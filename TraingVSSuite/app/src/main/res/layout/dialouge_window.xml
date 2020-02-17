@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/dialouge_name"
+        android:layout_width="133dp"
+        android:layout_height="50dp"
+        android:background="@drawable/dialouge_name"
+        app:layout_constraintBottom_toTopOf="@+id/dialougeW"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/dialouge_nameT"
+        android:layout_width="133dp"
+        android:layout_height="50dp"
+        android:background="@drawable/dialouge_name"
+        app:layout_constraintBottom_toTopOf="@+id/dialougeW"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="8dp"
+        android:text="테스트"
+        android:textSize="13pt" />
+
+    <ImageView
+        android:id="@+id/dialougeW"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:background="@drawable/dialouge"
+        android:scaleType="fitEnd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:padding="6dp"
+        android:text="테스트"
+        android:id="@+id/dialougeT"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:textSize="15pt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
