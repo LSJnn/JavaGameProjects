@@ -39,5 +39,50 @@
 
 		@ db의 값이 안 읽혀짐.
 			(추측 : inner 클래스에서 변수 활용 위해 final 선언 해줘서..?)
+			
+2월 18일 : 
+	mysql 을 사용한 DB 강의.(생활 코딩)
+	mysql 설치, 재설치. 
+	
+2월 19일 : Bitnami 를 통해 설치. 
+
+2월 20일 : mySQL 설치 완료. 및 password 설정 완료. demo 테이블 구축
+	
+	Create : insert
+	Read : select : Select PROJECTION = [보고 싶은 컬럼들 (*/ id, characters , ...)] from 테이블 WEHRE 조건 ORDER BY DESC/ASC LIMIT 1;							// limit = 나타내는 열 수 (FOR 데이터 효율적 운용)
+	Update : update 테이블 SET 컬럼 = 변경값 WHERE (조건 )
+	////////////////Update 는 Where 문 활실히 지정해야함 OR 모든 행이 바뀜.
+
+	DELETE FROM 테이블 WHERE 조건.
+	///////////////DELETE 는 FROM 테이블/ WHERE 가 중요!!!! OR 모든 것이 삭제됨.
+	
+	Join 을 통한 관계형 DB 활용.
+	
+	sql workbench 라는 새로운 DB 클라이언트 사용 및 활용
+	
+2월 21일 : workbench 를 이용한 테이블 구성.(SUITEMAN 게임을 위한 DEMO 테이블)
+	  및 starUML 을 사용하여 관계도 작성.
+	  
+2월 25일 : 기획팀에서 새로운 아이디어 구상해옴. : HERESY(이단)
+	  레이아웃 및 기초 기능 구현
+	  타이핑 기능 구현 시도. -Timer 를 사용한. 
+	  
+2월 26일 : 부족한 레이아웃 업데이트.
+	  TImer . TimerTask 활용 시도. sleep() 시도 실패.
+	  구글링 결과 JS/JQuery 를 통해 구현된 기술 찾음. : 나중에 가능하다면 연결하고자 함.
+	  참고 : https://gahyun-web-diary.tistory.com/2
+	  http://blog.naver.com/PostView.nhn?blogId=pjh445&logNo=221396615227&categoryNo=0&parentCategoryNo=32&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView
+	  
+2월 27일 : 타이핑 기능 1차 포기.
+	   버튼 클릭 시 나타나게 하기. - setVIsibility 로 세팅
+	   --> UI스레드 에서만 사용 가능. 
+	   ERROR : Only the original thread that created a view hierarchy can touch its views.\
+	   	A. onUIThread 사용./ post(new Runnable) 사용
+	   ERROR : Attempt to read from field 'java.lang.Object java.util.TimerTask.lock' on a null object reference
+		A. 대상 객체 확인.
+		
+	 
+
+		
 		
 	
