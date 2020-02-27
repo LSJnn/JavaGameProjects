@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,7 +64,12 @@ public class LabelActivity extends AppCompatActivity {
 
         Intent i = getIntent();
 
-////////////////////////////////////////////////////////////////////DB///////////////////////
+        ////////////////////////////////////////////////////////////////////DB///////////////////////
+        URL test = "http://39.122.225.137";
+
+
+//로컬 db 연결 실패
+        /*
         DbOpenHelper mDbOpenHelper = new DbOpenHelper(this);
         //DatabaseHelper 를 통해 테이블 구조 가져옴.
         mDbOpenHelper.open();
@@ -85,6 +91,7 @@ public class LabelActivity extends AppCompatActivity {
         // 커서 생성. chapter1 테이블의 한 줄씩 읽어옴.
         iCursor.getColumnIndex("_ID");
         //_ID 값의 인덱스값을 정수로 받아옴.
+*/
 
 /*
         List stories = new ArrayList();
@@ -99,8 +106,8 @@ public class LabelActivity extends AppCompatActivity {
             imgBg.setBackgroundResource(R.drawable.room);
             ImgCh.setImageResource(R.drawable.ysu_smile);
 
-
-            final int c= iCursor.getColumnCount();
+// 로컬 db 연결 실패.
+/*            final int c= iCursor.getColumnCount();
             imgDialouge.setOnClickListener(new View.OnClickListener() {
                 int count = -1;
                         @Override
@@ -124,7 +131,7 @@ public class LabelActivity extends AppCompatActivity {
             }
         });
 
-        iCursor.close();
+        iCursor.close();*/
 
     }
 
