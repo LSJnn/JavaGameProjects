@@ -1,0 +1,43 @@
+2월 8일 : (가안)
+	레이아웃 구성. 
+	include사용 시도. 
+	여러 사이트 및 강의 자료에서 받아옴 -> 추후 제작 이미지로 대체 예정
+	
+2월 9일 : 
+	Constraint Layout-> FrameLayout으로 변경
+		? 깔끔하기도 하고, 활용하기 좋음. (Fragment 사용 고려)
+	include사용 성공.
+
+2월 11일 :
+	DB 연결 시도.
+	 실패 - baseColumns 확장 클래스, databaseHelper 등에서 문제 발견. 
+		: insert 시 오류 발생
+
+2월 12일 : 
+	DB 연결 성공 
+		- databaseHelper와 onCreate 구문의 혼동 문제.
+		- null object 오류
+	bitmap too large 문제 발생
+		- 이미지 줄여도 고쳐지지 않음.
+		- xxxhdpi 로 옮겨도 고쳐지지 않음
+
+2월 15일 : 
+	bitmap 문제 해결 
+		- drawable 에서 구성해야함. 
+		- 이미지 하나가 줄여도 줄여도 줄여지지 않았음.
+
+	!! 클릭할 때 마다 db의 다음 행으로 넘어가기.(시도)
+
+2월 17일 :
+		-db 내 삽입할 반복 텍스트 변수로 설정 변환 시킴.
+ 
+	!! 클릭할 때 마다 db의 다음 행으로 넘어가기.(시도)
+	 Cursor를 통해 다양한 시도함 : 
+		- for 문 내에 while(iCursor.moveToNext) 구현 시도
+		- onClickListener 문 내에 for 문- while 문 중첩 구현 시도
+		-touchDialouge() 메소드 생성하여 활용 시도.
+
+		@ db의 값이 안 읽혀짐.
+			(추측 : inner 클래스에서 변수 활용 위해 final 선언 해줘서..?)
+		
+	
