@@ -81,8 +81,13 @@
 	   ERROR : Attempt to read from field 'java.lang.Object java.util.TimerTask.lock' on a null object reference
 		A. 대상 객체 확인.
 		
-	 
-
-		
-		
+2월 28일 : 배경음악 삽입 
+		- MediaPlayer. 
+			: 인텐트 후에도 배경음악 재생 가능하게 수정 필요.
+	  새로하기/ 이어하기 기능 추가
+	  	- Intent를 사용해 새로하기 이어하기 기능 구현 중
+		- SharePreferences 를 통해 간단한 값 저장--> 이어하기 떄 필요한 값 저장.
+			: 다만, 인텐트를 통해 새로하기 신호 를 주는 것 다시 시도 해야함.
+			 startActivityForResult 로 하면 되려나...... 모르겠다.
+	
 	
