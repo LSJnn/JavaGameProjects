@@ -10,7 +10,7 @@
 
     <style name="MyNoActionBarTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:colorBackground">@android:color/white</item>
-        <item name="android:fontFamily">@font/hanchorong_n</item>
+        <item name="android:fontFamily">@font/cafe24oneprettynight</item>
         <item name="android:textColor">@color/textColor</item>
         <item name="android:textSize">24dp</item>
     </style>
