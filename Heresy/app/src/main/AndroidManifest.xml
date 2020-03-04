@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyNoActionBarTheme">
-        <activity android:name=".Story"></activity>
+        <activity
+            android:name=".Story"/>
         <activity android:name=".SecondPage" />
         <activity android:name=".MainActivity">
             <intent-filter>

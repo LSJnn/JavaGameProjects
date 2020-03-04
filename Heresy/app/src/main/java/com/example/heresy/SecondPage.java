@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.ButtonBarLayout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
@@ -17,11 +18,17 @@ import org.w3c.dom.Text;
 
 public class SecondPage extends AppCompatActivity {
 
-    static  final int OK = 00000;
+    static  final int SECOND_BACK = 00000;
+    static  final int NEW_OK = 13000;
+
     EditText lstE;
     EditText fstE;
     ImageButton back;
     ImageButton next;
+
+    String l; String f;
+
+    int new_start;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,16 +43,19 @@ public class SecondPage extends AppCompatActivity {
 
         //////////////초기화//////////////////////////
 
-        String l = lstE.getText().toString();
-        String f = fstE.getText().toString();
-        String full = l+f;
+        l = lstE.getText().toString();
+        f = fstE.getText().toString();
 
+        System.out.println("1 L = "+l + "1 F = "+ f);
+
+        Intent newI = getIntent();
+        setResult(NEW_OK);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent();
-                setResult(OK);
+                i.putExtra("SECOND_BACK",SECOND_BACK);
                 finish();
             }
         });
@@ -54,17 +64,18 @@ public class SecondPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String l = lstE.getText().toString();
-                String f = fstE.getText().toString();
-
                 Intent i = new Intent(getApplicationContext(),Story.class);
                 i.putExtra("firstname",f);
                 i.putExtra("lastname",l);
                 startActivity(i);
+                finish();
 
             }
         });
 
 
     }
+
+
+
 }

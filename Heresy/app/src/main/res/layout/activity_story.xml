@@ -13,10 +13,8 @@
         layout="@layout/story_text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="28dp"
-        android:layout_marginTop="24dp"
-        android:visibility="gone"/>
+        app:layout_constraintTop_toBottomOf="@+id/backbtn"
+        tools:layout_editor_absoluteX="0dp" />
     <include
         android:id="@+id/include2"
         layout="@layout/story_text2"
@@ -25,6 +23,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include_Image"
         />
+
     <include
         android:id="@+id/include3"
         layout="@layout/story_text3"
@@ -58,6 +57,15 @@
         android:background="@drawable/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/backbtn"
+        android:layout_margin="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 

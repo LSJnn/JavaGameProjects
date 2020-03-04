@@ -48,4 +48,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/start" />
 
+    <ImageButton
+        android:id="@+id/newgame"
+        android:layout_width="266dp"
+        android:layout_height="82dp"
+        android:background="@drawable/newgmae"
+        android:layout_marginTop="84dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:visibility="gone"
+        />
+
+    <ImageButton
+        android:id="@+id/loadgame"
+        android:layout_width="266dp"
+        android:layout_height="82dp"
+        android:background="@drawable/load"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/start"
+        android:visibility="gone"
+        />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

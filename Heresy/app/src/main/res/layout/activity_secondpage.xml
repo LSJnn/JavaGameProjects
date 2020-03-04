@@ -22,6 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="나의 이름은?"
+        android:textSize="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,6 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="성 : "
+        android:textSize="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.173"
@@ -44,8 +46,11 @@
         android:id="@+id/e_lastname"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:hint="두 글자 이하"
         android:singleLine="true"
         android:textColor="@android:color/black"
+        android:textSize="36dp"
+        android:maxLength="2"
         app:layout_constraintBottom_toBottomOf="@+id/lastname"
         app:layout_constraintStart_toEndOf="@+id/lastname"
         app:layout_constraintTop_toTopOf="@+id/lastname" />
@@ -55,6 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
+        android:textSize="36dp"
         android:text="이름 : "
         app:layout_constraintStart_toStartOf="@+id/lastname"
         app:layout_constraintTop_toBottomOf="@+id/lastname" />
@@ -63,8 +69,11 @@
         android:id="@+id/e_firstname"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:hint="3글자 이하"
         android:singleLine="true"
         android:textColor="@android:color/black"
+        android:textSize="36dp"
+        android:maxLength="3"
         app:layout_constraintStart_toEndOf="@+id/firstname"
         app:layout_constraintTop_toTopOf="@+id/firstname" />
 
