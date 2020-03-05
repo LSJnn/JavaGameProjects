@@ -101,3 +101,7 @@
 			- 해결책 찾는 중 : 생명주기 학습함. 
 			https://developer.android.com/guide/components/activities/activity-lifecycle?refresh=1&hl=ko#java
 			  대신 사용하려고 했던 savedInstance() 는 finish() 로 명시적 종료 시 콜백 안됨. 
+			  
+			  
+3월 5일 : 엔딩 목록 팝업창으로 변경.
+		-엔딩 아이템 엔딩 글자 수 에 따라 맞춰짐. --> height 만 wrap_content 로 설정.
