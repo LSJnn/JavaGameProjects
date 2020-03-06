@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     mySharedPreferences mSf;
 
     int loadpage;
-    Intent i;
     Intent intent;
     String l;
     String f;
@@ -157,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
 
                         Intent si = new Intent(MainActivity.this, SecondPage.class);
                         startActivityForResult(si,NEW);
+                        System.out.println("GOOOOOOOOOOOOOOOOOo TO Second");
                         // 실행 후 돌아왔을 떄 안보이도록.
                         checkVIsibility();
                     }
@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
                 loadgame.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        i = getIntent();
+                        Intent i = getIntent();
 //                        loadpage = i.getExtras().getInt("STORY_BACK");
                         intent = new Intent(MainActivity.this,Story.class);
                         intent.putExtra("loadpage",loadpage);

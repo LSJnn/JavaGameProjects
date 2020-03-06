@@ -5,48 +5,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Story"
-    >
+    tools:context=".T1_kakao"
+    android:background="@drawable/main_background">
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/story_text1"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/t1_k_tv1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/backbtn"
-        tools:layout_editor_absoluteX="0dp" />
-    <include
-        android:id="@+id/include2"
-        layout="@layout/story_text2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="148dp"
+        android:text="테스트"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include_Image"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <include
-        android:id="@+id/include3"
-        layout="@layout/story_text3"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/k_include"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include_Image2" />
+        app:layout_constraintTop_toBottomOf="@+id/t1_k_tv1"
+        android:visibility="gone"/>
 
-    <include
-        android:id="@+id/include_Image"
-        layout="@layout/kakotalk"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/t1_k_tv2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/include"
-        android:visibility="gone"
-        />
-    <include
-        android:id="@+id/include_Image2"
-        layout="@layout/kakotalk2"
-        android:layout_width="match_parent"
+        android:text="테스트"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/k_include" />
+
+    <TextView
+        android:id="@+id/t1_k_tv3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@+id/include" />
+        android:text="테스트"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t1_k_tv2" />
 
 
     <ImageButton

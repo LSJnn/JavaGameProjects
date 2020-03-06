@@ -25,6 +25,7 @@ public class SecondPage extends AppCompatActivity {
     EditText fstE;
     ImageButton back;
     ImageButton next;
+    ImageButton ending;
 
     String l; String f;
 
@@ -40,13 +41,9 @@ public class SecondPage extends AppCompatActivity {
         fstE=findViewById(R.id.e_firstname);
         back=findViewById(R.id.backbtn);
         next=findViewById(R.id.nextBtn);
+        ending= findViewById(R.id.endingBtn);
 
         //////////////초기화//////////////////////////
-
-        l = lstE.getText().toString();
-        f = fstE.getText().toString();
-
-        System.out.println("1 L = "+l + "1 F = "+ f);
 
         Intent newI = getIntent();
         setResult(NEW_OK);
@@ -64,12 +61,21 @@ public class SecondPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(getApplicationContext(),Story.class);
-                i.putExtra("firstname",f);
-                i.putExtra("lastname",l);
+                Intent i = new Intent(SecondPage.this,T1_text.class);
+                i.putExtra("lastName",lstE.getText().toString());//성
+                i.putExtra("firstName",fstE.getText().toString());//이름
+                i.putExtra("changeCode", 1);
+                System.out.println("GOOOOOOOOOOOOOOOOOo TO T1");
                 startActivity(i);
                 finish();
+            }
+        });
 
+        ending.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(SecondPage.this, Endings.class);
+                startActivity(intent);
             }
         });
 

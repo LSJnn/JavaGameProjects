@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Heresy</string>
+    <string name="page7001">나는 4년제 대학에 다니고 있는 \n평범한 대학생 </string>
+    <string name="page7002">방학임에도 불구하고 \n취업준비나 인간관계나 \n스트레스가 이만저만이 아니다."</string>
+    <string name="page8001">가진이는 \n초등학생 때부터 쭉 친한 친구다.</string>
+    <string name="page7003">너무 지치고 <font color='#FF0000'>힘들다..</font></string>
+    <string name="page9001">가진이가 심리상담 선생님을 \n소개시켜준다는데 \n받아볼까?</string>
 </resources>

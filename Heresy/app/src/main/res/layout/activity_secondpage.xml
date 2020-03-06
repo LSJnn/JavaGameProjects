@@ -6,15 +6,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SecondPage"
+    android:background="@drawable/main_background"
     >
 
     <ImageButton
         android:id="@+id/backbtn"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
         android:layout_margin="8dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:background="@drawable/back"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/endingBtn"
+        android:layout_width="70dp"
+        android:layout_height="65dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/ending"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -34,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="성 : "
-        android:textSize="36dp"
+        android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.173"
@@ -49,7 +59,7 @@
         android:hint="두 글자 이하"
         android:singleLine="true"
         android:textColor="@android:color/black"
-        android:textSize="36dp"
+        android:textSize="36sp"
         android:maxLength="2"
         app:layout_constraintBottom_toBottomOf="@+id/lastname"
         app:layout_constraintStart_toEndOf="@+id/lastname"
@@ -60,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:textSize="36dp"
+        android:textSize="36sp"
         android:text="이름 : "
         app:layout_constraintStart_toStartOf="@+id/lastname"
         app:layout_constraintTop_toBottomOf="@+id/lastname" />
@@ -72,15 +82,15 @@
         android:hint="3글자 이하"
         android:singleLine="true"
         android:textColor="@android:color/black"
-        android:textSize="36dp"
+        android:textSize="36sp"
         android:maxLength="3"
         app:layout_constraintStart_toEndOf="@+id/firstname"
         app:layout_constraintTop_toTopOf="@+id/firstname" />
 
     <ImageButton
         android:id="@+id/nextBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
         android:layout_margin="8dp"
         android:background="@drawable/next"
         app:layout_constraintBottom_toBottomOf="parent"

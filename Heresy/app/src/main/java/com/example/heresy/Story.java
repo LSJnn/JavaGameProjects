@@ -120,33 +120,28 @@ public class Story extends AppCompatActivity {
             }
         });
 
-/*        if (sum == 1) {
+/*
+        if (sum == 1) {
             tv1.setText("나는 4년제 대학에 다니고 있는 \n" +
                     "평범한 대학생 " + i.getExtras() + l + f + "\n");
         }
         chat_1[0].setVisibility(View.VISIBLE);
         chat_1[1].setVisibility(View.VISIBLE);
-    */
-/* while(sum <=5 ) {
-     chat_1[sum].setVisibility(View.VISIBLE);*/
-        /*
+ while(sum <=5 ) {
+     chat_1[sum].setVisibility(View.VISIBLE);
 
-         */
-/*            if (sum >= 7) {
+            if (sum >= 7) {
                 for(int k=1;k<chat_1.length;k++){
                     chat_1[k].setVisibility(View.INVISIBLE);
                 }
                 for (int t = 5; sum<12; t++) {
                     chat_2[t-5].setVisibility(View.VISIBLE);
                 }
-            }*//*
+            }
 
             }else if(sum<0){
             finish();
 */
-
-/////////////////////////////back/ next 버튼 /////////////////////
-
 
 /////////////////////배열에 1글자씩 저장///////////////////////.//
 /*        String text = tv1.getText().toString();
@@ -160,9 +155,10 @@ public class Story extends AppCompatActivity {
 
 //////////////////한 글자씩 출력////////////////--> 실패... timer 함수는 run 안의 내용을 일정 간격마다 반복하는 것. 여기서 for 문을 사용하든 뭘하든 안됨.
 
+/*
         //Read(eachString,tv2);
 
-/*
+
         String saying = "";
         for(int a=0;a<eachString.length;a++){
 
@@ -277,6 +273,9 @@ public class Story extends AppCompatActivity {
         next.setOnClickListener(Listener);
     }
 
+    public void storyKeeper(){
+        // 뷰들이 한번 VIsibile 되면 유지. 다음으로 넘어갈 떄 까지.
+    }
     public void storyManager(){
         if(recentPage!=0){
             n = recentPage;

@@ -8,6 +8,7 @@
     tools:context=".MainActivity"
     android:background="@android:color/black">
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -16,7 +17,7 @@
         android:layout_marginRight="8dp"
         android:text="이 게임에 등장하는\n인물, 기관, 사건은\n실제와 관련이 없습니다"
         android:textAlignment="center"
-        android:textSize="36dp"
+        android:textSize="36sp"
         android:textColor="@android:color/white"
         app:fontFamily="@font/hanchorong_n"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -53,7 +54,7 @@
         android:layout_width="266dp"
         android:layout_height="82dp"
         android:layout_marginTop="112dp"
-        android:background="@drawable/ending"
+        android:background="@drawable/ending_main"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"

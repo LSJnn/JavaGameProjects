@@ -1,5 +1,6 @@
 package com.example.heresy;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,6 +22,10 @@ public class Endings extends AppCompatActivity {
     ImageButton exit;
     ArrayList<EndingItem> endingItemArrayList ;
 
+    int endingPage;
+    EndingItem endingItem;
+    String ending;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,9 +38,10 @@ public class Endings extends AppCompatActivity {
 
         endingAdapter = new EndingAdapter(Endings.this, endingItemArrayList);
         listView.setAdapter(endingAdapter);
-
         defaultEnding();
 
+        /////엔딩 설정.
+        endingPage = i.getIntExtra("page",-1);
 
 
         exit= findViewById(R.id.exit);
@@ -53,8 +59,6 @@ public class Endings extends AppCompatActivity {
     }
 
     public void defaultEnding(){
-/*        endingItemArrayList.add(new EndingItem(1,R.drawable.ending_item));
-        endingItemArrayList.add(new EndingItem(2,R.drawable.ending_item));*/
 
         for(int i = 0 ; i <20; i++){
             endingItemArrayList.add(new EndingItem(i));
