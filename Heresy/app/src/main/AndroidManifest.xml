@@ -3,6 +3,7 @@
     package="com.example.heresy">
 
     <application
+        android:name=".Application"
         android:allowBackup="true"
         android:fontFamily="@font/hanchorong_n"
         android:icon="@mipmap/ic_launcher"

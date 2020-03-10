@@ -12,20 +12,18 @@
         android:id="@+id/t1_tl_tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
-        android:text="테스트"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/backbtn" />
 
     <ImageView
         android:id="@+id/t1_ti_img1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:src="@drawable/ending"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t1_tl_tv1" />
 
@@ -36,7 +34,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t1_ti_img1"
-        android:text="테스트"
         android:textAlignment="center"
         android:padding="15dp"/>
 
@@ -44,7 +41,6 @@
         android:id="@+id/t1_ti_tv3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="테스트"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +50,6 @@
         android:id="@+id/t1_ti_tv4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="테스트"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

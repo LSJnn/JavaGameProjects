@@ -23,8 +23,7 @@
         android:id="@+id/t1_c_tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:text="테스트"
+        android:padding="2dp"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,18 +33,19 @@
         android:id="@+id/t1_c_tv2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:text="테스트"
+        android:padding="2dp"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t1_c_tv1" />
+        app:layout_constraintTop_toBottomOf="@+id/t1_c_tv1"
+        android:visibility="gone"/>
 
     <ImageButton
         android:id="@+id/t1_c_btn1"
         android:layout_width="250dp"
         android:layout_height="70dp"
         android:layout_margin="15dp"
+        android:visibility="invisible"
         android:background="@drawable/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,23 +56,25 @@
         android:layout_width="250dp"
         android:layout_height="70dp"
         android:layout_margin="15dp"
-
-        android:background="@drawable/button"
         android:padding="15dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t1_c_btn1" />
+
 
     <ImageButton
         android:id="@+id/t1_c_btn3"
         android:layout_width="250dp"
         android:layout_height="70dp"
-        android:background="@drawable/button"
         android:layout_margin="15dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t1_c_btn2" />
-
+        app:layout_constraintTop_toBottomOf="@+id/t1_c_btn2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
         android:id="@+id/nextBtn"

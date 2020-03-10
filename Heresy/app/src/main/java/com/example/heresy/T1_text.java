@@ -28,9 +28,9 @@ public class T1_text extends AppCompatActivity {
 
     String f;String l;
     int recentPage;// 최근 페이지.
-    mySharedPreferences sf;
+    mySharedPreferences sf; Intent i1;
 
-    int n; int p; int c;// paragraph 조정. 나누기 3 --> 나머지 1=001/ 2 = 002/ 3= 003
+    int n; int p=0; int c=0; int a;// paragraph 조정. 나누기 3 --> 나머지 1=001/ 2 = 002/ 3= 003
     StartStory startStory;
 
 
@@ -42,18 +42,13 @@ public class T1_text extends AppCompatActivity {
         initializeVIew();
 
         getData();
-        //initializeLayout();
 
         startStory = new StartStory();
         startStory.getONE(otv1,otv2,otv3,l,f);
 
-        nextOnClick();// 다음 누르면 이야기 전개됨.
-        //changeCode=startStory.changeCode;
-
+        nextOnClick();// 다음 누르면 이야기 전개됨
 
         btnClick();
-
-
     }
 
 
@@ -67,16 +62,14 @@ public class T1_text extends AppCompatActivity {
         next = findViewById(R.id.nextBtn);
         ending = findViewById(R.id.endingBtn);
 
-        n=7; // ?? 7페이지 부터 시작.
-        c=0;
         System.out.println("initializeVIew!!!!!!!!!!!!!!!!!!!!!1");
     }
     public void getData() {
-
-        Intent i1 = getIntent();
+        i1 = getIntent();
         f = i1.getStringExtra("firstName");
         l = i1.getStringExtra("lastName");
-        System.out.println("2L ================== "+l + "\n2 F = "+ f+"\n");
+        n = i1.getIntExtra("n",7);
+        System.out.println("TExtL ================== "+i1.getStringExtra("lastName") + "\n2 F = "+ i1.getStringExtra("firstName")+"\n");
 
         recentPage = i1.getExtras().getInt("loadpage");//::n
         System.out.println(recentPage +"=========recentPage\n");
@@ -90,27 +83,44 @@ public class T1_text extends AppCompatActivity {
         sf.setString(this, "firstname", f);
         sf.setString(this, "lastname", l);
 
-        if (f == null && l == null) {
+/*        if (f == null && l == null) {
             f = sf.getStringR(this, "firstname");
             l = sf.getStringR(this, "lastname");
-        }
+        }*/
     }
 
     public void initializeLayout() {
         switch (changeCode) {
             case 2:
                 Intent i2 = new Intent(T1_text.this, T1_text_image.class);
-                i2.putExtra("firstName", f);
-                i2.putExtra("lastName",l);
+                i2.putExtra("firstName", i1.getStringExtra("firstName"));
+                i2.putExtra("lastName",i1.getStringExtra("lastName"));
+                i2.putExtra("n",n);
                 startActivity(i2);
+                finish();
                 break;
             case 3:
                 Intent i3 = new Intent(T1_text.this, T1_choice.class);
+                i3.putExtra("n",n);
+                i3.putExtra("firstName", i1.getStringExtra("firstName"));
+                i3.putExtra("lastName",i1.getStringExtra("lastName"));
                 startActivity(i3);
+                finish();
                 break;
             case 4://카카오톡 필요.
                 Intent i4 = new Intent(T1_text.this,T1_kakao.class);
+                i4.putExtra("n",n);
+                i4.putExtra("firstName", i1.getStringExtra("firstName"));
+                i4.putExtra("lastName",i1.getStringExtra("lastName"));
                 startActivity(i4);
+                finish();
+                break;
+            case 5 :
+                Intent i0 = new Intent(T1_text.this,Success.class);
+                i0.putExtra("page",n);
+
+                startActivity(i0);
+                finish();
             default: //아무것도 안함.
         }
     }
@@ -119,7 +129,7 @@ public class T1_text extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent();
+                Intent i = new Intent(T1_text.this, MainActivity.class);
                 finish();
 
             }
@@ -134,6 +144,66 @@ public class T1_text extends AppCompatActivity {
             }
         });
     }
+    public void Nis(){
+        if(n==7){
+            a = 4;
+        }if(n==34){
+            a = 2;
+        }if(n==35){
+            a=3;
+        }
+        if (n == 37) {
+            a = 2;
+        }if(n==59){
+            a = 3;
+        }if(n==63){
+            a = 6;
+        }
+        if(n==64){
+            a = 6;
+        }
+        if(n==65){
+            a = 3;
+        }
+        if(n==73){
+            a = 3;
+        }
+        if(n==77){
+            a = 2;
+        }
+        if(n==79){
+            a = 4;
+        }
+        if(n==80){
+            a = 4;
+        }
+        if(n==82){
+            a = 4;
+        }
+        if(n==94){
+            a = 4;
+        }
+    }
+
+    public void PageIs(int a){
+        int k = c%a;
+        if(k!= 0 ){
+            p=k;
+        } else {
+            p= a;
+        }
+        System.out.println("n ======"+n+"\nc===="+c+"\np ========"+p);
+        startStory.setStory(1,n,p);
+
+        if(p==a){// codeChange 메소드.
+            n++;
+            c=0;
+            changeCode=startStory.changeCode;
+            System.out.println("changeCode ============="+changeCode);
+        }
+
+        initializeLayout();
+    }
 
     public void nextOnClick(){
 
@@ -142,27 +212,9 @@ public class T1_text extends AppCompatActivity {
             public void onClick(View v) {
                 //n 은 장 수 --> 7로 유지되야함. 123 이 끝날때 까지.
                 c++;
-                int k = c%4;//2,1,0
 
-                if(k==1){
-                    p = 1;
-                }else if(k ==2){
-                    p = 2;
-                }else if(k==3){
-                    p = 3;
-                }else {p =4;}
-
-                System.out.println("n ======"+n+"\nc===="+c+"\nk======="+k+"\np ========"+p);
-                startStory.setStory(1,n,p);
-                if(p==4){
-                    n++; // 3 까지 끝나면 다음 쪽으로.
-                    System.out.println("changeCode ============="+changeCode);
-                }
-                //--> changeCode 에 따라 넘어감.
-
-                changeCode=startStory.changeCode;
-                System.out.println("changeCode ============="+changeCode);
-                initializeLayout();
+                Nis();
+                PageIs(a);
 
 
             }

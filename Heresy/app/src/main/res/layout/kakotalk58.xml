@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/kakao2"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+    >
+
+    <ImageView
+        android:id="@+id/kakao_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="500dp"
+        android:background="@drawable/kakao28_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <ImageView
+    android:id="@+id/kakao_bgtxt"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@drawable/kakao58_name"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    />
+
+    <ImageView
+        android:id="@+id/kakao58_m1"
+        android:layout_width="250dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/kakao58_m1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/kakao58_m2"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="352dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/kakao58_m2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/kakao58_h1"
+        android:layout_width="220dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/kakao58_h1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/kakao58_h2"
+        android:layout_width="220dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="264dp"
+        android:background="@drawable/kakao58_h2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/kakao58_h3"
+        android:layout_width="230dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="412dp"
+        android:background="@drawable/kakao58_h3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
