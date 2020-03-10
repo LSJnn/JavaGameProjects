@@ -31,9 +31,10 @@ public class T1_choice extends AppCompatActivity {
 
         Intent i = getIntent();
         n = i.getIntExtra("n",9);
-        F = i.getStringExtra("firstName");
-        L= i. getStringExtra("lastName")    ;
+        F = Application.getF();
+        L= Application.getL();
         System.out.println("2FL ================== "+i.getStringExtra("firstName") + "\n2 L = "+i.getStringExtra("lastName")+"\n");
+
 
         initializeView();
 
@@ -94,6 +95,9 @@ public class T1_choice extends AppCompatActivity {
             a = 4;
         }
         else if(n ==89){
+            a = 4;
+        }
+        else if(n ==100){
             a = 4;
         }
     }
@@ -382,6 +386,29 @@ public class T1_choice extends AppCompatActivity {
                         public void onClick(View v) {
                             changeCode = 1;
                             n=79;//불합격
+                            initializeLayout();
+                        }
+                    });
+
+                }
+                else if(n==100&&p==3){
+                    next.setClickable(false);
+                    c_imgbtn1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            changeCode=1;
+                            System.out.println("changeCode ============="+changeCode);
+                            n=104;//스터디
+                            initializeLayout();
+                            System.out.println("n==="+n);
+                        }
+                    });
+
+                    c_imgbtn2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            changeCode = 1;
+                            n=101;//공부
                             initializeLayout();
                         }
                     });

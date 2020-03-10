@@ -32,8 +32,10 @@ public class T1_text_image extends AppCompatActivity {
         initializeView();
 
         i = getIntent();
-        F = i.getStringExtra("firstName");
-        L = i.getStringExtra("lastName");
+
+        F = Application.getF();
+        L = Application.getL();
+
         System.out.println("2FL ================== "+i.getStringExtra("firstName") + "\n2 L = "+i.getStringExtra("lastName")+"\n");
         n = i.getIntExtra("n",11);
         System.out.println("N = "+n);
@@ -175,7 +177,7 @@ public class T1_text_image extends AppCompatActivity {
             a = 3;
         }
         else if( n ==87){
-            a = 4;
+            a = 5;
         }
         else if( n ==88){
             a = 7;
@@ -199,6 +201,15 @@ public class T1_text_image extends AppCompatActivity {
             a = 5;
         }
         else if( n ==98){
+            a = 5;
+        }
+        else if( n ==101){
+            a = 5;
+        }
+        else if( n ==102){
+            a = 5;
+        }
+        else if( n ==104){
             a = 5;
         }
 

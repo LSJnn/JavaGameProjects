@@ -26,7 +26,7 @@ public class T1_text extends AppCompatActivity {
 
     int changeCode;
 
-    String f;String l;
+    String l; String f;
     int recentPage;// 최근 페이지.
     mySharedPreferences sf; Intent i1;
 
@@ -44,7 +44,7 @@ public class T1_text extends AppCompatActivity {
         getData();
 
         startStory = new StartStory();
-        startStory.getONE(otv1,otv2,otv3,l,f);
+        startStory.getONE(otv1,otv2,otv3,l ,f );
 
         nextOnClick();// 다음 누르면 이야기 전개됨
 
@@ -65,11 +65,12 @@ public class T1_text extends AppCompatActivity {
         System.out.println("initializeVIew!!!!!!!!!!!!!!!!!!!!!1");
     }
     public void getData() {
+
         i1 = getIntent();
-        f = i1.getStringExtra("firstName");
-        l = i1.getStringExtra("lastName");
+         l =  Application.getL();
+         f =  Application.getF();
         n = i1.getIntExtra("n",7);
-        System.out.println("TExtL ================== "+i1.getStringExtra("lastName") + "\n2 F = "+ i1.getStringExtra("firstName")+"\n");
+        System.out.println("TExtL ================== "+l + "\n2 F = "+ f+"\n");
 
         recentPage = i1.getExtras().getInt("loadpage");//::n
         System.out.println(recentPage +"=========recentPage\n");
@@ -93,8 +94,6 @@ public class T1_text extends AppCompatActivity {
         switch (changeCode) {
             case 2:
                 Intent i2 = new Intent(T1_text.this, T1_text_image.class);
-                i2.putExtra("firstName", i1.getStringExtra("firstName"));
-                i2.putExtra("lastName",i1.getStringExtra("lastName"));
                 i2.putExtra("n",n);
                 startActivity(i2);
                 finish();
@@ -102,23 +101,18 @@ public class T1_text extends AppCompatActivity {
             case 3:
                 Intent i3 = new Intent(T1_text.this, T1_choice.class);
                 i3.putExtra("n",n);
-                i3.putExtra("firstName", i1.getStringExtra("firstName"));
-                i3.putExtra("lastName",i1.getStringExtra("lastName"));
                 startActivity(i3);
                 finish();
                 break;
             case 4://카카오톡 필요.
                 Intent i4 = new Intent(T1_text.this,T1_kakao.class);
                 i4.putExtra("n",n);
-                i4.putExtra("firstName", i1.getStringExtra("firstName"));
-                i4.putExtra("lastName",i1.getStringExtra("lastName"));
                 startActivity(i4);
                 finish();
                 break;
             case 5 :
                 Intent i0 = new Intent(T1_text.this,Success.class);
                 i0.putExtra("page",n);
-
                 startActivity(i0);
                 finish();
             default: //아무것도 안함.
@@ -182,6 +176,9 @@ public class T1_text extends AppCompatActivity {
         }
         if(n==94){
             a = 4;
+        }
+        if(n ==99){
+            a =4;
         }
     }
 

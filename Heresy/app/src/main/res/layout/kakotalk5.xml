@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="580dp"
+    android:layout_height="540dp"
     >
 
     <ImageView
@@ -17,24 +17,40 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-    android:id="@+id/kakao_bgtxt"
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:background="@drawable/kako28_bgt"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    />
+        android:id="@+id/kakao_bgtxt"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/kako28_bgt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/kakao30_m"
         android:layout_width="260dp"
-        android:layout_height="450dp"
-        android:layout_marginTop="56dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="76dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:background="@drawable/kakao30_m"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/kao_tv1"
+        android:layout_width="220dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:gravity="start"
+        android:textAlignment="textStart"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/kakao30_m"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="@+id/kakao30_m"
+        app:layout_constraintTop_toTopOf="@+id/kakao30_m" />
 
     <ImageView
         android:id="@+id/kakao30_h"
@@ -42,11 +58,12 @@
         android:layout_height="55dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="516dp"
+        android:layout_marginTop="456dp"
         android:background="@drawable/kakao28_h1"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:visibility="invisible"/>
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

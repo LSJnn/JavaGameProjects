@@ -44,49 +44,66 @@
 
     <ImageView
         android:id="@+id/kakao41_h1"
-        android:layout_width="270dp"
-        android:layout_height="100dp"
+        android:layout_width="230dp"
+        android:layout_height="80dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/kakao41_h1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:visibility="invisible"/>
+        android:visibility="visible"/>
+
+
+    <TextView
+        android:id="@+id/kao_tv1"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="start"
+        android:textAlignment="textStart"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/kakao41_h2"
+        app:layout_constraintEnd_toEndOf="@+id/kakao41_h1"
+        app:layout_constraintStart_toStartOf="@+id/kakao_h1" />
 
     <ImageView
         android:id="@+id/kakao41_h2"
-        android:layout_width="200dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginTop="124dp"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginLeft="84dp"
+        android:layout_marginTop="96dp"
         android:background="@drawable/kakao41_h2"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:visibility="invisible"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/kakao41_h3"
-        android:layout_width="200dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginTop="204dp"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginLeft="84dp"
+        android:layout_marginTop="160dp"
         android:background="@drawable/kakao41_h3"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:visibility="invisible"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/kakao41_h4"
-        android:layout_width="200dp"
+        android:layout_width="160dp"
         android:layout_height="70dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginTop="292dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginLeft="84dp"
+        android:layout_marginTop="224dp"
         android:background="@drawable/kakao41_h4"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:visibility="invisible"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

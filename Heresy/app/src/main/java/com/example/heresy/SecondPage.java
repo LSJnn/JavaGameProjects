@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -28,7 +29,7 @@ public class SecondPage extends AppCompatActivity {
     ImageButton next;
     ImageButton ending;
 
-    String l; String f;static String  APPL;
+    String l; String f;
 
     int new_start;
 
@@ -45,11 +46,15 @@ public class SecondPage extends AppCompatActivity {
         ending= findViewById(R.id.endingBtn);
 
         //////////////초기화//////////////////////////
-        Application a = (Application)this.getApplication();
-         a.setL(lstE.getText().toString());
-         APPL =a.getL();
-        Intent newI = getIntent();
-        setResult(NEW_OK);
+/*        Application app1 = (Application)getApplication();
+        Application app2 = (Application)getApplication();
+        app1.setL(lstE.getText().toString());
+        app2.setF(fstE.getText().toString());*/
+
+    lstE.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+
+        System.out.println(Application.getF());
+        System.out.println(Application.getL());
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,11 +70,12 @@ public class SecondPage extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent i = new Intent(SecondPage.this,T1_text.class);
-                i.putExtra("lastName",lstE.getText().toString());//성
-                i.putExtra("firstName",fstE.getText().toString());//이름 // f만 옴. // 객체로 하면 안옴.
+                Application.setL(lstE.getText().toString());
+                Application.setF(fstE.getText().toString());
+
+                l = Application.getL();
+                f = Application.getF();
                 i.putExtra("changeCode", 1);
-                System.out.println("GOOOOOOOOOOOOOOOOOo TO T1");
-                System.out.println("appL =========="+  APPL);
                 startActivity(i);
                 finish();
             }

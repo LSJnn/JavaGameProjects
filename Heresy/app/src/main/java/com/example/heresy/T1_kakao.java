@@ -21,7 +21,7 @@ public class T1_kakao extends AppCompatActivity {
     ImageButton back; ImageButton next; ImageButton ending;
 
     TextView k_tv1;TextView k_tv2; TextView k_tv3;
-    LinearLayout k_view;
+    LinearLayout k_view; TextView kao1; TextView kao2;
 
     ImageView k_img1; ImageView k_img2;ImageView k_img3;ImageView k_img4; ImageView k_img5;ImageView k_img6;
     Intent i;
@@ -48,7 +48,7 @@ public class T1_kakao extends AppCompatActivity {
         initializeLayout();
 
         startStory4 = new StartStory();
-        startStory4.getFOUR(k_tv1,k_tv2,k_tv3,k_view,l, f);
+        startStory4.getFOUR(k_tv1,k_tv2,k_tv3,k_view,l,f,kao1,kao2 );
         nextOnClick();
 
 
@@ -59,8 +59,10 @@ public class T1_kakao extends AppCompatActivity {
 
     public void getData(){
         i = getIntent();
-        f= i.getStringExtra("firstName");
-        l = i.getStringExtra("lastName");
+/*        f= i.getStringExtra("firstName");
+        l = i.getStringExtra("lastName");*/
+        l = Application.getL();
+        f = Application. getF();
         n = i.getIntExtra("n",8);
         System.out.println("kakaoFL ================== "+i.getStringExtra("firstName") + "\n2 L = "+i.getStringExtra("lastName")+"\n");
     }
@@ -87,15 +89,11 @@ public class T1_kakao extends AppCompatActivity {
             case 1:
                 Intent i1 = new Intent(T1_kakao.this, T1_text.class);
                 i1.putExtra("n",n);
-                i1.putExtra("firstName", i.getStringExtra("firstName"));
-                i1.putExtra("lastName",i.getStringExtra("lastName"));
                 startActivity(i1);
                 finish();
                 break;
             case 2:
                 Intent i2 = new Intent(T1_kakao.this, T1_text_image.class);
-                i2.putExtra("firstName", i.getStringExtra("firstName"));
-                i2.putExtra("lastName",i.getStringExtra("lastName"));
                 i2.putExtra("n",n);
                 startActivity(i2);
                 finish();
@@ -103,8 +101,6 @@ public class T1_kakao extends AppCompatActivity {
             case 3:
                 Intent i3 = new Intent(T1_kakao.this, T1_choice.class);
                 i3.putExtra("n",n);
-                i3.putExtra("firstName", i.getStringExtra("firstName"));
-                i3.putExtra("lastName",i.getStringExtra("lastName"));
                 startActivity(i3);
                 finish();
                 break;
@@ -220,6 +216,7 @@ public class T1_kakao extends AppCompatActivity {
         k_img3 = findViewById(R.id.kakao_m2);
         k_img4 = findViewById(R.id.kakao_h2);
         k_img5 = findViewById(R.id.kakao_h3);
+        kao1 = findViewById(R.id.kao_tv1);
 
     }
 
@@ -237,6 +234,8 @@ public class T1_kakao extends AppCompatActivity {
         k_img1 = findViewById(R.id.kakao20_h1);
         k_img2 = findViewById(R.id.kakao20_h2);
         k_img3 = findViewById(R.id.kakao20_m1);
+
+        kao1 = findViewById(R.id.kao_tv1);
     }
 
     public void kakao3(){
@@ -256,6 +255,7 @@ public class T1_kakao extends AppCompatActivity {
 
         k_img1 = findViewById(R.id.kakao30_m);
         k_img2 = findViewById(R.id.kakao30_h);
+        kao1=findViewById(R.id.kao_tv1);
     }
     public void kakao6(){
         layoutInflater.inflate(R.layout.kakotalk6, k_view,true);
@@ -271,6 +271,8 @@ public class T1_kakao extends AppCompatActivity {
         k_img1 = findViewById(R.id.kakao38_h1);
         k_img2 = findViewById(R.id.kakao38_h2);
         k_img3 = findViewById(R.id.kakao38_m);
+
+        kao1= findViewById(R.id.kao_tv1);
     }
     public void kakao39(){
         layoutInflater.inflate(R.layout.kakotalk39, k_view,true);
@@ -308,6 +310,8 @@ public class T1_kakao extends AppCompatActivity {
         k_img3 = findViewById(R.id.kakao58_h2);
         k_img4 = findViewById(R.id.kakao58_m2);
         k_img5 = findViewById(R.id.kakao58_h3);
+
+        kao1 =findViewById(R.id.kao_tv1);
     }
 
     public void removeVIew(){
@@ -326,6 +330,7 @@ public class T1_kakao extends AppCompatActivity {
                 case 2:
                     k_view.setVisibility(View.VISIBLE);
                     k_img1.setVisibility(View.VISIBLE);
+                    kao1.setText(f+" 뭐해");
                     break;
                 case 3:
                     k_img2.setVisibility(View.VISIBLE);
@@ -362,6 +367,7 @@ public class T1_kakao extends AppCompatActivity {
                 case 1:
                     k_view.setVisibility(View.VISIBLE);
                     k_img1.setVisibility(View.VISIBLE);
+                    kao1.setText(f);kao1.append("오늘 뭐해?");
                     break;
                 case 2:
                     k_img2.setVisibility(View.VISIBLE);
@@ -402,6 +408,11 @@ public class T1_kakao extends AppCompatActivity {
             switch (kakao) {
                 case 1:
                     k_view.setVisibility(View.VISIBLE);
+                    kao1.setText("[만남 결과 보고]\n" +
+                            "인도자 : 송가진\n" +
+                            "대상자 :  ");kao1.append(l+f);
+                            kao1.append("\n" +
+                            "협력자 : 최상담\n");
                     break;
                 case 2  :
                     k_img2.setVisibility(View.VISIBLE);
@@ -435,6 +446,7 @@ public class T1_kakao extends AppCompatActivity {
                 case 1:
                     k_view.setVisibility(View.VISIBLE);
                     k_img1.setVisibility(View.VISIBLE);
+                    kao1.setText(f);kao1.append("!! \n오늘도 화이팅!");
                     break;
                 case 2:
                     k_img2.setVisibility(View.VISIBLE);
@@ -468,6 +480,8 @@ public class T1_kakao extends AppCompatActivity {
                 case 1:
                     k_view.setVisibility(View.VISIBLE);
                     k_img1.setVisibility(View.VISIBLE);
+                    kao1.setText(f);
+                    kao1.append("아 오늘 꿈에 \n너가 나왔다.");
                     break;
                 case 2:
                     k_img2.setVisibility(View.VISIBLE);
@@ -496,6 +510,7 @@ public class T1_kakao extends AppCompatActivity {
                     break;
                 case 2:
                     k_img2.setVisibility(View.VISIBLE);
+                    kao1.setText(f);kao1.append("누구는 잘 모를 수도 있지만\n 영적으로 튼튼해야 모든 일이\n 잘 풀릴 수 있어.");
                     break;
                 case 3:
                     k_img3.setVisibility(View.VISIBLE);
@@ -524,6 +539,7 @@ public class T1_kakao extends AppCompatActivity {
                     break;
                 case 5:
                     k_img5.setVisibility(View.VISIBLE);
+                    kao1.setText("뭐하냐");kao1.append(l+f);kao1.append("~~~ 얘 어떡함 ;;; \n빨리 나오셈;;");
                     break;
             }
 
