@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -27,10 +28,11 @@ public class T1_kakao extends AppCompatActivity {
     Intent i;
 
     int changeCode;
-    String f; String l;
+    String f; String l; int restart;
 
     StartStory startStory4;
     int c=0; int p=0; int n; int a ; // Nis 에 사용. Page 설정.
+    int getPage; int getViewNum;
 
     LayoutInflater layoutInflater;
 
@@ -59,12 +61,25 @@ public class T1_kakao extends AppCompatActivity {
 
     public void getData(){
         i = getIntent();
-/*        f= i.getStringExtra("firstName");
-        l = i.getStringExtra("lastName");*/
         l = Application.getL();
-        f = Application. getF();
-        n = i.getIntExtra("n",8);
+        f = Application. getF();    // 종료 후에도 저장??
+
+        restart = i.getIntExtra("Restart",1);//1 --> 기본/ 2 --> 이어하기
+        getPage = i.getIntExtra("getPage",0);
+
+        System.out.println("RESTART " + restart);
+
+        if(restart==1){//false
+            n = i.getIntExtra("n",8);
+            System.out.println("재시작합니다.");
+        }else if(restart==2){
+            n=getPage;
+            System.out.println("getPage ===="+getPage+"n ====="+n);
+            restart=1;
+        }
         System.out.println("kakaoFL ================== "+i.getStringExtra("firstName") + "\n2 L = "+i.getStringExtra("lastName")+"\n");
+
+
     }
 
 
@@ -166,6 +181,21 @@ public class T1_kakao extends AppCompatActivity {
         if(n==58){
             a = 6;
         }
+        if(n==110){
+            a = 4;
+        }
+        if(n==122){
+            a = 4;
+        }
+        if(n==123){
+            a = 4;
+        }
+        if(n==124){
+            a = 4;
+        }
+
+
+
     }
 
     public void PageIs(int a){
@@ -198,6 +228,8 @@ public class T1_kakao extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 System.out.println("버튼버ㅡㅌㄴ버튼!!!!!!!!!!!!!!!!!!!!!1");
+                System.out.println(getPage+"---------page-------------");
+                System.out.println(n+"--------n--------------");
 
                 c++;
                 Nis();
@@ -281,7 +313,6 @@ public class T1_kakao extends AppCompatActivity {
         k_img2 = findViewById(R.id.kakao39_m1);
         k_img3 = findViewById(R.id.kakao39_m2);
     }
-
     public void kakao41(){
         layoutInflater.inflate(R.layout.kakotalk41, k_view,true);
 
@@ -301,7 +332,6 @@ public class T1_kakao extends AppCompatActivity {
         k_img3 = findViewById(R.id.kakao42_m1);
         k_img4 = findViewById(R.id.kakao42_h3);
     }
-
     public void kakao58(){
         layoutInflater.inflate(R.layout.kakotalk42, k_view,true);
 
@@ -313,6 +343,38 @@ public class T1_kakao extends AppCompatActivity {
 
         kao1 =findViewById(R.id.kao_tv1);
     }
+    public void kakao110(){
+        layoutInflater.inflate(R.layout.kakotalk110, k_view,true);
+
+        k_img1 = findViewById(R.id.kakao110_h1);
+        k_img2 = findViewById(R.id.kakao110_m1);
+    }
+
+    public void kakao122(){
+        layoutInflater.inflate(R.layout.kakotalk122, k_view,true);
+
+        k_img1 = findViewById(R.id.kakao112_m1);
+        k_img2 = findViewById(R.id.kakao112_h1);
+        k_img3 = findViewById(R.id.kakao112_m2);
+        k_img4 = findViewById(R.id.kakao112_h2);
+    }
+    public void kakao123(){
+        layoutInflater.inflate(R.layout.kakotalk123, k_view,true);
+
+        k_img1 = findViewById(R.id.kakao113_m1);
+        k_img2 = findViewById(R.id.kakao113_h1);
+        k_img3 = findViewById(R.id.kakao113_m2);
+        k_img4 = findViewById(R.id.kakao113_h2);
+    }
+    public void kakao124(){
+        layoutInflater.inflate(R.layout.kakotalk124, k_view,true);
+
+        k_img1 = findViewById(R.id.kakao124_m1);
+        k_img2 = findViewById(R.id.kakao124__h1);
+        k_img3 = findViewById(R.id.kakao124_m2);
+    }
+
+
 
     public void removeVIew(){
         if(k_view.getChildCount()>0){
@@ -544,6 +606,86 @@ public class T1_kakao extends AppCompatActivity {
             }
 
         }
+        else if (n == 110) {
+            kakao110();
+            switch (kakao) {
+                case 1:
+                    k_view.setVisibility(View.VISIBLE);
+                    k_img1.setVisibility(View.VISIBLE);
+                    break;
+                case 2:
+                    k_img2.setVisibility(View.VISIBLE);
+                    break;
+            }
+        }
+        else if (n == 122) {
+            kakao122();
+            switch (kakao) {
+                case 1:
+                    k_view.setVisibility(View.VISIBLE);
+                    k_img1.setVisibility(View.VISIBLE);
+                    break;
+                case 2:
+                    k_img2.setVisibility(View.VISIBLE);
+                    break;
+                case 3:
+                    k_img3.setVisibility(View.VISIBLE);
+                    break;
+                case 4:
+                    k_img4.setVisibility(View.VISIBLE);
+                    break;
+
+            }
+
+        }
+        else if (n == 123) {
+            kakao123();
+            switch (kakao) {
+                case 1:
+                    k_view.setVisibility(View.VISIBLE);
+                    k_img1.setVisibility(View.VISIBLE);
+                    break;
+                case 2:
+                    k_img2.setVisibility(View.VISIBLE);
+                    break;
+                case 3:
+                    k_img3.setVisibility(View.VISIBLE);
+                    break;
+                case 4:
+                    k_img4.setVisibility(View.VISIBLE);
+                    break;
+
+        }
+        }
+        else if (n == 124) {
+            kakao124();
+            switch (kakao) {
+                case 1:
+                    k_view.setVisibility(View.VISIBLE);
+                    k_img1.setVisibility(View.VISIBLE);
+                    break;
+                case 2:
+                    k_img2.setVisibility(View.VISIBLE);
+                    break;
+                case 3 : k_img3.setVisibility(View.VISIBLE);
+                break;
+            }
+
+        }
+
+
+
+    }
+    @Override
+    public void onBackPressed() {
+
+        super.onBackPressed();
+         StartStory.getViewNum();
+         StartStory.getPage();
+        System.out.println("PAGE 4 ============" +StartStory.getViewNum());
+        System.out.println("VIewNUM 4 ============" +StartStory.getPage());
+
+        Toast.makeText(getApplicationContext(),"뒤로 가기",Toast.LENGTH_SHORT).show();
 
     }
 

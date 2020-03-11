@@ -66,7 +66,13 @@ public class Story extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_story);
 
-        intent = getIntent();
+        getIntent();
+        System.out.println();
+        //////// StartStory set값 받아오기.
+
+    }
+
+/*        intent = getIntent();
         f = intent.getStringExtra("firstname");
         l = intent.getStringExtra("lastname");
         recentPage = intent.getExtras().getInt("loadpage");
@@ -120,7 +126,7 @@ public class Story extends AppCompatActivity {
             }
         });
 
-/*
+*//*
         if (sum == 1) {
             tv1.setText("나는 4년제 대학에 다니고 있는 \n" +
                     "평범한 대학생 " + i.getExtras() + l + f + "\n");
@@ -141,21 +147,21 @@ public class Story extends AppCompatActivity {
 
             }else if(sum<0){
             finish();
-*/
+*//*
 
 /////////////////////배열에 1글자씩 저장///////////////////////.//
-/*        String text = tv1.getText().toString();
+*//*        String text = tv1.getText().toString();
         String[] eachString;
 
         Typing typing = new Typing(text);
         typing.string_split();
 
 
-        eachString = typing.array_story;*/
+        eachString = typing.array_story;*//*
 
 //////////////////한 글자씩 출력////////////////--> 실패... timer 함수는 run 안의 내용을 일정 간격마다 반복하는 것. 여기서 for 문을 사용하든 뭘하든 안됨.
 
-/*
+*//*
         //Read(eachString,tv2);
 
 
@@ -169,12 +175,12 @@ public class Story extends AppCompatActivity {
             System.out.println(saying);
             tv2.setText(saying);
         }
-*/
+*//*
 
     }
 
     ///////////////////////////SharedPreferences/////
-/*    @Override
+*//*    @Override
     protected void onStop() {
         super.onStop();
         // activity 종료 전에 loadPage 파일에 저장.
@@ -184,7 +190,7 @@ public class Story extends AppCompatActivity {
         int memory = n;
         editor.putInt("page",memory);
         editor.commit();
-    }*/
+    }*//*
 
     public void initialize(){
         tv1 = findViewById(R.id.tv1);
@@ -310,7 +316,7 @@ public class Story extends AppCompatActivity {
 
         }readingStory.stopTimerTask();
 
-    }
+    }*/
 
 }
 

@@ -11,10 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyNoActionBarTheme">
-        <activity android:name=".T1_kakao"></activity>
+        <activity android:name=".Skip_popup"></activity>
+        <activity
+            android:name=".SkipPage"
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog" />
+        <activity android:name=".T1_kakao" />
         <activity android:name=".T1_text" />
-        <activity android:name=".T1_text_image"/>
-        <activity android:name=".T1_choice"/>
+        <activity android:name=".T1_text_image" />
+        <activity android:name=".T1_choice" />
         <activity android:name=".Success" />
         <activity android:name=".Endings" />
         <activity android:name=".Story" />

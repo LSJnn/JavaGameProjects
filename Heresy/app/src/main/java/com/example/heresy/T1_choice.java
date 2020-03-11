@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,7 +21,8 @@ public class T1_choice extends AppCompatActivity {
 
     int changeCode;
     StartStory startStory3;
-    String F; String L;
+    String f; String l;
+    int getPage; int getViewNum; int restart;
 
     int c=0; int p=0; int n; int a;
 
@@ -30,11 +32,24 @@ public class T1_choice extends AppCompatActivity {
         setContentView(R.layout.activity_t1_choice);
 
         Intent i = getIntent();
-        n = i.getIntExtra("n",9);
-        F = Application.getF();
-        L= Application.getL();
+        f = Application.getF();
+        l= Application.getL();
         System.out.println("2FL ================== "+i.getStringExtra("firstName") + "\n2 L = "+i.getStringExtra("lastName")+"\n");
 
+        restart = i.getIntExtra("Restart",1);//1 --> 기본/ 2 --> 이어하기
+        getPage = i.getIntExtra("getPage",0);
+
+        System.out.println("RESTART " + restart);
+
+        if(restart==1){//false
+            n = i.getIntExtra("n",9);
+            System.out.println("재시작합니다.");
+        }else if(restart==2){
+            n=getPage;
+            System.out.println("getPage ===="+getPage+"n ====="+n);
+            restart=1;
+
+        }
 
         initializeView();
 
@@ -98,7 +113,10 @@ public class T1_choice extends AppCompatActivity {
             a = 4;
         }
         else if(n ==100){
-            a = 4;
+            a = 3;
+        }
+        else if(n ==117){
+            a = 3;
         }
     }
 
@@ -373,9 +391,10 @@ public class T1_choice extends AppCompatActivity {
                     c_imgbtn1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            changeCode=1;
+                            changeCode=2;
                             System.out.println("changeCode ============="+changeCode);
-                            n=80;//납부
+                            Application.setZ(true);
+                            n=90;//짜장.
                             initializeLayout();
                             System.out.println("n==="+n);
                         }
@@ -384,8 +403,8 @@ public class T1_choice extends AppCompatActivity {
                     c_imgbtn2.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            changeCode = 1;
-                            n=79;//불합격
+                            changeCode = 2;
+                            n=95;//안먹음.
                             initializeLayout();
                         }
                     });
@@ -396,7 +415,7 @@ public class T1_choice extends AppCompatActivity {
                     c_imgbtn1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            changeCode=1;
+                            changeCode=2;
                             System.out.println("changeCode ============="+changeCode);
                             n=104;//스터디
                             initializeLayout();
@@ -414,8 +433,28 @@ public class T1_choice extends AppCompatActivity {
                     });
 
                 }
+                else if(n==117&&p==3){
+                    next.setClickable(false);
+                    c_imgbtn1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            changeCode=1;
+                            System.out.println("changeCode ============="+changeCode);
+                            n=119;//스터디
+                            initializeLayout();
+                        }
+                    });
 
-                else {}
+                    c_imgbtn2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            changeCode = 1;
+                            n=118;//공부
+                            initializeLayout();
+                        }
+                    });
+
+                }
 
 
             }
@@ -447,8 +486,6 @@ public class T1_choice extends AppCompatActivity {
             break;
             case 2:
                 Intent i2 = new Intent(T1_choice.this, T1_text_image.class);
-                i2.putExtra("firstName", F);
-                i2.putExtra("lastName",L);
                 i2.putExtra("n",n);
                 startActivity(i2);
                 finish();
@@ -468,6 +505,19 @@ public class T1_choice extends AppCompatActivity {
                 break;
             default: //아무것도 안함.
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+         StartStory.getPage();
+         StartStory.getViewNum();
+        System.out.println("PAGE 1 ============" +StartStory.getPage());
+        System.out.println("VIewNUM 4 ============" +StartStory.getViewNum());
+
+        Toast.makeText(getApplicationContext(),"뒤로 가기",Toast.LENGTH_SHORT).show();
+
     }
 
 }

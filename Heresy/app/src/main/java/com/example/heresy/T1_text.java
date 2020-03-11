@@ -13,6 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -25,10 +26,11 @@ public class T1_text extends AppCompatActivity {
     ////////////////////////필요 객체////////////////////////////////////////////////////////////
 
     int changeCode;
+    int getPage ;int getViewNum;
 
     String l; String f;
     int recentPage;// 최근 페이지.
-    mySharedPreferences sf; Intent i1;
+    mySharedPreferences sf; Intent i1; int restart;
 
     int n; int p=0; int c=0; int a;// paragraph 조정. 나누기 3 --> 나머지 1=001/ 2 = 002/ 3= 003
     StartStory startStory;
@@ -44,7 +46,7 @@ public class T1_text extends AppCompatActivity {
         getData();
 
         startStory = new StartStory();
-        startStory.getONE(otv1,otv2,otv3,l ,f );
+        startStory.getONE(otv1,otv2,otv3/*,l ,f*/ );
 
         nextOnClick();// 다음 누르면 이야기 전개됨
 
@@ -66,28 +68,31 @@ public class T1_text extends AppCompatActivity {
     }
     public void getData() {
 
-        i1 = getIntent();
+        i1 = getIntent();//second 에서 받아옴.
          l =  Application.getL();
          f =  Application.getF();
-        n = i1.getIntExtra("n",7);
         System.out.println("TExtL ================== "+l + "\n2 F = "+ f+"\n");
+        restart = i1.getIntExtra("Restart",1);//1 --> 기본/ 2 --> 이어하기
+        getPage = i1.getIntExtra("getPage",0);
 
-        recentPage = i1.getExtras().getInt("loadpage");//::n
-        System.out.println(recentPage +"=========recentPage\n");
+
+        System.out.println("RESTART " + restart);
+
+        if(restart==1){//false
+            n = i1.getIntExtra("n",7);
+            System.out.println("재시작합니다.");
+        }else if(restart==2){
+            n=getPage;
+            System.out.println("getPage ===="+getPage+"n ====="+n);
+            restart=1;
+        }
 
         changeCode = i1.getExtras().getInt("changeCode");//:: 단위.
         System.out.println("changeCode ========= "+changeCode);
         // 첫 시작 시 secondPage 화면에서 코드 넘어옴.
         //1 : activity_t1_text, 2 : activity_t1_txt_img , 3 : activity_t1_choice
 
-        sf = new mySharedPreferences();
-        sf.setString(this, "firstname", f);
-        sf.setString(this, "lastname", l);
 
-/*        if (f == null && l == null) {
-            f = sf.getStringR(this, "firstname");
-            l = sf.getStringR(this, "lastname");
-        }*/
     }
 
     public void initializeLayout() {
@@ -180,6 +185,38 @@ public class T1_text extends AppCompatActivity {
         if(n ==99){
             a =4;
         }
+        if(n ==105){
+            a =4;
+        }
+        if(n ==111){
+            a =3;
+        }
+        if(n ==112){
+            a =3;
+        }
+        if(n ==113){
+            a =3;
+        }
+        if(n ==114){
+            a =3;
+        }
+        if(n ==115){
+            a =3;
+        }
+        if(n ==115){
+            a =3;
+        }
+        if(n ==118){
+            a =5;
+        }
+        if(n ==119){
+            a =6;
+        }
+
+
+
+
+
     }
 
     public void PageIs(int a){
@@ -209,11 +246,8 @@ public class T1_text extends AppCompatActivity {
             public void onClick(View v) {
                 //n 은 장 수 --> 7로 유지되야함. 123 이 끝날때 까지.
                 c++;
-
                 Nis();
                 PageIs(a);
-
-
             }
         };
         next.setOnClickListener(nextOnClickListener);
@@ -285,4 +319,16 @@ public class T1_text extends AppCompatActivity {
         };
     }*/
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        StartStory.getPage();
+        StartStory.getViewNum();
+        System.out.println("PAGE 1 ============" +StartStory.getPage());
+        System.out.println("VIewNUM 1 ============" +StartStory.getViewNum());
+
+        Toast.makeText(getApplicationContext(),"뒤로 가기",Toast.LENGTH_SHORT).show();
+
+    }
 }

@@ -14,16 +14,17 @@ import org.w3c.dom.Text;
 import java.util.concurrent.TimeoutException;
 
 public class StartStory {
-    int viewNum;
-    int page; //ch메ter는 ppt 기준.
+
+    public static int viewNum;
+    public static int page; //ch메ter는 ppt 기준.
     int paragraph; // 문단.//페이지0문단
     int changeCode;
 
     TextView ONE_tv1;
     TextView ONE_tv2;
     TextView ONE_tv3;
-    String l;
-    String f;
+    String l = Application.getL();
+    String f = Application.getF();
 
     ImageView TWO_img1;
     TextView TWO_tv1;
@@ -66,22 +67,46 @@ public class StartStory {
 
     }
 
-    public void getONE(TextView tv1, TextView tv2, TextView tv3,String l , String f) {
+    public static int getViewNum(){
+        return viewNum;
+    }
+
+    public static void setPage(int page) {
+        StartStory.page = page;
+    }
+
+    public static void setViewNum(int viewNum) {
+        StartStory.viewNum = viewNum;
+    }
+
+    public void setParagraph(int paragraph) {
+        this.paragraph = paragraph;
+    }
+
+    public static int getPage() {
+        return page;
+    }
+
+    public int getParagraph() {
+        return paragraph;
+    }
+
+    public void getONE(TextView tv1, TextView tv2, TextView tv3/* String l , String f*/) {
         ONE_tv1 = tv1;
         ONE_tv2 = tv2;
         ONE_tv3 = tv3;
-        this.l = l;
-        this.f = f;
+/*        this.l = l;
+        this.f = f;*/
     }
 
-    public void getTWO(ImageView img1, TextView tv1, TextView tv2, TextView tv3, TextView tv4,String l, String f) {
+    public void getTWO(ImageView img1, TextView tv1, TextView tv2, TextView tv3, TextView tv4/*String l, String f*/) {
         TWO_img1 = img1;
         TWO_tv1 = tv1;
         TWO_tv2 = tv2;
         TWO_tv3 = tv3;
         TWO_tv4 = tv4;
-        this.l = l;
-        this.f = f;
+/*        this.l = l;
+        this.f = f;*/
     }
 
     public void getTHREE(ImageView img1, TextView tv1, TextView tv2,
@@ -159,6 +184,39 @@ public class StartStory {
             case 99 :
                 pageTNUM();
                 break;
+            case 103 :
+                pageTNUM();
+                break;
+            case 105 :
+                pageTNUM();
+                break;
+            case 111 :
+                pageTNUM();
+                break;
+            case 112 :
+                pageTNUM();
+                break;
+            case 113 :
+                pageTNUM();
+                break;
+            case 114 :
+                pageTNUM();
+                break;
+            case 115 :
+                pageTNUM();
+                break;
+            case 116 :
+                pageTNUM();
+                break;
+            case 118 :
+                pageTNUM();
+                break;
+            case 119:
+                pageTNUM();
+                break;
+
+
+
 
 
         }
@@ -335,10 +393,28 @@ public class StartStory {
             case 102 :
                 pageTINUM();
                 break;
-            case 105 :
+            case 104 :
                 pageTINUM();
                 break;
             case 106  :
+                pageTINUM();
+                break;
+            case 107  :
+                pageTINUM();
+                break;
+            case 108  :
+                pageTINUM();
+                break;
+            case 109  :
+                pageTINUM();
+                break;
+            case 120  :
+                pageTINUM();
+                break;
+            case 121  :
+                pageTINUM();
+                break;
+            case 131  :
                 pageTINUM();
                 break;
 
@@ -405,6 +481,16 @@ public class StartStory {
                 break;
             case 58 : pageKakao();
                 break;
+            case 110 : pageKakao();
+                break;
+            case 122 : pageKakao();
+                break;
+            case 123 : pageKakao();
+                break;
+            case 124 : pageKakao();
+                break;
+
+
 
 
         }
@@ -632,6 +718,163 @@ public class StartStory {
                     break;
             }
         }
+        else if (page == 103) {
+            switch (paragraph) {
+                case 1:TWO_tv2.setText("");TWO_tv4.setText("");
+                    TWO_tv3.setText(R.string.page103002);
+                    break;
+                case 2:TWO_tv4.setText(R.string.page103003);
+                    break;
+                case  3:TWO_tv4.setText(""); TWO_tv3.setText("");
+                    TWO_tv2.setText(R.string.page102004 );
+                    break;
+                case 4 :TWO_tv3.setText(R.string.page103005);
+                    TWO_tv3.append(": 헉 맞긴 맞는데…" );
+                    break;
+                case 5 :TWO_tv4.setText(R.string.page103006);
+                    changeCode = 5;
+                    break;
+
+            }
+        }
+        else if (page == 105) {
+            switch (paragraph) {
+                case 1:
+                    ONE_tv1.setText(R.string.page105001);
+                    break;
+                case 2:ONE_tv2.setText(R.string.page105002);
+                    break;
+                case  3:
+                    ONE_tv3.setText(R.string.page105003 );
+                    break;
+                case 4 :
+                    changeCode = 2;
+                    break;
+
+            }
+        }
+        else if (page == 111) {
+            switch (paragraph) {
+                case 1:
+                    ONE_tv1.setText(R.string.page111001);
+                    break;
+                case 2:ONE_tv2.setText(R.string.page111004);
+                    break;
+                case  3:
+                    ONE_tv3.setText(R.string.page111003);
+                    break;
+            }
+        }
+        else if (page == 112) {
+            switch (paragraph) {
+                case 1:
+                    ONE_tv1.setText(R.string.page112001);
+                    break;
+                case 2:
+                    ONE_tv2.setText(R.string.page112002);
+                    break;
+                case 3:
+                    ONE_tv3.setText(R.string.page112003);
+                    break;
+            }
+        }
+        else if (page == 113) {
+            switch (paragraph) {
+                case 1:
+                    ONE_tv1.setText(R.string.page113001);
+                    break;
+                case 2:
+                    ONE_tv2.setText(R.string.page113002);
+                    break;
+                case 3:
+                    ONE_tv3.setText(R.string.page113003);
+                    break;
+            }
+        }
+        else if (page == 114) {
+            switch (paragraph) {
+                case 1: ONE_tv2.setText("");ONE_tv3.setText("");
+                    ONE_tv1.setText(R.string.page114001);
+                    break;
+                case 2:
+                    ONE_tv2.setText(R.string.page114002);
+                    break;
+                case 3:
+                    ONE_tv3.setText(R.string.page114003);
+                    break;
+            }
+        }
+        else if (page == 115) {
+            switch (paragraph) {
+                case 1: ONE_tv2.setText("");ONE_tv3.setText("");
+                    ONE_tv1.setText(R.string.page115001);
+                    break;
+                case 2:
+                    ONE_tv2.setText(R.string.page115002);
+                    break;
+                case 3:
+                    ONE_tv3.setText(R.string.page115003);
+                    break;
+            }
+        }
+        else if (page == 116) {
+            switch (paragraph) {
+                case 1: ONE_tv2.setText("");ONE_tv3.setText("");
+                    ONE_tv1.setText(R.string.page116001);
+                    break;
+                case 2:
+                    ONE_tv2.setText(R.string.page116002);
+                    break;
+                case 3:
+                    ONE_tv3.setText(R.string.page116003);
+                    break;
+            }
+        }
+
+        else if (page == 118) {
+            switch (paragraph) {
+                case 1: ONE_tv2.setText("");ONE_tv3.setText("");
+                    ONE_tv1.setText(R.string.page118001);
+                    break;
+                case 2:
+                    ONE_tv2.setText(R.string.page118002);
+                    break;
+                case 3:
+                    ONE_tv3.setText(R.string.page118003);
+                    break;
+                case 4:ONE_tv1.setText("");ONE_tv3.setText("");
+                    ONE_tv2.setText(R.string.page118004);
+                    break;
+                case 5: changeCode =5;
+                break;
+            }
+        }
+        else if (page == 119) {
+            switch (paragraph) {
+                case 1: ONE_tv2.setText("");ONE_tv3.setText("");
+                    ONE_tv1.setText(R.string.page119001);
+                    break;
+                case 2:
+                    ONE_tv2.setText(R.string.page119002);
+                    break;
+                case 3:ONE_tv3.setText(R.string.page119002_1);
+                    break;
+                case 4:ONE_tv1.setText("");ONE_tv3.setText("");
+                    ONE_tv2.setText(R.string.page119003);
+                    break;
+                case 5 :
+                    ONE_tv2.setText(R.string.page119004);
+                    break;
+                case 6: changeCode= 2;
+                break;
+            }
+        }
+
+
+
+
+
+
 
 
 
@@ -1574,9 +1817,6 @@ public class StartStory {
                 case 4 :
                     TWO_tv4.setText(R.string.page97005 );
                     break;
-                case 5 :
-                    changeCode = 1;
-                    break;
 
             }
         }
@@ -1650,26 +1890,163 @@ public class StartStory {
 
             }
         }
-        else if (page == 103) {
+        else if (page == 104) {
             switch (paragraph) {
-                case 1:TWO_tv2.setText("");TWO_tv4.setText("");
-                    TWO_tv3.setText(R.string.page103002);
+                case 1:
+                    TWO_img1.setBackgroundResource(R.drawable.home);
+                    TWO_tv2.setText(R.string.page104002);
                     break;
-                case 2:TWO_tv4.setText(R.string.page103003);
+                case 2:TWO_tv3.setText(l+f);TWO_tv3.append(" : 알겠어 아빠..");
                     break;
-                case  3:TWO_tv4.setText(""); TWO_tv3.setText("");
-                    TWO_tv2.setText(R.string.page102004 );
+                case  3:TWO_tv4.setText(R.string.page104003 );
                     break;
-                case 4 :TWO_tv3.setText(R.string.page103005);
-                    TWO_tv3.append(": 헉 맞긴 맞는데…" );
-                    break;
-                case 5 :TWO_tv4.setText(R.string.page103006);
-                    changeCode = 5;
+                case 4 :
+                    changeCode = 1;
                     break;
 
             }
         }
+        else if (page == 106) {
+            switch (paragraph) {
+                case 1:
+                    TWO_img1.setImageResource(R.drawable.teacher);
+                    TWO_tv2.setText(R.string.page106002);
+                    break;
+                case 2:TWO_tv3.setText(R.string.page106003);
+                    break;
+                case  3:TWO_tv4.setText(R.string.page106004);
+                    break;
+            }
+        }
+        else if (page == 107) {
+            switch (paragraph) {
+                case 1:TWO_tv2.setText("");
+                    TWO_tv3.setText("");TWO_tv4.setText("");
+                    TWO_tv2.setText(R.string.page107002);
+                    break;
+                case 2:TWO_tv4.setText(R.string.page107003);
+                    break;
+                case  3:TWO_tv2.setText("");TWO_tv4.setText("");
+                    TWO_tv3.setText(R.string.page107004);
+                    break;
+            }
+        }
+        else if (page == 108) {
+            switch (paragraph) {
+                case 1:
+                    TWO_tv2.setText("");
+                    TWO_tv3.setText("");TWO_tv4.setText("");
+                    TWO_tv2.setText(R.string.page109002);
+                    break;
+                case 2:TWO_tv3.setText(R.string.page109003);
+                    break;
+                case  3:TWO_tv3.setText("");
+                    TWO_tv2.setText(R.string.page109004 );
+                    break;
+                case 4 : TWO_tv3.setText("");TWO_tv4.setText("");
+                    TWO_tv3.setText(R.string.page109005);
+                    break;
 
+            }
+        }
+        else if (page == 109) {
+            switch (paragraph) {
+                case 1:TWO_img1.setImageResource(R.drawable.edu);
+                    TWO_tv2.setText("");
+                    TWO_tv3.setText("");TWO_tv4.setText("");
+                    TWO_tv2.setText(R.string.page109002);
+                    break;
+                case 2:TWO_tv3.setText(R.string.page109003);
+                TWO_tv3.append(f);TWO_tv3.append("이가\n" +
+                        "신앙 탑인거같애 진짜ㅋㅋ\n" +
+                        "열심이야 배워야겠어\n");
+                    break;
+                case  3:TWO_tv3.setText("");
+                    TWO_tv4.setText(R.string.page109004 );
+                    break;
+                case 4 :TWO_tv2.setText(R.string.page109005);
+                    TWO_tv2.append(f );TWO_tv2.append("이 뭐 힘들거나\n" +
+                        "그런거 있으면 말해 진짜\n" +
+                        "응원한다 언니가\n");
+                    break;
+                case 5 :
+                    TWO_tv3.setText(l+f);TWO_tv3.setText(": 고마워요 언니들ㅠㅠㅠ");
+                    if(Application.isZ()==true) {//짜장면 먹음.
+                        changeCode = 4;
+                    }//안머으면 131로. 그대로 여기 뷰.
+                    break;
+
+            }
+        }
+        else if (page == 120) {
+            switch (paragraph) {
+                case 1:TWO_img1.setImageResource(R.drawable.teacher);
+                    TWO_tv3.setText(R.string.page120000);
+                    break;
+                case 2:TWO_tv4.setText(R.string.page120001);
+                    break;
+                case  3:TWO_tv2.setText("");TWO_tv3.setText("");
+                    TWO_tv2.setText(R.string.page120002 );
+                    break;
+                case 4 :TWO_tv3.setText(R.string.page120003);
+                    break;
+                case 5 :
+                    TWO_tv4.setText(R.string.page120004);
+                    break;
+            }
+        }
+        else if (page == 121) {
+            switch (paragraph) {
+                case 1:TWO_img1.setImageResource(R.drawable.edu);
+                    TWO_tv3.setText("");TWO_tv4.setText("");
+                    TWO_tv2.setText(R.string.page121001);
+                    break;
+                case 2:TWO_tv3.setText(R.string.page121001_1);
+                    break;
+                case  3:
+                    TWO_tv4.setText(R.string.page121002 );
+                    break;
+                case 4 :TWO_tv3.setText("");TWO_tv4.setText("");
+                    TWO_tv2.setText(R.string.page121004);
+                    break;
+                case 5 :
+                    TWO_tv4.setText(R.string.page121005);
+                    break;
+                case 6: changeCode = 4;
+                break;
+
+            }
+        }
+
+
+        else if (page == 131) {
+            switch (paragraph) {
+                case 1:
+                    TWO_img1.setImageResource(R.drawable.teacher);
+                    TWO_tv2.setText("");
+                    TWO_tv3.setText("");
+                    TWO_tv4.setText("");
+                    TWO_tv1.setText(R.string.page131002);
+                    break;
+                case 2:
+                    TWO_tv2.setText(R.string.page131003);
+                    break;
+                case 3:
+                    TWO_tv3.setText(R.string.page131004);
+                    break;
+                case 4:
+                    TWO_tv4.setText(R.string.page131005);
+                    break;
+                case 5:
+                    TWO_tv2.setText("");
+                    TWO_tv4.setText("");
+                    TWO_tv1.setText("");
+                    TWO_tv3.setText(R.string.page131006);
+                    break;
+
+            }
+
+        }
     }
 
     public void pageCHOICE(){
@@ -1822,6 +2199,7 @@ public class StartStory {
                 case 1:
                     THREE_img1.setImageResource(R.drawable.teacher);
                     THREE_tv1.setText(R.string.page89002);
+                    THREE_imgbtn3.setVisibility(View.GONE);
                     break;
                 case 2:
                     THREE_tv2.setText(R.string.page89003);
@@ -1837,17 +2215,35 @@ public class StartStory {
         }
         else if(page ==100){
             switch (paragraph){
-                case 1 : THREE_tv1.setText(R.string.page100002);
-                THREE_img1.setTag(R.drawable.home);
+                case 1 :
+                THREE_img1.setBackgroundResource(R.drawable.home);
+                    THREE_tv1.setText(R.string.page100002);
                 break;
-                case 2 : THREE_tv2.setText(R.string.page100003);
+                case 2 :
+                    THREE_tv2.setText(R.string.page100003);
                     THREE_tv2.append(l+f);THREE_tv2.append("아, 요즘 뭐하느라 맨날 그렇게 나가니??");
+                    break;
+                case 3:
                     THREE_imgbtn1.setBackgroundResource(R.drawable.choice_100001_1);
                     THREE_imgbtn2.setBackgroundResource(R.drawable.choice_100001_2);
                     THREE_imgbtn1.setVisibility(View.VISIBLE);THREE_imgbtn2.setVisibility(View.VISIBLE);
 
             }
         }
+        else if(page ==117){
+            switch (paragraph){
+                case 1 :
+                    THREE_tv1.setText(R.string.page117001);
+                    break;
+                case 2 :
+                    THREE_imgbtn1.setBackgroundResource(R.drawable.choice_117001_1);
+                    THREE_imgbtn2.setBackgroundResource(R.drawable.choice_117001_2);
+                    THREE_imgbtn1.setVisibility(View.VISIBLE);THREE_imgbtn2.setVisibility(View.VISIBLE);
+
+            }
+        }
+
+
 
     }
 
@@ -2059,6 +2455,56 @@ public class StartStory {
                     break;
 
             }}
+        else if(page ==110) {
+            switch (paragraph) {
+                case 1:kakao = 1;
+                    break;
+                case 2:
+                    kakao = 2;
+                    break;
+                case 3 :FOUR_tv2.setText(R.string.page110002);
+                case 4 : changeCode = 1;
+                    break;
+
+            }}
+        else if(page ==122) {
+            switch (paragraph) {
+                case 1:kakao = 1;
+                    break;
+                case 2:
+                    kakao = 2;
+                    break;
+                case 3 :kakao=3;
+                break;
+                case 4 :kakao=4;
+                    break;
+
+            }}
+        else if(page ==123) {
+            switch (paragraph) {
+                case 1:kakao = 1;
+                    break;
+                case 2:
+                    kakao = 2;
+                    break;
+                case 3 : kakao = 3;
+                    break;
+                case 4 : FOUR_tv2.setText(R.string.page123001);
+                    break;
+            }}
+        else if(page ==124) {
+            switch (paragraph) {
+                case 1:kakao = 1;
+                    break;
+                case 2:
+                    kakao = 2;
+                    break;
+                case 3 : kakao = 3;
+                    break;
+                case 4 : FOUR_tv2.setText(R.string.page124001);
+                    break;
+            }}
+
         return kakao;
     }
 

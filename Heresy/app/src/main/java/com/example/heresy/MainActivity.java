@@ -4,19 +4,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
-    final static int STORY_BACK = 20020;
-    final static int NEW =13000;
-    final static int NEW_OK = 13000;
-    final static int LOAD = 23000;
-    final static int LOAD_OK =23000;
 
     ImageButton start;
     ImageButton settings;
@@ -27,23 +20,25 @@ public class MainActivity extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     mySharedPreferences mSf;
 
+    int getViewNum;
+    int getPage;
+
     int loadpage;
     Intent intent;
-    String l;
-    String f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        System.out.println("main 1: "+loadpage);
-
+        //System.out.println("main 1: "+loadpage);
         this.initializeMain();
-        System.out.println("main 2: "+loadpage);
+        //System.out.println("main 2: "+loadpage);
 
         IsPlaying();
+
         this.setStartOnClick();
+        checkVIsibility();
 
         ending.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,10 +49,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-        }
+    }
 
 
     @Override
@@ -85,19 +77,19 @@ public class MainActivity extends AppCompatActivity {
         }*/
     }
 
-    public void checkVIsibility(){
+    public void checkVIsibility() {
 
-            if(newgame.getVisibility()==View.VISIBLE){
-                newgame.setVisibility(View.INVISIBLE);
-                loadgame.setVisibility(View.INVISIBLE);
-                settings.setVisibility(View.VISIBLE);
-            }
+        if (newgame.getVisibility() == View.VISIBLE) {
+            newgame.setVisibility(View.INVISIBLE);
+            loadgame.setVisibility(View.INVISIBLE);
+            settings.setVisibility(View.VISIBLE);
         }
+    }
 
-        //////////////////////음악///////////////////////////
-    private void IsPlaying(){
+    //////////////////////음악///////////////////////////
+    private void IsPlaying() {
 
-        if(!mediaPlayer.isPlaying()){
+        if (!mediaPlayer.isPlaying()) {
             mediaPlayer.start();
         } else {
             onDestroy();
@@ -109,10 +101,11 @@ public class MainActivity extends AppCompatActivity {
         //앱이 정지했을 떄
         super.onDestroy();
         mediaPlayer.release();
-        mediaPlayer=null;
+        mediaPlayer = null;
     }
 
-    public void initializeMain(){
+
+    public void initializeMain() {
         start = findViewById(R.id.start);
         settings = findViewById(R.id.settings);
         newgame = findViewById(R.id.newgame);
@@ -123,18 +116,16 @@ public class MainActivity extends AppCompatActivity {
         mediaPlayer.setLooping(true);
 
 
-        mSf = new mySharedPreferences();
+
+/*        mSf = new mySharedPreferences();
         mSf.getPreferenences(this);
         //getPreferences 있ㅆ어야 어떤 파일인지 알 수 있음.
         // page의 n 값을 저장함., 이름 저장.
-
-        loadpage=mSf.getIntR(this, "page");
-        f = mSf.getStringR(this,"firstname");
-        l = mSf.getStringR(this, "lastname");
+        loadpage=mSf.getIntR(this, "page");*/
 
     }
 
-    public void setStartOnClick(){
+    public void setStartOnClick() {
 
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
@@ -142,10 +133,10 @@ public class MainActivity extends AppCompatActivity {
 
                 newgame.setVisibility(View.VISIBLE);
 
-                if(loadpage==0){
+                if (StartStory.getViewNum() == 0) {
                     loadgame.setVisibility(View.INVISIBLE);
                     settings.setVisibility(View.INVISIBLE);
-                }else{
+                } else {
                     loadgame.setVisibility(View.VISIBLE);
                 }
 
@@ -155,7 +146,9 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
 
                         Intent si = new Intent(MainActivity.this, SecondPage.class);
-                        startActivityForResult(si,NEW);
+                        startActivity(si);
+                        StartStory.setViewNum(-1);
+                        StartStory.setPage(-1);//
                         System.out.println("GOOOOOOOOOOOOOOOOOo TO Second");
                         // 실행 후 돌아왔을 떄 안보이도록.
                         checkVIsibility();
@@ -166,21 +159,33 @@ public class MainActivity extends AppCompatActivity {
                 loadgame.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent i = getIntent();
-//                        loadpage = i.getExtras().getInt("STORY_BACK");
-                        intent = new Intent(MainActivity.this,Story.class);
-                        intent.putExtra("loadpage",loadpage);
-                        intent.putExtra("firstname", f);
-                        intent.putExtra("lastname", l);
 
-                        startActivityForResult(intent,LOAD);
+                        Practice.decidePos();
+                        getViewNum = StartStory.getViewNum();
+                        System.out.println("ViewNUm ============" + getViewNum);
+                        getPage = StartStory.getPage();
+                        System.out.println("PAGE ============" + getPage);
+
+
+                        if (getViewNum == 1) {
+                            intent = new Intent(MainActivity.this, T1_text.class);
+                        } else if (getViewNum == 2) {
+                            intent = new Intent(MainActivity.this, T1_text_image.class);
+                        } else if (getViewNum == 3) {
+                            intent = new Intent(MainActivity.this, T1_choice.class);
+                        } else if (getViewNum == 4) {
+                            intent = new Intent(MainActivity.this, T1_choice.class);
+                        }
+
+                        intent.putExtra("getPage", getPage);
+                        intent.putExtra("Restart",2);
+                        startActivity(intent);
                         checkVIsibility();
-                        //있던 페이지 넘겨줌.
+
                     }
                 });
             }
-        };
-        start.setOnClickListener(onClickListener);
+        }; start.setOnClickListener(onClickListener);
     }
-
 }
+

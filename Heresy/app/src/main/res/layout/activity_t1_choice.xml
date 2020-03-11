@@ -38,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t1_c_tv1"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
 
     <ImageButton
         android:id="@+id/t1_c_btn1"

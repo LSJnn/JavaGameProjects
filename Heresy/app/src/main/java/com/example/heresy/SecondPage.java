@@ -46,15 +46,8 @@ public class SecondPage extends AppCompatActivity {
         ending= findViewById(R.id.endingBtn);
 
         //////////////초기화//////////////////////////
-/*        Application app1 = (Application)getApplication();
-        Application app2 = (Application)getApplication();
-        app1.setL(lstE.getText().toString());
-        app2.setF(fstE.getText().toString());*/
 
-    lstE.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
-
-        System.out.println(Application.getF());
-        System.out.println(Application.getL());
+    //lstE.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

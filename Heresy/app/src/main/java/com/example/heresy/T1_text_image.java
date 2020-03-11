@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,7 +23,10 @@ public class T1_text_image extends AppCompatActivity {
     StartStory startStory2;
     Intent i;
 
-    int c=0;int p=0; static int n; int a;
+    int getPage; int getViewNum;
+
+    int c=0;int p=0; int n; int a;
+    int restart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,16 +36,30 @@ public class T1_text_image extends AppCompatActivity {
         initializeView();
 
         i = getIntent();
+        restart = i.getIntExtra("Restart",1);//1 --> 기본/ 2 --> 이어하기
+        getPage = i.getIntExtra("getPage",0);
+
+
+        System.out.println("RESTART " + restart);
+
+        if(restart==1){//false
+            n = i.getIntExtra("n",11);
+            System.out.println("재시작합니다.");
+        }else if(restart==2){
+            n=getPage;
+            System.out.println("getPage ===="+getPage+"n ====="+n);
+            restart=1;
+
+        }
 
         F = Application.getF();
         L = Application.getL();
 
         System.out.println("2FL ================== "+i.getStringExtra("firstName") + "\n2 L = "+i.getStringExtra("lastName")+"\n");
-        n = i.getIntExtra("n",11);
         System.out.println("N = "+n);
 
         startStory2 = new StartStory();
-        startStory2.getTWO(ti_img1,ti_tv1,ti_tv2,ti_tv3,ti_tv4,L,F);
+        startStory2.getTWO(ti_img1,ti_tv1,ti_tv2,ti_tv3,ti_tv4/*L,F*/);
 
         nextOnClick();
 
@@ -194,11 +212,14 @@ public class T1_text_image extends AppCompatActivity {
         else if( n ==93){
             a = 6;
         }
+        else if( n ==95){
+            a = 4;
+        }
         else if( n ==96){
             a = 4;
         }
         else if( n ==97){
-            a = 5;
+            a = 4;
         }
         else if( n ==98){
             a = 5;
@@ -210,11 +231,26 @@ public class T1_text_image extends AppCompatActivity {
             a = 5;
         }
         else if( n ==104){
+            a = 4;
+        }
+        else if( n ==106){
+            a = 3;
+        }
+        else if( n ==107){
+            a = 3;
+        }
+        else if( n ==108){
+            a = 4;
+        }
+        else if( n ==109){
             a = 5;
         }
-
-
-
+        else if( n ==120){
+            a = 5;
+        }
+        else if( n ==121){
+            a = 6;
+        }
 
 
 
@@ -235,7 +271,11 @@ public class T1_text_image extends AppCompatActivity {
                 n =52;
             }else if(n==50){// 불교 -- 따라가기
                 n=52;
-            }else{  // 성경 + 일반.
+            }else if(n==109&&Application.isZ()==false){//안먹으면 131로
+                n=131;//109페이지. 먹으면 그냥 그대로
+                // .
+            }
+            else{  // 성경 + 일반.
                 n++;
             }
             c=0;
@@ -325,6 +365,19 @@ public class T1_text_image extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        StartStory.getPage();
+        StartStory.getViewNum();
+        System.out.println("PAGE 2 ============" +StartStory.getPage());
+        System.out.println("VIewNUM 2 ============" +StartStory.getViewNum());
+        //super.onBackPressed();
+        Toast.makeText(getApplicationContext(),"뒤로 가기",Toast.LENGTH_SHORT).show();
+
     }
 
 
