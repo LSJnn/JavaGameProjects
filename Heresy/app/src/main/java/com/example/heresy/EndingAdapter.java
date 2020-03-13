@@ -15,7 +15,7 @@ public class EndingAdapter extends BaseAdapter {
     //Adapater 에 추가된 데이터를 저장할 arrayList : 엔딩 목록에 나타날 화면 번호.
     //EndingItem 타입.
     Context context;
-    ArrayList<EndingItem> EndingItemArray = new ArrayList<>(20);
+    ArrayList<EndingItem> EndingItemArray = new ArrayList<>();
     TextView endingTV;
 
     EndingAdapter(Context context, ArrayList<EndingItem> EndingItemarray){
@@ -66,6 +66,5 @@ public class EndingAdapter extends BaseAdapter {
     @Override
     public void notifyDataSetChanged() {
         super.notifyDataSetChanged();
-
     }
 }

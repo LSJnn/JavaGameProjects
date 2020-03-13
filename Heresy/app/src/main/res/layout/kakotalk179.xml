@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/kakao2"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="450dp"
+    >
+
+    <ImageView
+        android:id="@+id/kakao_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="450dp"
+        android:background="@drawable/kakao28_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/kakao179_name"
+        android:layout_width="380dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/kakao179_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/kakao179_h1"
+        android:layout_width="230dp"
+        android:layout_height="240dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/kakao179_h1"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kakao179_name" />
+
+    <ImageView
+        android:id="@+id/kakao179_h2"
+        android:layout_width="220dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:background="@drawable/kakao180_h1"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/kakao_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kakao179_h1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -55,7 +55,6 @@ public class T1_text_image extends AppCompatActivity {
         F = Application.getF();
         L = Application.getL();
 
-        System.out.println("2FL ================== "+i.getStringExtra("firstName") + "\n2 L = "+i.getStringExtra("lastName")+"\n");
         System.out.println("N = "+n);
 
         startStory2 = new StartStory();
@@ -81,7 +80,7 @@ public class T1_text_image extends AppCompatActivity {
 
     public void Nis(){
         if(n==11){
-            a = 3;
+            a = 2;
         }else if(n==12){
             a = 3;
         }else if(n==13){
@@ -135,7 +134,7 @@ public class T1_text_image extends AppCompatActivity {
             a = 2;
         }
         else if( n ==50){
-            a = 3;
+            a = 2;
         }
         else if( n ==51){
             a = 3;
@@ -161,23 +160,23 @@ public class T1_text_image extends AppCompatActivity {
         else if( n ==61){
             a = 5;
         }
-        else if( n ==66){
-            a = 3;
-        }
-        else if( n ==68){
+        else if( n ==67){
             a = 5;
         }
-        else if( n ==70){
+        else if( n ==69){
+            a =6;
+        }
+        else if( n ==71){
             a = 5;
         }
-        else if( n ==72){
-            a = 5;
+        else if( n ==73){
+            a = 2;
         }
         else if( n ==75){
             a = 5;
         }
         else if( n ==76){
-            a = 6;
+            a = 5;
         }
         else if( n ==81){
             a = 6;
@@ -213,7 +212,7 @@ public class T1_text_image extends AppCompatActivity {
             a = 6;
         }
         else if( n ==95){
-            a = 4;
+            a = 3;
         }
         else if( n ==96){
             a = 4;
@@ -222,7 +221,7 @@ public class T1_text_image extends AppCompatActivity {
             a = 4;
         }
         else if( n ==98){
-            a = 5;
+            a = 6;
         }
         else if( n ==101){
             a = 5;
@@ -240,7 +239,7 @@ public class T1_text_image extends AppCompatActivity {
             a = 3;
         }
         else if( n ==108){
-            a = 4;
+            a = 5;
         }
         else if( n ==109){
             a = 5;
@@ -251,6 +250,135 @@ public class T1_text_image extends AppCompatActivity {
         else if( n ==121){
             a = 6;
         }
+        else if( n ==125){
+            a = 6;
+        }
+        else if( n ==126){
+            a = 6;
+        }
+        else if( n ==127){
+            a = 4;
+        }
+        else if( n ==128){
+            a = 7;
+        }
+        else if( n ==131){
+            a = 5;
+        }
+        else if( n ==132){
+            a = 3;
+        }
+        else if( n ==133){
+            a = 3;
+        }
+        else if( n ==134){
+            a = 4;
+        }
+        else if( n ==135){
+            a = 3;
+        }
+        else if( n ==136){
+            a = 5;
+        }
+        else if( n ==137){
+            a = 3;
+        }
+        else if( n ==138){
+            a = 3;
+        }
+        else if( n ==139){
+            a = 5;
+        }
+        else if( n ==141){
+            a = 4;
+        }
+        else if( n ==142){
+            a = 4;
+        }
+        else if( n ==143){
+            a = 4;
+        }
+        else if( n ==144){
+            a = 4;
+        }
+        else if( n ==145){
+            a = 7;
+        }
+        else if( n ==154){
+            a = 5;
+        }
+        else if( n ==155){
+            a = 4;
+        }
+        else if( n ==156){
+            a = 5;
+        }
+        else if( n ==157){
+            a = 5;
+        }
+        else if( n ==158){
+            a = 4;
+        }
+        else if( n ==159){
+            a = 5;
+        }
+        else if( n ==160){
+            a = 4;
+        }
+        else if( n ==161){
+            a = 4;
+        }
+        else if( n ==162){
+            a = 6;
+        }
+        else if( n ==163){
+            a = 5;
+        }
+        else if( n ==165){
+            a = 4;
+        }
+        else if( n ==166){
+            a = 6;
+        }
+        else if( n ==169){
+            a = 4;
+        }
+        else if( n ==170){
+            a = 5;
+        }
+        else if( n ==171){
+            a = 3;
+        }
+        else if( n ==172){
+            a = 3;
+        }
+        else if( n ==173){
+            a = 3;
+        }
+        else if( n ==174){
+            a = 3;
+        }
+        else if( n ==175){
+            a = 5;
+        }
+        else if( n ==176){
+            a = 3;
+        }
+        else if( n ==177){
+            a = 3;
+        }
+        else if( n ==178){
+            a = 3;
+        }
+        else if( n ==180){
+            a = 3;
+        }
+        else if( n ==181){
+            a = 9;
+        }
+
+
+
 
 
 
@@ -352,7 +480,10 @@ public class T1_text_image extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(T1_text_image.this, MainActivity.class);
+                StartStory.getPage();
+                StartStory.getViewNum();
                 finish();
+
 
             }
         });

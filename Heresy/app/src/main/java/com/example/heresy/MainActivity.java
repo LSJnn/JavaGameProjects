@@ -115,8 +115,6 @@ public class MainActivity extends AppCompatActivity {
         mediaPlayer = new MediaPlayer().create(getApplicationContext(), R.raw.main_theme);
         mediaPlayer.setLooping(true);
 
-
-
 /*        mSf = new mySharedPreferences();
         mSf.getPreferenences(this);
         //getPreferences 있ㅆ어야 어떤 파일인지 알 수 있음.
@@ -159,13 +157,11 @@ public class MainActivity extends AppCompatActivity {
                 loadgame.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
                         Practice.decidePos();
                         getViewNum = StartStory.getViewNum();
                         System.out.println("ViewNUm ============" + getViewNum);
                         getPage = StartStory.getPage();
                         System.out.println("PAGE ============" + getPage);
-
 
                         if (getViewNum == 1) {
                             intent = new Intent(MainActivity.this, T1_text.class);
@@ -175,6 +171,8 @@ public class MainActivity extends AppCompatActivity {
                             intent = new Intent(MainActivity.this, T1_choice.class);
                         } else if (getViewNum == 4) {
                             intent = new Intent(MainActivity.this, T1_choice.class);
+                        }else {
+                            loadgame.setVisibility(View.INVISIBLE);
                         }
 
                         intent.putExtra("getPage", getPage);

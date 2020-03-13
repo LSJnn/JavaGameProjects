@@ -133,6 +133,8 @@ public class T1_kakao extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(T1_kakao.this, MainActivity.class);
+                StartStory.getPage();
+                StartStory.getViewNum();
                 finish();
 
             }
@@ -156,27 +158,28 @@ public class T1_kakao extends AppCompatActivity {
         }if(n==20){
             a=5;
         }
-        if(n==28){
-            a=5;
-        }if(n==29){
-            a=7;
+        if(n==28){//+1; d왜? 뷰 지우려고.
+            a=6;
+        }
+        if(n==29){
+            a=8;
         }if(n==30){
-            a=2;
+            a=3;
         }
         if(n==31){
             a=6;
         }
-        if(n==38){
+        if(n==38){  // 여기도 아마 +1 해야할 듯..
             a=4;
         }
         if(n == 39){
             a = 4;
         }
         if(n == 41){
-            a = 7;
+            a = 8;
         }
         if(n==42){
-            a = 6;
+            a = 5;
         }
         if(n==58){
             a = 6;
@@ -192,6 +195,9 @@ public class T1_kakao extends AppCompatActivity {
         }
         if(n==124){
             a = 4;
+        }
+        if(n==179){
+            a = 7;
         }
 
 
@@ -312,6 +318,8 @@ public class T1_kakao extends AppCompatActivity {
         k_img1 = findViewById(R.id.kakao39_h1);
         k_img2 = findViewById(R.id.kakao39_m1);
         k_img3 = findViewById(R.id.kakao39_m2);
+
+        kao1 = findViewById(R.id.kao_tv1);
     }
     public void kakao41(){
         layoutInflater.inflate(R.layout.kakotalk41, k_view,true);
@@ -323,6 +331,8 @@ public class T1_kakao extends AppCompatActivity {
         k_img5 = findViewById(R.id.kakao41_m1);
         k_img6 = findViewById(R.id.kakao41_m2);
 
+        kao1=findViewById(R.id.kao_tv1);
+
     }
     public void kakao42(){
         layoutInflater.inflate(R.layout.kakotalk42, k_view,true);
@@ -331,6 +341,8 @@ public class T1_kakao extends AppCompatActivity {
         k_img2 = findViewById(R.id.kakao42_h2);
         k_img3 = findViewById(R.id.kakao42_m1);
         k_img4 = findViewById(R.id.kakao42_h3);
+
+        kao1 = findViewById(R.id.kao_tv1);
     }
     public void kakao58(){
         layoutInflater.inflate(R.layout.kakotalk42, k_view,true);
@@ -372,6 +384,12 @@ public class T1_kakao extends AppCompatActivity {
         k_img1 = findViewById(R.id.kakao124_m1);
         k_img2 = findViewById(R.id.kakao124__h1);
         k_img3 = findViewById(R.id.kakao124_m2);
+    }
+    public void kakao179(){
+        layoutInflater.inflate(R.layout.kakotalk179, k_view,true);
+
+        k_img1 = findViewById(R.id.kakao179_h1);
+        k_img2 = findViewById(R.id.kakao179_h2);
     }
 
 
@@ -429,7 +447,7 @@ public class T1_kakao extends AppCompatActivity {
                 case 1:
                     k_view.setVisibility(View.VISIBLE);
                     k_img1.setVisibility(View.VISIBLE);
-                    kao1.setText(f);kao1.append("오늘 뭐해?");
+                    kao1.setText(f);kao1.append(" 오늘 뭐해?");
                     break;
                 case 2:
                     k_img2.setVisibility(View.VISIBLE);
@@ -526,6 +544,7 @@ public class T1_kakao extends AppCompatActivity {
                 case 1:
                     k_view.setVisibility(View.VISIBLE);
                     k_img1.setVisibility(View.VISIBLE);
+                    kao1.setText(f+"아~ 항상 \n 너를 위해 기도해~");
                     break;
                 case 2:
                     k_img2.setVisibility(View.VISIBLE);
@@ -572,7 +591,7 @@ public class T1_kakao extends AppCompatActivity {
                     break;
                 case 2:
                     k_img2.setVisibility(View.VISIBLE);
-                    kao1.setText(f);kao1.append("누구는 잘 모를 수도 있지만\n 영적으로 튼튼해야 모든 일이\n 잘 풀릴 수 있어.");
+                    kao1.setText(f+"는 잘 모를 수도 있지만\n 영적으로 튼튼해야 모든 일이\n 잘 풀릴 수 있어.");
                     break;
                 case 3:
                     k_img3.setVisibility(View.VISIBLE);
@@ -669,6 +688,20 @@ public class T1_kakao extends AppCompatActivity {
                     break;
                 case 3 : k_img3.setVisibility(View.VISIBLE);
                 break;
+            }
+
+        }
+        else if (n == 179) {
+            kakao179();
+            switch (kakao) {
+                case 1:
+                    k_view.setVisibility(View.VISIBLE);
+                    break;
+                case 2:
+                    k_img1.setVisibility(View.VISIBLE);
+                    break;
+                case 3 : k_img2.setVisibility(View.VISIBLE);
+                    break;
             }
 
         }

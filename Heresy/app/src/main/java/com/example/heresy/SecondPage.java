@@ -53,7 +53,7 @@ public class SecondPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent();
-                i.putExtra("SECOND_BACK",SECOND_BACK);
+                StartStory.setViewNum(0);
                 finish();
             }
         });
@@ -85,6 +85,10 @@ public class SecondPage extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        StartStory.setViewNum(0);
 
-
+    }
 }

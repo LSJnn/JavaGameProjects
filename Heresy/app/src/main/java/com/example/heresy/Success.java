@@ -11,6 +11,7 @@ public class Success extends AppCompatActivity {
 
     ImageButton ending;
     ImageButton back;
+    int page;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +22,7 @@ public class Success extends AppCompatActivity {
         btnClick();
 
         Intent i = getIntent();
-        i.getIntExtra("page",-1);
+        page = i.getIntExtra("page",-1);
 
 
         // page 이름으로 n 엔딩나와야할 페이지 받아오면, 리스트에 저장. 목록 생성.
@@ -48,6 +49,8 @@ public class Success extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Success.this, Endings.class);
+                intent.putExtra("page",page);
+                System.out.println("page ="+page);
                 startActivity(intent);
 
             }

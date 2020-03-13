@@ -13,46 +13,46 @@ public class EndingItem {
 
     private int chapter;
     private String ending;
-    private int position;
+    int position;
 
     public EndingItem(int chapter){
         this.chapter= chapter;
-        //this.image = image;
+    }
+    public EndingItem(int chapter,int position){
+        this.chapter= chapter;
+        this.position = position;
     }
 
     public void setEnding(int chapter) {
         this.chapter = chapter;
     }
-    //몇번쨰 엔딩 표시.
 
 
     public String getEnding(){
 
         switch (chapter){
-            case 9 ://챕터별 결말. 작성.
+            case 0 ://챕터별 결말. 작성.
                 ending = "혜준이의 심리상담가 소개를 거절했다";
                 break;
-            case 30: ending ="유교경전은 선택하고 갑분싸를 만들었다. ";
+            case 1: ending ="상담쌤의 정체를 핸드폰을 통해 알아냈다. ";
                 break;
-            case 40: ending = "성경공부 한다는 사실을 온 동네방네 소문냈다.";
+            case 2: ending = "성경공부 한다는 사실을 온 동네방네 소문냈다.";
                 break;
-            case 48: ending = "상담 썜의 센터 소개를 거절했다.";
+            case 3: ending = "상담 썜의 센터 소개를 거절했다.";
                 break;
-            case 52: ending = "면접에서 바쁜 티를 내버려서 떨어졌다. (취준이 날 살림..)";
+            case 4: ending = "면접에서 바쁜 티를 내버려서 떨어졌다.(취준이 날 살림..)";
                 break;
-            case 61: ending = "면접에서 게으리다고 거절당했다.(게으름이 날 살림...)";
+            case 5: ending = "면접에서 게으리다고 거절당했다.(게으름이 날 살림...)";
                 break;
-            case 57: ending = "면접에서 호락호락하지 않게 굴어서 떨어졌다.(의심이 날 살림)";
+            case 6: ending = "면접에서 호락호락하지 않게 굴어서 떨어졌다.(의심이 날 살림)";
                 break;
-            case 70: ending = "합동작전 시작?!";
+            case 7: ending = "합동작전 시작?!";
                 break;
-            case 77: ending = "가족들 성경공부 초기 진압 성공";
+            case 8: ending = "가족들 성경공부 초기 진압 성공";
                 break;
-            default: ending = "? ? ? ? ? ?";
+            case -1: ending =position+"? ? ? ? ? ?";
         }
         return ending;
     }
-
-
 }
 

@@ -34,7 +34,6 @@ public class T1_choice extends AppCompatActivity {
         Intent i = getIntent();
         f = Application.getF();
         l= Application.getL();
-        System.out.println("2FL ================== "+i.getStringExtra("firstName") + "\n2 L = "+i.getStringExtra("lastName")+"\n");
 
         restart = i.getIntExtra("Restart",1);//1 --> 기본/ 2 --> 이어하기
         getPage = i.getIntExtra("getPage",0);
@@ -67,6 +66,8 @@ public class T1_choice extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(T1_choice.this,MainActivity.class);
+                StartStory.getPage();
+                StartStory.getViewNum();
                 finish();
             }
         });
@@ -82,13 +83,15 @@ public class T1_choice extends AppCompatActivity {
         });
     }
 
-    public void Nis(){// page9- 1. 텍1, 2. 버튼2(한번에), 3. 다음장으로 넘어가는 .
+    public void Nis(){
+        // page9- 1. 텍1, 2. 버튼2(한번에), 3. 다음장으로 넘어가는 .
         ////// 매개 변수로 개수 넣으면 아마 아래 전개 될 듯.. 한번 해보기.
         if(n==9){
             a = 3;
         }else if(n ==26){
             a = 3;
-        }else if(n ==45){
+        }
+        else if(n ==45){
             a = 3;
         }
         else if(n ==47){
@@ -100,11 +103,14 @@ public class T1_choice extends AppCompatActivity {
         else if(n ==62){
             a = 3;
         }
-        else if(n ==71){
+        else if(n ==66){
+            a = 4;
+        }
+        else if(n ==70){
             a = 3;
         }
         else if(n ==74){
-            a = 4;
+            a = 3;
         }
         else if(n ==78){
             a = 4;
@@ -117,6 +123,15 @@ public class T1_choice extends AppCompatActivity {
         }
         else if(n ==117){
             a = 3;
+        }
+        else if(n ==147){
+            a = 3;
+        }
+        else if(n ==164){
+            a = 4;
+        }
+        else{
+            Toast.makeText(getApplicationContext(),"메인으로 돌아가 다시 시작해주십시오.",Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -165,6 +180,7 @@ public class T1_choice extends AppCompatActivity {
                     c_imgbtn2.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+                            System.out.println("N ========="+n);
                             changeCode = 5;
                             initializeLayout();
                         }
@@ -296,14 +312,14 @@ public class T1_choice extends AppCompatActivity {
                     });
 
                 }
-                else if(n==67&&p==2){
+                else if(n==66&&p==4){
                     next.setClickable(false);
                     c_imgbtn1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             changeCode=2;
                             System.out.println("changeCode ============="+changeCode);
-                            n=70;//간다.
+                            n=69;//간다.
                             initializeLayout();
                             System.out.println("n==="+n);
                         }
@@ -313,20 +329,21 @@ public class T1_choice extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             changeCode=2;
-                            n=68;//합격
+                            n=67;//합격
                             initializeLayout();
                         }
                     });
 
                 }
-                else if(n==71&&p==2){
+                else if(n==70&&p==3){
                     next.setClickable(false);
+
                     c_imgbtn1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            changeCode=2;
                             System.out.println("changeCode ============="+changeCode);
-                            n=72;//간다.
+                            changeCode = 2;
+                            n=71;
                             initializeLayout();
                             System.out.println("n==="+n);
                         }
@@ -335,20 +352,22 @@ public class T1_choice extends AppCompatActivity {
                     c_imgbtn2.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            n=74;//합격
+                            n=73;//합격
+                            System.out.println("n==="+n);
+                            changeCode = 2;
                             initializeLayout();
                         }
                     });
 
                 }
-                else if(n==74&&p==3){
+                else if(n==74&&p==2){
                     next.setClickable(false);
                     c_imgbtn1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             changeCode=1;
                             System.out.println("changeCode ============="+changeCode);
-                            n=78;//합격
+                            n=77;//합격
                             initializeLayout();
                             System.out.println("n==="+n);
                         }
@@ -440,7 +459,7 @@ public class T1_choice extends AppCompatActivity {
                         public void onClick(View v) {
                             changeCode=1;
                             System.out.println("changeCode ============="+changeCode);
-                            n=119;//스터디
+                            n=119;//지켜봄.
                             initializeLayout();
                         }
                     });
@@ -449,7 +468,51 @@ public class T1_choice extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             changeCode = 1;
-                            n=118;//공부
+                            n=118;//휴학
+                            initializeLayout();
+                        }
+                    });
+
+                }
+                else if(n==147&&p==2){
+                    next.setClickable(false);
+                    c_imgbtn1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            System.out.println("changeCode ============="+changeCode);
+                            n=148;//연락.
+                            changeCode=1;
+                            initializeLayout();
+                        }
+                    });
+
+                    c_imgbtn2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            changeCode = 1;
+                            n=150;//연기.
+                            initializeLayout();
+                        }
+                    });
+
+                }
+                else if(n==164&&p==3){
+                    next.setClickable(false);
+                    c_imgbtn1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            changeCode=2;
+                            System.out.println("changeCode ============="+changeCode);
+                            n=169;//연락.
+                            initializeLayout();
+                        }
+                    });
+
+                    c_imgbtn2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            changeCode = 2;
+                            n=165;//공부
                             initializeLayout();
                         }
                     });
@@ -500,6 +563,7 @@ public class T1_choice extends AppCompatActivity {
             case 5 :
                 Intent i0 = new Intent(T1_choice.this,Success.class);
                 i0.putExtra("page",n);
+                System.out.println("page ====="+n);
                 startActivity(i0);
                 finish();
                 break;

@@ -87,8 +87,8 @@ public class T1_text extends AppCompatActivity {
             restart=1;
         }
 
-        changeCode = i1.getExtras().getInt("changeCode");//:: 단위.
-        System.out.println("changeCode ========= "+changeCode);
+/*        changeCode = i1.getExtras().getInt("changeCode");//:: 단위.
+        System.out.println("changeCode ========= "+changeCode);*/
         // 첫 시작 시 secondPage 화면에서 코드 넘어옴.
         //1 : activity_t1_text, 2 : activity_t1_txt_img , 3 : activity_t1_choice
 
@@ -120,6 +120,13 @@ public class T1_text extends AppCompatActivity {
                 i0.putExtra("page",n);
                 startActivity(i0);
                 finish();
+                break;
+            case 6 :
+                Intent i6 = new Intent(T1_text.this,Fine.class);
+                i6.putExtra("page",n);
+                startActivity(i6);
+                finish();
+                break;
             default: //아무것도 안함.
         }
     }
@@ -130,6 +137,8 @@ public class T1_text extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(T1_text.this, MainActivity.class);
                 finish();
+                StartStory.getPage();
+                StartStory.getViewNum();
 
             }
         });
@@ -164,8 +173,11 @@ public class T1_text extends AppCompatActivity {
         if(n==65){
             a = 3;
         }
-        if(n==73){
-            a = 3;
+        if(n==68){  /////새로 추가.
+            a = 4;
+        }
+        if(n==72){
+            a = 4;
         }
         if(n==77){
             a = 2;
@@ -174,7 +186,7 @@ public class T1_text extends AppCompatActivity {
             a = 4;
         }
         if(n==80){
-            a = 4;
+            a = 3;
         }
         if(n==82){
             a = 4;
@@ -212,6 +224,58 @@ public class T1_text extends AppCompatActivity {
         if(n ==119){
             a =6;
         }
+        if(n ==128){
+            a =4;
+        }
+        if(n ==129){
+            a =7;
+        }
+        if(n ==140){
+            a =7;
+        }
+        if(n ==146){
+            a =7;
+        }
+        if(n ==147){
+            a =7;
+        }
+        if(n ==148){
+            a =4;
+        }
+        if(n ==149){
+            a =4;
+        }
+        if(n ==150){
+            a =4;
+        }
+        if(n ==151){
+            a =5;
+        }
+        if(n ==152){
+            a =4;
+        }
+        if(n ==153){
+            a =3;
+        }
+        if(n ==167){
+            a =3;
+        }
+        if(n ==168){
+            a =5;
+        }
+        if(n ==182){
+            a =6;
+        }
+        if(n ==183){
+            a =5;
+        }
+        if(n ==184){
+            a =7;
+        }
+
+
+
+
 
 
 
@@ -230,7 +294,11 @@ public class T1_text extends AppCompatActivity {
         startStory.setStory(1,n,p);
 
         if(p==a){// codeChange 메소드.
-            n++;
+            if(n==149){
+                n=152;
+            }else {
+                n++;
+            }
             c=0;
             changeCode=startStory.changeCode;
             System.out.println("changeCode ============="+changeCode);
