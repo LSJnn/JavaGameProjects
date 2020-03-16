@@ -15,4 +15,17 @@
         <item name="android:textSize">30sp</item>
     </style>
 
+    <style name="SplashTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">@raw/splash</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="Dialouge" parent="Theme.AppCompat.DayNight.Dialog">
+        <item name="windowNoTitle">true</item>
+        <item name="android:colorBackground">@android:color/white</item>
+        <item name="android:fontFamily">@font/cafe24oneprettynight</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
 </resources>

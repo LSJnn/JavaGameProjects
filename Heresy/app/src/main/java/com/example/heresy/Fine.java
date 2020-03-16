@@ -16,15 +16,18 @@ public class Fine extends AppCompatActivity {
     TextView fine_tv1;TextView fine_tv2;
 
     int c;
+    int n;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fine);
 
+        Intent i = getIntent();
+        n = i.getIntExtra("page",-1);
+
         initializeView();
         nextOnClick();
-
 
 
     btnClick();
@@ -69,6 +72,7 @@ public class Fine extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Fine.this, MainActivity.class);
+                i.putExtra("page",n);
                 finish();
 
             }
@@ -78,6 +82,7 @@ public class Fine extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Fine.this, Endings.class);
+                intent.putExtra("page",n);
                 startActivity(intent);
 
             }

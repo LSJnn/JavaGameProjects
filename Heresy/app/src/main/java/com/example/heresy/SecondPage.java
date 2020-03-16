@@ -30,8 +30,11 @@ public class SecondPage extends AppCompatActivity {
     ImageButton ending;
 
     String l; String f;
+    boolean L;
+    boolean F;
 
     int new_start;
+    mySharedPreferences msf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +47,14 @@ public class SecondPage extends AppCompatActivity {
         back=findViewById(R.id.backbtn);
         next=findViewById(R.id.nextBtn);
         ending= findViewById(R.id.endingBtn);
+        msf = new mySharedPreferences();
+
+
+        msf.getPreferenences(this);
+        Application.setMsf(msf);
 
         //////////////초기화//////////////////////////
 
-    //lstE.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,22 +64,7 @@ public class SecondPage extends AppCompatActivity {
                 finish();
             }
         });
-
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent i = new Intent(SecondPage.this,T1_text.class);
-                Application.setL(lstE.getText().toString());
-                Application.setF(fstE.getText().toString());
-
-                l = Application.getL();
-                f = Application.getF();
-                i.putExtra("changeCode", 1);
-                startActivity(i);
-                finish();
-            }
-        });
+        nextClick();
 
         ending.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +76,31 @@ public class SecondPage extends AppCompatActivity {
 
 
     }
+
+    public void nextClick(){
+        View.OnClickListener onClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if( lstE.getText().toString().length()!=0&&fstE.getText().toString().length()!=0) {
+
+                    Intent i = new Intent(SecondPage.this, T1_text.class);
+                    Application.setL(lstE.getText().toString());
+                    Application.setF(fstE.getText().toString());
+
+                    l = Application.getL();
+                    f = Application.getF();
+                    msf.setString("lastName", l, "firstName", f);
+                    i.putExtra("changeCode", 1);
+                    startActivity(i);
+                    finish();
+                }else {Toast.makeText(getApplicationContext()," 이름을 입력해주세요",Toast.LENGTH_SHORT).show();}
+
+            }
+        };
+        next.setOnClickListener(onClickListener);
+    }
+
 
     @Override
     public void onBackPressed() {

@@ -14,7 +14,7 @@ public class Practice extends StartStory{
     }
 
     public static void decidePos(){
-         setPage(146); setViewNum(1);
+         setPage(60); setViewNum(2);
     }
 
 }

@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="540dp"
+    android:layout_height="510dp"
     >
 
     <ImageView
@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="510dp"
         android:background="@drawable/kakao28_bg"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,6 +48,7 @@
         android:gravity="start"
         android:textAlignment="textStart"
         android:textSize="14sp"
+        android:fontFamily="@font/malgun"
         app:layout_constraintEnd_toEndOf="@+id/kakao30_m"
         app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="@+id/kakao30_m"

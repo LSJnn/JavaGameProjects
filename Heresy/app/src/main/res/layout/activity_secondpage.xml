@@ -56,11 +56,11 @@
         android:id="@+id/e_lastname"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:hint="두 글자 이하"
+        android:hint='"두 글자 이하"'
+        android:maxLength="2"
         android:singleLine="true"
         android:textColor="@android:color/black"
         android:textSize="36sp"
-        android:maxLength="2"
         app:layout_constraintBottom_toBottomOf="@+id/lastname"
         app:layout_constraintStart_toEndOf="@+id/lastname"
         app:layout_constraintTop_toTopOf="@+id/lastname" />
@@ -79,7 +79,7 @@
         android:id="@+id/e_firstname"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:hint="3글자 이하"
+        android:hint="3글자 3이하"
         android:singleLine="true"
         android:textColor="@android:color/black"
         android:textSize="36sp"

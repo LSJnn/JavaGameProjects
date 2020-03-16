@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="DEFAULT 화면 입니다."
+        android:text="엔딩을 보셨습니다.\n 다시 시작해 주십시오."
         android:textSize="45sp"
         android:layout_gravity="center"
         />

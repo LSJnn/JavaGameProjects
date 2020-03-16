@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class T1_text_image extends AppCompatActivity {
 
-    ImageButton next;ImageButton back;ImageButton ending;
+    ImageButton next;ImageButton back;ImageButton ending;ImageButton now;
 
     ImageView ti_img1;
     TextView ti_tv1;TextView ti_tv2;TextView ti_tv3;TextView ti_tv4;
@@ -22,11 +22,11 @@ public class T1_text_image extends AppCompatActivity {
     String L; String F;
     StartStory startStory2;
     Intent i;
-
     int getPage; int getViewNum;
 
     int c=0;int p=0; int n; int a;
     int restart;
+    MusicActivity mediaPlayer = Application.getMusicActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,12 +70,15 @@ public class T1_text_image extends AppCompatActivity {
         back = findViewById(R.id.backbtn);
         next = findViewById(R.id.nextBtn);
         ending = findViewById(R.id.endingBtn);
+        now = findViewById(R.id.now);
 
         ti_img1 = findViewById(R.id.t1_ti_img1);
         ti_tv1 = findViewById(R.id.t1_tl_tv1);
         ti_tv2 = findViewById(R.id.t1_ti_tv2);
         ti_tv3 = findViewById(R.id.t1_ti_tv3);
         ti_tv4 = findViewById(R.id.t1_ti_tv4);
+
+        startStory2.setViewNum(2);
     }
 
     public void Nis(){
@@ -88,9 +91,9 @@ public class T1_text_image extends AppCompatActivity {
         }else if(n==14){
             a = 4;
         }else if(n==15){
-            a=6;
+            a=7;
         }else if(n==16){
-            a=4;
+            a=5;
         }else if(n==17){
             a=3;
         }else if(n==18){
@@ -399,7 +402,17 @@ public class T1_text_image extends AppCompatActivity {
                 n =52;
             }else if(n==50){// 불교 -- 따라가기
                 n=52;
-            }else if(n==109&&Application.isZ()==false){//안먹으면 131로
+            }else if(n==90){
+                mediaPlayer.stopMusic();
+                mediaPlayer.playBgSleep();
+                n++;
+            }else if(n ==95&&Application.isZ()==true){
+                //먹으면.
+                mediaPlayer.stopMusic();
+                mediaPlayer.playBgSome();
+                n++;
+            }
+            else if(n==109&&Application.isZ()==false){//안먹으면 131로
                 n=131;//109페이지. 먹으면 그냥 그대로
                 // .
             }
@@ -436,31 +449,27 @@ public class T1_text_image extends AppCompatActivity {
             case 1:
                 Intent i1 = new Intent(T1_text_image.this, T1_text.class);
                 i1.putExtra("n",n);
-                i1.putExtra("firstName", i.getStringExtra("firstName"));
-                i1.putExtra("lastName",i.getStringExtra("latName"));
+                i1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i1);
                 finish();
                 break;
             case 2:
                 Intent i2 = new Intent(T1_text_image.this, T1_text_image.class);
-                i2.putExtra("firstName", i.getStringExtra("firstName"));
-                i2.putExtra("lastName",i.getStringExtra("lastName"));
+                i2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 i2.putExtra("n",n);
                 startActivity(i2);
                 finish();
                 break;
             case 3:
                 Intent i3 = new Intent(T1_text_image.this, T1_choice.class);
-                i3.putExtra("firstName", i.getStringExtra("firstName"));
-                i3.putExtra("lastName",i.getStringExtra("lastName"));
+                i3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 i3.putExtra("n",n);
                 startActivity(i3);
                 finish();
                 break;
             case 4://카카오톡 필요.
                 Intent i4 = new Intent(T1_text_image.this,T1_kakao.class);
-                i4.putExtra("firstName", i.getStringExtra("firstName"));
-                i4.putExtra("lastName",i.getStringExtra("lastName"));
+                i4.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 i4.putExtra("n",n);
                 startActivity(i4);
                 finish();
@@ -468,6 +477,7 @@ public class T1_text_image extends AppCompatActivity {
             case 5 :
                 Intent i0 = new Intent(T1_text_image.this,Success.class);
                 i0.putExtra("page",n);
+                i0.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i0);
                 finish();
             default: //아무것도 안함.
@@ -482,6 +492,8 @@ public class T1_text_image extends AppCompatActivity {
                 Intent i = new Intent(T1_text_image.this, MainActivity.class);
                 StartStory.getPage();
                 StartStory.getViewNum();
+                mediaPlayer.stopMusic();
+                startActivity(i);
                 finish();
 
 
@@ -496,19 +508,37 @@ public class T1_text_image extends AppCompatActivity {
 
             }
         });
+
+        now.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(T1_text_image.this,Now.class);
+                intent.putExtra("page",StartStory.getPage());
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        Intent i = new Intent(T1_text_image.this,MainActivity.class);
 
         StartStory.getPage();
         StartStory.getViewNum();
+        mediaPlayer.stopMusic();
+
         System.out.println("PAGE 2 ============" +StartStory.getPage());
         System.out.println("VIewNUM 2 ============" +StartStory.getViewNum());
-        //super.onBackPressed();
-        Toast.makeText(getApplicationContext(),"뒤로 가기",Toast.LENGTH_SHORT).show();
+        //setShared();
 
+        startActivity(i);
+        finish();
+
+    }
+
+    public void setShared(){
+        Application.msf.setInt(getApplicationContext(),"page",StartStory.getPage());
+        Application.msf.setInt(getApplicationContext(),"view",StartStory.getViewNum());
     }
 
 

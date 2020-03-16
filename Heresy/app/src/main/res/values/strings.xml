@@ -2,13 +2,13 @@
     <string name="app_name">Heresy</string>
     <string name="page7001">나는 4년제 대학에 다니고 있는 \n평범한 대학생 </string>
     <string name="page7002">방학임에도 불구하고 \n취업준비나 인간관계나 \n스트레스가 이만저만이 아니다."</string>
-    <string name="page8001">가진이는 \n초등학생 때부터 쭉 친한 친구다.</string>
+    <string name="page8001">가진이는 \n초등학생 때부터 쭉 \n친한 친구다.</string>
     <string name="page7003">너무 지치고 <font color='#FF0000'>힘들다..</font></string>
     <string name="page9001">가진이가 심리상담 선생님을 \n소개시켜준다는데 \n받아볼까?</string>
     <string name="page10004">답답한 일상에 \n상담이라도 받아보면 \n나아질까 하는 마음이다.</string>
     <string name="page10005">....</string>
     <string name="page11002">처음 만난 심리 상담 선생님은 \n\n인상이 정말 좋으셨다.</string>
-    <string name="page12002">선생님 : 친구 이거 심리 검사하는 건데 \n한 번 풀어보고 얘기할까요?</string>
+    <string name="page12002">선생님 : 친구 이거는 \n심리 검사하는 거에요.\n한 번 풀어보고 얘기할까요?</string>
     <string name="page12003"> : 아 그냥 해당하는 거 \n체크만 하면 되는 건가요?</string>
     <string name="page12004"> 선생님 : 네~</string>
     <string name="page13002"> (열심히 푸는 중)</string>
@@ -16,30 +16,30 @@
 
     <string name="page14001">몇 분 뒤...~</string>
     <string name="page14002"> : 다 했어요</string>
-    <string name="page14003"> 선생님 : 한번 볼게요</string>
+    <string name="page14003"> 선생님 : 네~ 수고했어요 ㅎㅎ\n 한번 봐볼게요</string>
     <string name="page14004"> (찬찬히 살펴본다)</string>
-    <string name="page15002">선생님 : 음.. 우리 친구 이번에\n그림 한 번 그려볼게요.\n먼저 산이랑 해를 그려볼래요?</string>
+    <string name="page15002">선생님 : 음.. \n우리 친구 이번엔\n그림을 한 번 그려볼게요.\n</string>
     <string name="page15003">...</string>
     <string name="page15004">(산과 해를 그리고 있다.)</string>
-    <string name="page15005">다음은 집, 나무, 우물… 뱀을 그려볼게요</string>
+    <string name="page15005">다음은 \n집, 나무, 우물\n…그리고 뱀을 그려볼게요</string>
     <string name="page15006">...</string>
     <string name="page15007"> : 다 그렸어요!</string>
     <string name="page16002">선생님 : 음.. 지금\n </string>
-    <string name="page16003"> 친구가 취업 준비부터\n여러가지 상황들 때문에\n심적으로 힘들어 보여요~</string>
-    <string name="page16004"> : 네 아무래도 그렇죠..?</string>
+    <string name="page16003"> 친구가 \n취업 준비부터\n여러가지 상황들 때문에\n심적으로 힘들어 보여요~</string>
+    <string name="page16004"> : 네 \n아무래도 그렇죠...</string>
     <string name="page16005">선생님 : 혹시 부모님이 약간\n엄하신 편인가요?</string>
     <string name="page16006">: 아 네 통금시간도 있고 그래서\n집에 빨리 들어가야되고 \n그런게 좀 있어요</string>
-    <string name="page17002">선생님 : ㅎㅎ아버지가 특히 \n잔소리가 심하실 것 같은데??</string>
+    <string name="page17002">선생님 : ㅎㅎ\n아버지가 특히 \n잔소리가 심하실 것 같은데??</string>
     <string name="page17003"> : 헉ㅋㅋㅋ네 어떻게 아셨어요?\n검사지 보면 그런 것도 \n다 알 수 있어요??</string>
-    <string name="page17004">선생님 : 음.. 검사지나 그림에서 \n보이기도 하지만,\n왠지 모르게 </string>
-    <string name="page17005">학생은 \n그런 느낌이 들어요...!</string>
-    <string name="page18002">나 : 아빠가 집에서 맨날 \ntv만 봐도 뭐라하거든요ㅋㅋㅋ \n한마디씩 꼭 하고</string>
-    <string name="page18003">선생님 : 그럴 땐 한귀로 듣고 \n한귀로 흘려보내고!!ㅎㅎ 어휴 </string>
+    <string name="page17004">선생님 : 음.. \n검사지나 그림에서 \n보이기도 하지만,\n왠지 모르게 </string>
+    <string name="page17005">학생은\n 그런 느낌이 들어요...!</string>
+    <string name="page18002">나 : 아빠가 집에서 맨날 \ntv만 봐도 뭐라하거든요\nㅋㅋㅋ \n한마디씩 꼭 하고</string>
+    <string name="page18003">선생님 : 그럴 땐 한 귀로 듣고 \n한 귀로 흘려보내고!!ㅎㅎ\n 어휴 </string>
 
-    <string name="page19002">이렇게 우리는 \n한 시간 가량을 더 떠들었고</string>
-    <string name="page19003">선생님은 처음 본 사이 \n같지 않게 <font color='#FF0000'>친숙</font>했다.</string>
-    <string name="page19004">내가 말하지 않았는데도 \n나의 상황들을 <font color='#FF0000'>점쟁이</font>처럼 \n잘 맞추곤 했다. </string>
-    <string name="page20001">그 이후로 선생님과 연락을 종종\n주고 받았고 점점 가까워졌다.</string>
+    <string name="page19002">이렇게 우리는 \n한 시간 가량을\n 더 떠들었고</string>
+    <string name="page19003">상담 선생님은 \n처음 본 사이같지 않게\n <font color='#FF0000'>친숙</font>했다.</string>
+    <string name="page19004">내가 말하지 않았는데도 \n나의 상황들을 \n<font color='#FF0000'>점쟁이</font>처럼\n잘 맞추곤 했다. </string>
+    <string name="page20001">그 이후로 \n선생님과 연락을 \n종종 주고 받았고 \n우리는 점점 가까워졌다.</string>
     <string name="page21002">돗자리를 깔고 \n피자도 시켜 먹고</string>
     <string name="page21003">셋이 재밌게 수다를 떨었다.</string>
     <string name="page22002">상담쌤 : </string>
@@ -130,15 +130,15 @@
     <string name="page51002">나 : 흠.....\n(그래도 성경책이 베스트 셀러 아닌가)
 </string>
     <string name="page51003">나 : 저도.. 그게 나을 것 같아요!</string>
-    <string name="page52002">상담쌤 : 그래 그러면
-조원대학교 근처에 공부하기 좋은
+    <string name="page52002">상담쌤 : 그래 그러면\n
+조원대학교 근처에 공부하기 좋은\n
 공부방이 있거든
 !</string>
-    <string name="page52003">거기 가서 본격적으로 시작해보자!
+    <string name="page52003">거기 가서 \n본격적으로 시작해보자!
 </string>
     <string name="page52004">다음부터는 거기서 보는거야~</string>
     <string name="page53001">이렇게 해서 \n대학가 근처 공부방에서 \n성경에 대한 기초적인 지식을 \n배우기 시작했다.</string>
-    <string name="page53002">상담쌤 : 오늘 공부는 \n여기까지 하고,\n한가지 당부할게 있어.
+    <string name="page53002">상담쌤 : 오늘 공부는 \n여기까지 하고,\n한 가지 당부할 게 있어.
 </string>
 
     <string name="page53004">상담쌤 : 쌤이 사실 \n너희를 너무 아끼는 마음에\n이렇게 자주 만나서 \n상담도 하고 공부도 하지만,
@@ -158,17 +158,17 @@
     <string name="page56004">엄마 : 어~ 여기 있어 \n뭐 어디 갔다 왔니??</string>
     <string name="page56005">나 : 나 요즘 우리 학교 근처로\n성경공부 다니고 있거든?
 </string>
-    <string name="page56006">엄마 : 뭐?? 언제부터</string>
+    <string name="page56006">엄마 : 뭐?? 언제부터?</string>
     <string name="page56007">나 : 아 몰라 얼마 안됐어\n근데ㅋㅋ 쌤이 심리상담가거든?
 \n원래 꽁짜로 이런거 안해주는데\n나라서 해주는거래ㅋㅋ</string>
-    <string name="page57002">엄마 : 너 그거 사이비 아니야?\n심리 상담하는데 성경공부를
-\n왜 하냐?</string>
-    <string name="page57003">나 : ??그러게 ? 근데 쌤이 어디가서 말하지 말랬는데ㅠ 엄마한테 말해버렸네 나도 참~!!
+    <string name="page57002">엄마 : 뭐?? 이상한데..\n너 그거 사이비 아니야?\n심리 상담하는데 성경공부를
+\n왜 하니?</string>
+    <string name="page57003">나 : ??그것도 그렇네...? \n근데 쌤이 어디가서 말하지 말랬는데ㅠ\n 엄마한테 말해버렸네 \n나도 참~!!
 </string>
-    <string name="page57004">엄마한테 말했으니까 \n이번엔 애들한테도 말해야겠다ㅎ~</string>
+    <string name="page57004">엄마한테 말했으니까 \n이번엔 애들한테 말해야겠다ㅎ~</string>
     <string name="page59002">자랑할려고 말 꺼냈다가
-\n가족과 동기들에게 사이비에 대한
-\n얘기들을 듣고 심각성을 느낀 나는
+\n가족과 동기들에게 \n사이비에 대한
+\n얘기들을 듣고 \n심각성을 느낀 나는...
 </string>
     <string name="page59003">상담쌤과 안전하게\n<font color='#FE8DFD'>♡손절♡</font>했다.
 </string>
@@ -176,12 +176,12 @@
 </string>
     <string name="page60003">걱정하지 마세용~</string>
     <string name="page61001">어느덧 성경공부를 시작한지\n3주 정도 지났다…</string>
-    <string name="page61002">상담쌤 : 얘들아 쌤이 요즘 바빠져서 이제 성경공부를 못 도와줄거 같아ㅠ
+    <string name="page61002">상담쌤 : 얘들아 쌤이 요즘 \n바빠져서 이제 성경공부를 \n못 도와줄 것 같아ㅠ
 \n이거 너무 아쉬워서 어쩌지..</string>
     <string name="page61003">(망설이며) 참..! 나보다 더 깊고 체계적으로 가르치는 곳이 있긴 한데..
 거기는 면접보고 합격한 사람들만 들어갈 수 있어</string>
     <string name="page61004">나 : 우와 면접도 봐요? \n좋은덴가보다</string>
-    <string name="page62001">상담쌤 : 너희들이 원하면\n쌤이 연결은 시켜줄 수\n있을 것 같아.\n 어떡할래?
+    <string name="page62001">상담쌤 : 너희들이 원하면 쌤이 \n연결은 시켜줄 있을 것 같아.\n\n 어떡할래?
 </string>
     <string name="page63001"> : 음.. 면접까지는 좀
 \n부담스러운 것 같아서
@@ -214,10 +214,10 @@
     <string name="page65002">그 곳에는 남자 여자로 구성된
 \n2명의 면접관이 있었다.
 </string>
-    <string name="page66002">여자 면접관 : 앞으로 약 7개월 가량
+    <string name="page66002">여자 면접관 : 앞으로 \n약 7개월 가량
 \n교육이 진행될건데요
 </string>
-    <string name="page66003">월,화,목,금마다 센터에 빠지지 않고
+    <string name="page66003">월,화,목,금마다 \n센터에 빠지지 않고
 \n나오셔야 하거든요~
 </string>
     <string name="page67002">잘 나오실 수 있겠어요?</string>
@@ -233,8 +233,8 @@
 \n…
 </string>
     <string name="page68005">
-남자 면접관 : 저희는 맨날 오게 해서
-\n믿음을 키우는게 최우선이라
+남자 면접관 : 저희 기관에서는 \n매번 얼굴을 마주보며
+\n믿음을 키우는 게 최우선이라
 \n교육은 힘드실 것 같아요ㅠ
 </string>
     <string name="page69001">
@@ -245,24 +245,23 @@
 면접관들 : (떨떠름)
 </string>
     <string name="page69003">……….</string>
-    <string name="page70002">남자 면접관 : 대학생이라고 들었는데 생활비는 어떻게 하고있는지요?
+    <string name="page70002">남자 면접관 : 대학생이라고 들었는데 생활비는 어떻게 하고 계세요?
 </string>
     <string name="page70003">나 : 부모님이 용돈을 주세요
 </string>
-    <string name="page70004">(면접관들이 슬그머니 미소를 짓는다.)
+    <string name="page70004">(면접관들이 슬그머니 \n미소를 짓는다.)
 </string>
-    <string name="page70005">남자 면접관 : (웃으며) 집이 좀 넉넉한가봐요?
+    <string name="page70005">남자 면접관 : (웃으며)\n 집이 좀 넉넉한가봐요?
 </string>
     <string name="page70006">나 : 아, 뭐..
 </string>
     <string name="page71002">여자 면접관 : \n그럼 빚 같은 건 없겠네ㅎㅎ
 </string>
-    <string name="page71003">요즘 많이 바쁘지는 않아요? \n한창 취업준비 때문에 정신 없을 텐데.
+    <string name="page71003">요즘 많이 바쁘지는 않아요? \n한창 취업준비 때문에 \n정신 없을 텐데.
 </string>
     <string name="page72003">나 : 아 하고싶긴 한데 제가 요즘 정신이 없어가지고 하
 </string>
-    <string name="page72004">남자 면접관 : 저희는 시간 남아도는 사람만  뽑아서 교육은 힘드실 것 같아요
-
+    <string name="page72004">남자 면접관 : 저희는 \n시간 남아도는 사람만 \n뽑아서 교육은 힘드실 것 같아요
 </string>
 
     <string name="page74002">여자 면접관 : 그럼 다음주부터 유다마트 앞 건물 3층에 있는 센터에서 교육 진행하는 것으로 할게요.
@@ -978,7 +977,7 @@
 우리 엄마아빠가 너무 고맙다.</string>
     <string name="page168002">이렇게나마 다시 세상 속으로 \n나올 수 있어서
         정말 다행이고 \n</string>
-        <string name="page168002_1">
+    <string name="page168002_1">
         부모님이 아니었다면
 늙어 죽을 때까지 그곳에서 혹사당하고
 바보같이 살았을 것이다..</string>

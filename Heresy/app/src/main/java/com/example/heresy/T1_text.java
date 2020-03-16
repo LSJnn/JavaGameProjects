@@ -20,7 +20,7 @@ import org.w3c.dom.Text;
 public class T1_text extends AppCompatActivity {
 
     //////////////레이아웃 요소/////////////////////////////////////////////////////////////////////////
-    ImageButton next;ImageButton back;ImageButton ending;
+    ImageButton next;ImageButton back;ImageButton ending;ImageButton now;
 
     TextView otv1;TextView otv2;TextView otv3;
     ////////////////////////필요 객체////////////////////////////////////////////////////////////
@@ -34,6 +34,7 @@ public class T1_text extends AppCompatActivity {
 
     int n; int p=0; int c=0; int a;// paragraph 조정. 나누기 3 --> 나머지 1=001/ 2 = 002/ 3= 003
     StartStory startStory;
+    MusicActivity mediaPlayer;
 
 
     @Override
@@ -58,13 +59,16 @@ public class T1_text extends AppCompatActivity {
         otv1 = findViewById(R.id.t1_o_tv1);
         otv2 = findViewById(R.id.t1_o_tv2);
         otv3 = findViewById(R.id.t1_o_tv3);
+        now = findViewById(R.id.now);
 
 
         back = findViewById(R.id.backbtn);
         next = findViewById(R.id.nextBtn);
         ending = findViewById(R.id.endingBtn);
-
+        mediaPlayer = Application.getMusicActivity();
         System.out.println("initializeVIew!!!!!!!!!!!!!!!!!!!!!1");
+
+        startStory.setViewNum(1);
     }
     public void getData() {
 
@@ -100,30 +104,35 @@ public class T1_text extends AppCompatActivity {
             case 2:
                 Intent i2 = new Intent(T1_text.this, T1_text_image.class);
                 i2.putExtra("n",n);
+                i2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i2);
                 finish();
                 break;
             case 3:
                 Intent i3 = new Intent(T1_text.this, T1_choice.class);
                 i3.putExtra("n",n);
+                i3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i3);
                 finish();
                 break;
             case 4://카카오톡 필요.
                 Intent i4 = new Intent(T1_text.this,T1_kakao.class);
                 i4.putExtra("n",n);
+                i4.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i4);
                 finish();
                 break;
             case 5 :
                 Intent i0 = new Intent(T1_text.this,Success.class);
                 i0.putExtra("page",n);
+                i0.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i0);
                 finish();
                 break;
             case 6 :
                 Intent i6 = new Intent(T1_text.this,Fine.class);
                 i6.putExtra("page",n);
+                i6.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i6);
                 finish();
                 break;
@@ -136,9 +145,11 @@ public class T1_text extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(T1_text.this, MainActivity.class);
-                finish();
                 StartStory.getPage();
                 StartStory.getViewNum();
+                startActivity(i);
+                mediaPlayer.stopMusic();
+                finish();
 
             }
         });
@@ -149,6 +160,15 @@ public class T1_text extends AppCompatActivity {
                 Intent intent = new Intent(T1_text.this, Endings.class);
                 startActivity(intent);
 
+            }
+        });
+        now.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(T1_text.this,Now.class);
+                intent.putExtra("page",StartStory.getPage());
+                System.out.println("page ========"+StartStory.getPage());
+                startActivity(intent);
             }
         });
     }
@@ -165,7 +185,7 @@ public class T1_text extends AppCompatActivity {
         }if(n==59){
             a = 3;
         }if(n==63){
-            a = 6;
+            a = 7;
         }
         if(n==64){
             a = 6;
@@ -322,81 +342,23 @@ public class T1_text extends AppCompatActivity {
 
     }
 
-/*    public void setStoryListener() {
-        View.OnClickListener Listener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                n++;
-                System.out.println("n = " + n + "\n");
-
-                sf.getPreferenences(T1_text.this);
-                sf.setInt(T1_text.this, "page", n); // 현재 n 저장.
-//                storyIntent.putExtra("STORY_BACK",n);
-                System.out.println("SFn = " + sf.getIntR(T1_text.this, "page") + "\n");
-
-                switch (n) {
-                    case 1:
-                        tv1.setText("나는 4년제 대학에 다니고 있는 \n" +
-                                "평범한 대학생 " + l + f);
-                        break;
-                    case 2:
-                        include.setVisibility(View.VISIBLE);
-                        break;
-                    case 3:
-                        h1.setVisibility(View.VISIBLE);
-                        break;
-                    case 4:
-                        m1.setVisibility(View.VISIBLE);
-                        break;
-                    case 5:
-                        m2.setVisibility(View.VISIBLE);
-                        break;
-                    case 6:
-                        h2.setVisibility(View.VISIBLE);
-                        break;
-                    case 7:
-                        h3.setVisibility(View.VISIBLE);
-                        break;
-                    case 8:
-                        tv2.setText("혜준이는 \n 초등학생때부터 쭉 친구다");
-                        break;
-                    case 9:
-                        tInclude.setVisibility(View.GONE);
-                        include.setVisibility(View.GONE);
-                        include2.setVisibility(View.VISIBLE);
-                        break;
-                    case 10:
-                        m3.setVisibility(View.VISIBLE);
-                        break;
-                    case 11:
-                        h4.setVisibility(View.VISIBLE);
-                        break;
-                    case 12:
-                        m4.setVisibility(View.VISIBLE);
-                        break;
-                    case 13:
-                        tInclude3.setVisibility(View.VISIBLE);
-                        tv3.setText("답답한 일상에 상담이라도 받아보면\n" +
-                                " 나아질까 하는 마음이다\n" +
-                                "\n" +
-                                "…\n");
-                        break;
-                }
-
-            }
-        };
-    }*/
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-
+        Intent ib = new Intent(T1_text.this, MainActivity.class);
         StartStory.getPage();
         StartStory.getViewNum();
+        mediaPlayer.stopMusic();
+       // setShared();
         System.out.println("PAGE 1 ============" +StartStory.getPage());
         System.out.println("VIewNUM 1 ============" +StartStory.getViewNum());
+        startActivity(ib);
+        finish();
 
-        Toast.makeText(getApplicationContext(),"뒤로 가기",Toast.LENGTH_SHORT).show();
 
+    }
+    public void setShared(){
+        Application.msf.setInt(getApplicationContext(),"page",StartStory.getPage());
+        Application.msf.setInt(getApplicationContext(),"view",StartStory.getViewNum());
     }
 }

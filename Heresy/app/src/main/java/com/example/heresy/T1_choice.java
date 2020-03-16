@@ -1,6 +1,7 @@
 package com.example.heresy;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -13,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class T1_choice extends AppCompatActivity {
 
-    ImageButton next;ImageButton back;ImageButton ending;
+    ImageButton next;ImageButton back;ImageButton ending;ImageButton now;
 
     ImageView c_img1;
     TextView c_tv1;TextView c_tv2;
@@ -23,6 +24,7 @@ public class T1_choice extends AppCompatActivity {
     StartStory startStory3;
     String f; String l;
     int getPage; int getViewNum; int restart;
+    MusicActivity mediaPlayer = Application.getMusicActivity();
 
     int c=0; int p=0; int n; int a;
 
@@ -66,8 +68,11 @@ public class T1_choice extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(T1_choice.this,MainActivity.class);
-                StartStory.getPage();
-                StartStory.getViewNum();
+/*                StartStory.getPage();
+                StartStory.getViewNum(); 어차피 set해져있으.*/
+                setShared();
+                mediaPlayer.stopMusic();
+                startActivity(i);
                 finish();
             }
         });
@@ -79,6 +84,15 @@ public class T1_choice extends AppCompatActivity {
                 Intent intent = new Intent(T1_choice.this, Endings.class);
                 startActivity(intent);
 
+            }
+        });
+
+        now.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(T1_choice.this,Now.class);
+                intent.putExtra("page",StartStory.getPage());
+                startActivity(intent);
             }
         });
     }
@@ -414,8 +428,11 @@ public class T1_choice extends AppCompatActivity {
                             System.out.println("changeCode ============="+changeCode);
                             Application.setZ(true);
                             n=90;//짜장.
+                            mediaPlayer.stopMusic();
+                            mediaPlayer.playBgSleep();
                             initializeLayout();
                             System.out.println("n==="+n);
+
                         }
                     });
 
@@ -530,6 +547,7 @@ public class T1_choice extends AppCompatActivity {
         back = findViewById(R.id.backbtn);
         next = findViewById(R.id.nextBtn);
         ending = findViewById(R.id.endingBtn);
+        now = findViewById(R.id.now);
 
         c_img1 = findViewById(R.id.t1_c_img1);
         c_imgbtn1 = findViewById(R.id.t1_c_btn1);
@@ -538,18 +556,21 @@ public class T1_choice extends AppCompatActivity {
         c_tv1 = findViewById(R.id.t1_c_tv1);
         c_tv2 = findViewById(R.id.t1_c_tv2);
 
+        startStory3.setViewNum(3);
     }
 
     public void initializeLayout() {
         switch (changeCode) {
             case 1 : Intent i1 = new Intent(T1_choice.this, T1_text.class);
             i1.putExtra("n",n);
+                i1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i1);
             finish();
             break;
             case 2:
                 Intent i2 = new Intent(T1_choice.this, T1_text_image.class);
                 i2.putExtra("n",n);
+                i2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i2);
                 finish();
                 break;
@@ -557,12 +578,14 @@ public class T1_choice extends AppCompatActivity {
                 System.out.println("INITIALIZATION TO 4");
                 Intent i4 = new Intent(T1_choice.this,T1_kakao.class);
                 i4.putExtra("n",n);
+                i4.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i4);
                 finish();
                 break;
             case 5 :
                 Intent i0 = new Intent(T1_choice.this,Success.class);
                 i0.putExtra("page",n);
+                i0.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 System.out.println("page ====="+n);
                 startActivity(i0);
                 finish();
@@ -573,14 +596,24 @@ public class T1_choice extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        Intent i = new Intent(T1_choice.this,MainActivity.class);
+        mediaPlayer.stopMusic();
 
          StartStory.getPage();
          StartStory.getViewNum();
+
+        // setShared();
+
         System.out.println("PAGE 1 ============" +StartStory.getPage());
         System.out.println("VIewNUM 4 ============" +StartStory.getViewNum());
+        startActivity(i);
+        finish();
 
-        Toast.makeText(getApplicationContext(),"뒤로 가기",Toast.LENGTH_SHORT).show();
+    }
+
+    public void setShared(){
+        Application.msf.setInt(getApplicationContext(),"page",StartStory.getPage());
+        Application.msf.setInt(getApplicationContext(),"view",StartStory.getViewNum());
 
     }
 

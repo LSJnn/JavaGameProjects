@@ -1,22 +1,32 @@
 package com.example.heresy;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
 
 
 public class mySharedPreferences implements SharedPreferences {
     private static String name = "newPref";
+    private static Context context ;
+    ArrayList SavedEnding = new ArrayList<>();
+    int endingNumber;
 
 
-    public static SharedPreferences getPreferenences(Context context){
+    public static SharedPreferences getPreferenences(Context Context){
+        context= Context;
         return context.getSharedPreferences(name,Context.MODE_PRIVATE);
     }
+
 
     @Override
     public Map<String, ?> getAll() {
@@ -24,10 +34,11 @@ public class mySharedPreferences implements SharedPreferences {
     }
 
 
-    public void setString(Context context,String key, String value){
+    public void setString(String key1, String last,String key2, String first){
         SharedPreferences mSf = getPreferenences(context);
         SharedPreferences.Editor editor = mSf.edit();
-        editor.putString(key,value);
+        editor.putString(key1,last);
+        editor.putString(key2,first);
         editor.commit();
     }
 
@@ -51,7 +62,7 @@ public class mySharedPreferences implements SharedPreferences {
     public int getIntR(Context context, String key) {
         SharedPreferences mSf = getPreferenences(context);
 
-        return mSf.getInt(key,0);
+        return mSf.getInt(key,-1);
     }
 
     public void setInt(Context context, String key, int value){
@@ -59,6 +70,20 @@ public class mySharedPreferences implements SharedPreferences {
         SharedPreferences.Editor editor = mSp.edit();
         editor.putInt(key,value);
         editor.commit();
+    }
+
+    public void setArrayEnding(String key, int value){
+        SharedPreferences mSp = getPreferenences(context);
+        SharedPreferences.Editor editor = mSp.edit();
+        editor.putInt(key,value);
+        editor.commit();
+        endingNumber = value;
+    }
+
+    public ArrayList saveEnding(){
+        SavedEnding.add(endingNumber);
+        //리스트에 추가.
+        return SavedEnding;
     }
 
     @Override

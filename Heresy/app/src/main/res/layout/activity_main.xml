@@ -6,71 +6,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@android:color/black">
-
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:text="이 게임에 등장하는\n인물, 기관, 사건은\n실제와 관련이 없습니다"
-        android:textAlignment="center"
-        android:textSize="36sp"
-        android:textColor="@android:color/white"
-        app:fontFamily="@font/hanchorong_n"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.269" />
+    android:background="@drawable/main_black">
 
     <ImageButton
         android:id="@+id/start"
         android:layout_width="266dp"
         android:layout_height="82dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="288dp"
         android:background="@drawable/game_start"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/settings"
-        android:layout_width="266dp"
-        android:layout_height="82dp"
-        android:background="@drawable/settings"
-        app:layout_constraintBottom_toTopOf="@+id/ending"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/start" />
 
     <ImageButton
         android:id="@+id/ending"
         android:layout_width="266dp"
         android:layout_height="82dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/ending_main"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/start" />
+        app:layout_constraintTop_toBottomOf="@+id/loadgame" />
 
     <ImageButton
         android:id="@+id/newgame"
         android:layout_width="266dp"
         android:layout_height="82dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="288dp"
         android:background="@drawable/newgmae"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible"
         />
 
     <ImageButton
@@ -85,6 +53,16 @@
         app:layout_constraintTop_toBottomOf="@+id/start"
         android:visibility="gone"
         />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/main_banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        adSize = "BANNER"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

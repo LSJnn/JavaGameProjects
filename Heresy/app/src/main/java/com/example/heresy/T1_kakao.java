@@ -19,7 +19,7 @@ import org.w3c.dom.Text;
 
 public class T1_kakao extends AppCompatActivity {
     //프레임 레이아웃은 갈아끼는 방식으로. 매번. 어쩔 수 없다.
-    ImageButton back; ImageButton next; ImageButton ending;
+    ImageButton back; ImageButton next; ImageButton ending;ImageButton now;
 
     TextView k_tv1;TextView k_tv2; TextView k_tv3;
     LinearLayout k_view; TextView kao1; TextView kao2;
@@ -35,6 +35,7 @@ public class T1_kakao extends AppCompatActivity {
     int getPage; int getViewNum;
 
     LayoutInflater layoutInflater;
+    MusicActivity mediaPlayer;
 
 
 
@@ -62,7 +63,7 @@ public class T1_kakao extends AppCompatActivity {
     public void getData(){
         i = getIntent();
         l = Application.getL();
-        f = Application. getF();    // 종료 후에도 저장??
+        f = Application.getF();
 
         restart = i.getIntExtra("Restart",1);//1 --> 기본/ 2 --> 이어하기
         getPage = i.getIntExtra("getPage",0);
@@ -89,13 +90,16 @@ public class T1_kakao extends AppCompatActivity {
         back = findViewById(R.id.backbtn);
         next = findViewById(R.id.nextBtn);
         ending = findViewById(R.id.endingBtn);
+        now = findViewById(R.id.now);
 
         k_tv1 = findViewById(R.id.t1_k_tv1);
         k_tv2 = findViewById(R.id.t1_k_tv2);
         k_tv3 = findViewById(R.id.t1_k_tv3);
 
         k_view = findViewById(R.id.k_include);
+        mediaPlayer = Application.getMusicActivity();
 
+        startStory4.setViewNum(4);
         System.out.println("initializeVIew!!!!!!!!!!!!!!!!!!!!!1");
     }
 
@@ -104,24 +108,28 @@ public class T1_kakao extends AppCompatActivity {
             case 1:
                 Intent i1 = new Intent(T1_kakao.this, T1_text.class);
                 i1.putExtra("n",n);
+                i1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i1);
                 finish();
                 break;
             case 2:
                 Intent i2 = new Intent(T1_kakao.this, T1_text_image.class);
                 i2.putExtra("n",n);
+                i2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i2);
                 finish();
                 break;
             case 3:
                 Intent i3 = new Intent(T1_kakao.this, T1_choice.class);
                 i3.putExtra("n",n);
+                i3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i3);
                 finish();
                 break;
             case 5 :
                 Intent i0 = new Intent(T1_kakao.this,Success.class);
                 i0.putExtra("page",n);
+                i0.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i0);
                 finish();
             default: //아무것도 안함.
@@ -135,6 +143,8 @@ public class T1_kakao extends AppCompatActivity {
                 Intent i = new Intent(T1_kakao.this, MainActivity.class);
                 StartStory.getPage();
                 StartStory.getViewNum();
+                mediaPlayer.stopMusic();
+                startActivity(i);
                 finish();
 
             }
@@ -146,6 +156,15 @@ public class T1_kakao extends AppCompatActivity {
                 Intent intent = new Intent(T1_kakao.this, Endings.class);
                 startActivity(intent);
 
+            }
+        });
+
+        now.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(T1_kakao.this,Now.class);
+                intent.putExtra("page",StartStory.getPage());
+                startActivity(intent);
             }
         });
     }
@@ -345,7 +364,7 @@ public class T1_kakao extends AppCompatActivity {
         kao1 = findViewById(R.id.kao_tv1);
     }
     public void kakao58(){
-        layoutInflater.inflate(R.layout.kakotalk42, k_view,true);
+        layoutInflater.inflate(R.layout.kakotalk58, k_view,true);
 
         k_img1 = findViewById(R.id.kakao58_m1);
         k_img2 = findViewById(R.id.kakao58_h1);
@@ -486,7 +505,7 @@ public class T1_kakao extends AppCompatActivity {
         else if (n == 30) {
             kakao5();
             switch (kakao) {
-                case 1:
+                case 1:k_tv1.setText("");
                     k_view.setVisibility(View.VISIBLE);
                     kao1.setText("[만남 결과 보고]\n" +
                             "인도자 : 송가진\n" +
@@ -503,7 +522,7 @@ public class T1_kakao extends AppCompatActivity {
 
             kakao6();
             switch (kakao) {
-                case 1:
+                case 1:k_tv1.setText("");
                     k_view.setVisibility(View.VISIBLE);
                     k_img1.setVisibility(View.VISIBLE);
                     break;
@@ -591,7 +610,7 @@ public class T1_kakao extends AppCompatActivity {
                     break;
                 case 2:
                     k_img2.setVisibility(View.VISIBLE);
-                    kao1.setText(f+"는 잘 모를 수도 있지만\n 영적으로 튼튼해야 모든 일이\n 잘 풀릴 수 있어.");
+                    kao1.setText("너는 잘 모를 수도 있지만\n 영적으로 튼튼해야 모든 일이\n 잘 풀릴 수 있어.");
                     break;
                 case 3:
                     k_img3.setVisibility(View.VISIBLE);
@@ -712,14 +731,21 @@ public class T1_kakao extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-        super.onBackPressed();
+        Intent i = new Intent(T1_kakao.this,MainActivity.class);
          StartStory.getViewNum();
          StartStory.getPage();
+        mediaPlayer.stopMusic();
+       // setShared();
         System.out.println("PAGE 4 ============" +StartStory.getViewNum());
         System.out.println("VIewNUM 4 ============" +StartStory.getPage());
+        startActivity(i);
+        finish();
 
-        Toast.makeText(getApplicationContext(),"뒤로 가기",Toast.LENGTH_SHORT).show();
 
     }
+/*    public void setShared(){
+        Application.msf.setInt(getApplicationContext(),"page",StartStory.getPage());
+        Application.msf.setInt(getApplicationContext(),"view",StartStory.getViewNum());
+    }*/
 
 }
