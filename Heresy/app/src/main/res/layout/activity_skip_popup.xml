@@ -1,9 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
     tools:context=".Skip_popup">
+
+
+    <ImageView
+        android:id="@+id/skip_bg"
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:src="@drawable/skip_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/exit"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/exit"
+        app:layout_constraintEnd_toEndOf="@+id/skip_bg"
+        app:layout_constraintTop_toTopOf="@+id/skip_bg" />
+
+    <ImageButton
+        android:id="@+id/skip_basic"
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        android:background="@drawable/skip_basic"
+        app:layout_constraintBottom_toBottomOf="@+id/skip_bg"
+        app:layout_constraintEnd_toEndOf="@+id/skip_bg"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toStartOf="@+id/skip_bg"
+        app:layout_constraintTop_toTopOf="@+id/skip_bg"
+        app:layout_constraintVertical_bias="0.471" />
+
+    <TextView
+        android:id="@+id/tvQ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="보유 수량  "
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/skip_basic"
+        app:layout_constraintTop_toTopOf="@+id/skip_basic" />
+
+    <TextView
+        android:id="@+id/tvOwn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tvQ"
+        app:layout_constraintStart_toEndOf="@+id/tvQ" />
+
+    <TextView
+        android:id="@+id/adQ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="광고 티켓  "
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/skip_basic"
+        app:layout_constraintStart_toEndOf="@+id/skip_basic"
+        app:layout_constraintTop_toBottomOf="@+id/tvQ" />
+
+    <TextView
+        android:id="@+id/tvOwn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/skip_basic"
+        app:layout_constraintStart_toEndOf="@+id/adQ"
+        app:layout_constraintTop_toBottomOf="@+id/tvOwn" />
+
+
+    <ImageButton
+        android:id="@+id/use"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="12dp"
+        android:background="@drawable/skip_use"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buy"
+        app:layout_constraintStart_toStartOf="@+id/skip_bg"
+        app:layout_constraintTop_toBottomOf="@+id/skip_basic" />
+
+    <ImageButton
+        android:id="@+id/buy"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/skip_buy"
+        app:layout_constraintBottom_toBottomOf="@+id/use"
+        app:layout_constraintEnd_toEndOf="@+id/skip_bg" />
+
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

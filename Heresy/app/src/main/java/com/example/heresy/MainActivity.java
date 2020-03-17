@@ -10,6 +10,8 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
@@ -17,7 +19,6 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 public class MainActivity extends AppCompatActivity{
 
     ImageButton start;
-    ImageButton settings;
     ImageButton newgame;
     ImageButton loadgame;
     ImageButton ending;
@@ -26,8 +27,7 @@ public class MainActivity extends AppCompatActivity{
 
 
     public static MusicActivity mediaPlayer;
-    //mySharedPreferences mSf;
-/*    mySoundPool mySoundPool;*/
+
     int getViewNum;
     int getPage;
 
@@ -48,6 +48,9 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+        AdView main=findViewById(R.id.main_banner);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        main.loadAd(adRequest);
 
         this.initializeMain();
 
@@ -109,6 +112,8 @@ public class MainActivity extends AppCompatActivity{
         ending = findViewById(R.id.ending);
         tinyDB = new TinyDB(this);
         Application.setSavePageDB(tinyDB);
+        Application.getSavePageDB().putInt("skip",0);
+        Application.getSavePageDB().putInt("ad",4);
 
         mediaPlayer = new MusicActivity(this);
         Application.setMusicActivity(mediaPlayer);

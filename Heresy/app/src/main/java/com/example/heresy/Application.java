@@ -10,6 +10,7 @@ public class Application extends android.app.Application {
     public static String F;
     public static boolean Z = false;
     public static int N;
+
     public static int skip;
     public static ArrayList<EndingItem> endingItemArrayList ;
     public static boolean first;

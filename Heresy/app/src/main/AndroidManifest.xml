@@ -11,12 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyNoActionBarTheme">
+        <activity android:name=".Dialouge_Use"
+            android:theme="@style/Dialouge" ></activity>
+        <activity android:name=".Dialouge_Own_zero"
+            android:theme="@style/Dialouge" />
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-6192078009124891~5702234038"/>
-        <activity android:name=".Now"
-            android:theme="@style/Dialouge"
-            ></activity>
+            android:value="ca-app-pub-6192078009124891~5702234038" />
+
+        <activity
+            android:name=".Now"
+            android:theme="@style/Dialouge" />
         <activity
             android:name=".SplashActivity"
             android:noHistory="true"
@@ -29,10 +35,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".Fine" />
-        <activity android:name=".Skip_popup" />
+        <activity
+            android:name=".Skip_popup"
+            android:theme="@style/Dialouge" />
         <activity
             android:name=".SkipPage"
-            android:theme="@style/Theme.AppCompat.DayNight.Dialog" />
+            android:theme="@style/Dialouge" />
         <activity android:name=".T1_kakao" />
         <activity android:name=".T1_text" />
         <activity android:name=".T1_text_image" />
@@ -41,7 +49,7 @@
         <activity android:name=".Endings" />
         <activity android:name=".Story" />
         <activity android:name=".SecondPage" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

@@ -5,13 +5,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.drawable.Animatable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 public class Success extends AppCompatActivity {
+
+    private InterstitialAd interstitialAd;
 
     ImageButton ending;ImageButton now;
     ImageView newEnding;
@@ -24,6 +35,21 @@ public class Success extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_success);
+////////////광고///////////////
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+
+            }
+        });
+        AdView success = findViewById(R.id.success_banner);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        success.loadAd(adRequest);
+
+        interstitialAd = new InterstitialAd(this);
+        interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+
+
 
         initializeVIew();
         btnClick();
@@ -36,7 +62,7 @@ public class Success extends AppCompatActivity {
             startBlink();
         }
 
-        if(enter){
+        if(enter=true){
             stopBlink();
         }
 
@@ -51,6 +77,7 @@ public class Success extends AppCompatActivity {
         newEnding = findViewById(R.id.newEnding);
         now = findViewById(R.id.now);
 
+
     }
 
     public void btnClick() {
@@ -61,6 +88,11 @@ public class Success extends AppCompatActivity {
                 Intent i = new Intent(Success.this, MainActivity.class);
                 mediaPlayer = Application.getMusicActivity();
                 mediaPlayer.stopMusic();
+                if(interstitialAd.isLoaded()){
+                    interstitialAd.show();
+                }else {
+                    Log.d("TAG", "로드 실패.");
+                }
                 startActivity(i);
                 finish();
 
@@ -86,6 +118,7 @@ public class Success extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 
     public void startBlink(){

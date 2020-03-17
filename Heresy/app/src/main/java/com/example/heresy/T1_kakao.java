@@ -19,7 +19,7 @@ import org.w3c.dom.Text;
 
 public class T1_kakao extends AppCompatActivity {
     //프레임 레이아웃은 갈아끼는 방식으로. 매번. 어쩔 수 없다.
-    ImageButton back; ImageButton next; ImageButton ending;ImageButton now;
+    ImageButton back; ImageButton next; ImageButton ending;ImageButton now;ImageButton skip; TextView skipT;
 
     TextView k_tv1;TextView k_tv2; TextView k_tv3;
     LinearLayout k_view; TextView kao1; TextView kao2;
@@ -91,6 +91,7 @@ public class T1_kakao extends AppCompatActivity {
         next = findViewById(R.id.nextBtn);
         ending = findViewById(R.id.endingBtn);
         now = findViewById(R.id.now);
+        skip = findViewById(R.id.skip);
 
         k_tv1 = findViewById(R.id.t1_k_tv1);
         k_tv2 = findViewById(R.id.t1_k_tv2);
@@ -165,6 +166,15 @@ public class T1_kakao extends AppCompatActivity {
                 Intent intent = new Intent(T1_kakao.this,Now.class);
                 intent.putExtra("page",StartStory.getPage());
                 startActivity(intent);
+            }
+        });
+
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(T1_kakao.this, Skip_popup.class);
+                //팝업--> 현재 보유개수. 사용/구매버튼.
+                startActivity(i);
             }
         });
     }
@@ -732,6 +742,7 @@ public class T1_kakao extends AppCompatActivity {
     public void onBackPressed() {
 
         Intent i = new Intent(T1_kakao.this,MainActivity.class);
+
          StartStory.getViewNum();
          StartStory.getPage();
         mediaPlayer.stopMusic();

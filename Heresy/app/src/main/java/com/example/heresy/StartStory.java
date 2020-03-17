@@ -23,8 +23,8 @@ public class StartStory {
     TextView ONE_tv1;
     TextView ONE_tv2;
     TextView ONE_tv3;
-    String l = Application.getL();
-    String f = Application.getF();
+    String l = Application.getSavePageDB().getString("L");
+    String f = Application.getSavePageDB().getString("F");
 
     ImageView TWO_img1;
     TextView TWO_tv1;
@@ -66,7 +66,9 @@ public class StartStory {
             viewNumIsTWO();
         } else if (viewNum == 4) {
             viewNumIsFOUR();
-        }else if (viewNum== 3){viewNumIsTHREE();}
+        }else if (viewNum== 3){
+            viewNumIsTHREE();
+        }
 
     }
 

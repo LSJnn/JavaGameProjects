@@ -20,7 +20,7 @@ import org.w3c.dom.Text;
 public class T1_text extends AppCompatActivity {
 
     //////////////레이아웃 요소/////////////////////////////////////////////////////////////////////////
-    ImageButton next;ImageButton back;ImageButton ending;ImageButton now;
+    ImageButton next;ImageButton back;ImageButton ending;ImageButton now;ImageButton skip;
 
     TextView otv1;TextView otv2;TextView otv3;
     ////////////////////////필요 객체////////////////////////////////////////////////////////////
@@ -60,6 +60,7 @@ public class T1_text extends AppCompatActivity {
         otv2 = findViewById(R.id.t1_o_tv2);
         otv3 = findViewById(R.id.t1_o_tv3);
         now = findViewById(R.id.now);
+        skip = findViewById(R.id.skip);
 
 
         back = findViewById(R.id.backbtn);
@@ -69,6 +70,7 @@ public class T1_text extends AppCompatActivity {
         System.out.println("initializeVIew!!!!!!!!!!!!!!!!!!!!!1");
 
         startStory.setViewNum(1);
+
     }
     public void getData() {
 
@@ -169,6 +171,15 @@ public class T1_text extends AppCompatActivity {
                 intent.putExtra("page",StartStory.getPage());
                 System.out.println("page ========"+StartStory.getPage());
                 startActivity(intent);
+            }
+        });
+
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(T1_text.this, Skip_popup.class);
+                //팝업--> 현재 보유개수. 사용/구매버튼.
+                startActivity(i);
             }
         });
     }

@@ -7,23 +7,45 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
-public class SkipPage extends AppCompatActivity {
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.reward.RewardItem;
+import com.google.android.gms.ads.reward.RewardedVideoAd;
+import com.google.android.gms.ads.reward.RewardedVideoAdListener;
+import com.google.android.gms.ads.rewarded.RewardedAd;
+
+public class SkipPage extends AppCompatActivity implements RewardedVideoAdListener {
+    private RewardedVideoAd rewardedVideoAd;
+
     ImageButton exit;
     ImageButton skip1;
     ImageButton skip2;
     ImageButton skip3;
     ImageButton free;
 
-    static int skip =0;
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        MobileAds.initialize(this,"ca-app-pub-6192078009124891~5702234038");
+        rewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
+        rewardedVideoAd.setRewardedVideoAdListener(this);
+        rewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build());
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_skip_page);
 
+
+        getIntent();
+        initializer();
         skipBuyListener();
+
+
 
 
     }
@@ -43,9 +65,10 @@ public class SkipPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                skip +=1;
-                Application.setSkip(skip);
-                //
+                setResult(1);
+
+                finish();
+
             }
         });
 
@@ -53,8 +76,9 @@ public class SkipPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                skip +=2;
-                Application.setSkip(skip);
+                setResult(2);
+
+                finish();
             }
         });
 
@@ -62,8 +86,8 @@ public class SkipPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                skip +=3;
-                Application.setSkip(skip);
+                setResult(3);
+                finish();
             }
         });
 
@@ -71,8 +95,19 @@ public class SkipPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                skip +=1;
-                Application.setSkip(skip);
+                //광고 보여주기.
+
+                if(rewardedVideoAd.isLoaded()){
+                    rewardedVideoAd.show();
+                    onRewardedVideoAdClosed();
+                    setResult(4);
+                    finish();
+                }else {
+                    //로드가 안됐을 경우
+                    Toast.makeText(getApplicationContext(), "동영상 로드에 실패했습니다. 다시 시도해주세요",Toast.LENGTH_LONG).show();
+                    finish();
+                }
+
             }
         });
 
@@ -80,10 +115,50 @@ public class SkipPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                skip +=1;
+                finish();
+
             }
         });
 
     }
 
+    @Override
+    public void onRewardedVideoAdLoaded() {
+
+    }
+
+    @Override
+    public void onRewardedVideoAdOpened() {
+
+    }
+
+    @Override
+    public void onRewardedVideoStarted() {
+
+    }
+
+    @Override
+    public void onRewardedVideoAdClosed() {
+    }
+
+    @Override
+    public void onRewarded(RewardItem rewardItem) {
+
+    }
+
+    @Override
+    public void onRewardedVideoAdLeftApplication() {
+
+    }
+
+    @Override
+    public void onRewardedVideoAdFailedToLoad(int i) {
+
+
+    }
+
+    @Override
+    public void onRewardedVideoCompleted() {
+
+    }
 }

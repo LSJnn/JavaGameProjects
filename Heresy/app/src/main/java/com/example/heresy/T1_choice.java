@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class T1_choice extends AppCompatActivity {
 
-    ImageButton next;ImageButton back;ImageButton ending;ImageButton now;
+    ImageButton next;ImageButton back;ImageButton ending;ImageButton now; ImageButton skip; TextView skipT;
 
     ImageView c_img1;
     TextView c_tv1;TextView c_tv2;
@@ -22,7 +22,6 @@ public class T1_choice extends AppCompatActivity {
 
     int changeCode;
     StartStory startStory3;
-    String f; String l;
     int getPage; int getViewNum; int restart;
     MusicActivity mediaPlayer = Application.getMusicActivity();
 
@@ -34,8 +33,6 @@ public class T1_choice extends AppCompatActivity {
         setContentView(R.layout.activity_t1_choice);
 
         Intent i = getIntent();
-        f = Application.getF();
-        l= Application.getL();
 
         restart = i.getIntExtra("Restart",1);//1 --> 기본/ 2 --> 이어하기
         getPage = i.getIntExtra("getPage",0);
@@ -93,6 +90,15 @@ public class T1_choice extends AppCompatActivity {
                 Intent intent = new Intent(T1_choice.this,Now.class);
                 intent.putExtra("page",StartStory.getPage());
                 startActivity(intent);
+            }
+        });
+
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(T1_choice.this, Skip_popup.class);
+                //팝업--> 현재 보유개수. 사용/구매버튼.
+                startActivity(i);
             }
         });
     }
@@ -544,10 +550,12 @@ public class T1_choice extends AppCompatActivity {
     }
 
     public void initializeView(){
+
         back = findViewById(R.id.backbtn);
         next = findViewById(R.id.nextBtn);
         ending = findViewById(R.id.endingBtn);
         now = findViewById(R.id.now);
+        skip = findViewById(R.id.skip);
 
         c_img1 = findViewById(R.id.t1_c_img1);
         c_imgbtn1 = findViewById(R.id.t1_c_btn1);

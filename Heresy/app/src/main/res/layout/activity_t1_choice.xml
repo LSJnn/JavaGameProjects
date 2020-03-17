@@ -87,11 +87,10 @@
         android:background="@drawable/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
     <ImageButton
         android:id="@+id/backbtn"
         android:layout_width="100dp"
-        android:layout_height="55dp"
+        android:layout_height="53dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="12dp"
         android:background="@drawable/back"
@@ -101,7 +100,7 @@
     <ImageButton
         android:id="@+id/now"
         android:layout_width="100dp"
-        android:layout_height="55dp"
+        android:layout_height="53dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/now"
         app:layout_constraintEnd_toStartOf="@+id/backbtn"
@@ -110,18 +109,19 @@
 
     <ImageButton
         android:id="@+id/skip"
-        android:layout_width="100dp"
+        android:layout_width="80dp"
         android:layout_height="55dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/skip"
+        android:background="@drawable/skip_basic"
         app:layout_constraintEnd_toStartOf="@id/now"
         app:layout_constraintStart_toEndOf="@id/endingBtn"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ImageButton
         android:id="@+id/endingBtn"
-        android:layout_width="70dp"
-        android:layout_height="55dp"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="12dp"
         android:background="@drawable/ending"

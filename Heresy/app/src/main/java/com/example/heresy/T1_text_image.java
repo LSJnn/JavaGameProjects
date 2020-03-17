@@ -13,16 +13,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class T1_text_image extends AppCompatActivity {
 
-    ImageButton next;ImageButton back;ImageButton ending;ImageButton now;
+    ImageButton next;ImageButton back;ImageButton ending;ImageButton now;ImageButton skip;
 
     ImageView ti_img1;
     TextView ti_tv1;TextView ti_tv2;TextView ti_tv3;TextView ti_tv4;
 
     int changeCode;
-    String L; String F;
+
     StartStory startStory2;
     Intent i;
-    int getPage; int getViewNum;
+    int getPage;
 
     int c=0;int p=0; int n; int a;
     int restart;
@@ -33,9 +33,11 @@ public class T1_text_image extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_t1_txt_img);
 
-        initializeView();
-
         i = getIntent();
+        initializeView();
+        startStory2.getTWO(ti_img1,ti_tv1,ti_tv2,ti_tv3,ti_tv4);
+
+
         restart = i.getIntExtra("Restart",1);//1 --> 기본/ 2 --> 이어하기
         getPage = i.getIntExtra("getPage",0);
 
@@ -52,13 +54,9 @@ public class T1_text_image extends AppCompatActivity {
 
         }
 
-        F = Application.getF();
-        L = Application.getL();
 
         System.out.println("N = "+n);
 
-        startStory2 = new StartStory();
-        startStory2.getTWO(ti_img1,ti_tv1,ti_tv2,ti_tv3,ti_tv4/*L,F*/);
 
         nextOnClick();
 
@@ -71,6 +69,7 @@ public class T1_text_image extends AppCompatActivity {
         next = findViewById(R.id.nextBtn);
         ending = findViewById(R.id.endingBtn);
         now = findViewById(R.id.now);
+        skip= findViewById(R.id.skip);
 
         ti_img1 = findViewById(R.id.t1_ti_img1);
         ti_tv1 = findViewById(R.id.t1_tl_tv1);
@@ -78,7 +77,8 @@ public class T1_text_image extends AppCompatActivity {
         ti_tv3 = findViewById(R.id.t1_ti_tv3);
         ti_tv4 = findViewById(R.id.t1_ti_tv4);
 
-        startStory2.setViewNum(2);
+        StartStory.setViewNum(2);
+
     }
 
     public void Nis(){
@@ -496,7 +496,14 @@ public class T1_text_image extends AppCompatActivity {
                 startActivity(i);
                 finish();
 
-
+            }
+        });
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(T1_text_image.this, Skip_popup.class);
+                //팝업--> 현재 보유개수. 사용/구매버튼.
+                startActivity(i);
             }
         });
 

@@ -7,46 +7,6 @@
     tools:context=".Success"
     android:background="@drawable/main_background">
 
-    <ImageButton
-        android:id="@+id/backbtn"
-        android:layout_width="100dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="12dp"
-        android:background="@drawable/back"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/now"
-        android:layout_width="100dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/now"
-        app:layout_constraintEnd_toStartOf="@+id/backbtn"
-        app:layout_constraintStart_toEndOf="@+id/skip"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/skip"
-        android:layout_width="100dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/skip"
-        app:layout_constraintEnd_toStartOf="@id/now"
-        app:layout_constraintStart_toEndOf="@id/endingBtn"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/endingBtn"
-        android:layout_width="70dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="12dp"
-        android:background="@drawable/ending"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:visibility="invisible"
         android:id="@+id/newEnding"
@@ -69,5 +29,52 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.408" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/success_banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+    </com.google.android.gms.ads.AdView>
+
+    <ImageButton
+        android:id="@+id/backbtn"
+        android:layout_width="100dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/now"
+        android:layout_width="100dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/now"
+        app:layout_constraintBottom_toBottomOf="@+id/backbtn"
+        app:layout_constraintEnd_toStartOf="@+id/backbtn"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toEndOf="@+id/endingBtn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageButton
+        android:id="@+id/endingBtn"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="12dp"
+        android:background="@drawable/ending"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
