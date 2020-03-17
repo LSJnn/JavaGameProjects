@@ -89,22 +89,18 @@ public class StartStory {
     }
 
 
-    public void getONE(TextView tv1, TextView tv2, TextView tv3/* String l , String f*/) {
+    public void getONE(TextView tv1, TextView tv2, TextView tv3) {
         ONE_tv1 = tv1;
         ONE_tv2 = tv2;
         ONE_tv3 = tv3;
-/*        this.l = l;
-        this.f = f;*/
     }
 
-    public void getTWO(ImageView img1, TextView tv1, TextView tv2, TextView tv3, TextView tv4/*String l, String f*/) {
+    public void getTWO(ImageView img1, TextView tv1, TextView tv2, TextView tv3, TextView tv4) {
         TWO_img1 = img1;
         TWO_tv1 = tv1;
         TWO_tv2 = tv2;
         TWO_tv3 = tv3;
         TWO_tv4 = tv4;
-/*        this.l = l;
-        this.f = f;*/
     }
 
     public void getTHREE(ImageView img1, TextView tv1, TextView tv2,
@@ -118,7 +114,7 @@ public class StartStory {
         THREE_imgbtn3 = btn3;
     }
 
-    public void getFOUR(TextView tv1, TextView tv2, TextView tv3, LinearLayout frame,String l, String f ,TextView kaka1, TextView kaka2)
+    public void getFOUR(TextView tv1, TextView tv2, TextView tv3, LinearLayout frame,TextView kaka1, TextView kaka2)
     {
         FOUR_tv1 = tv1;
         FOUR_tv2 = tv2;
@@ -126,9 +122,6 @@ public class StartStory {
         FOUR_frame = frame;
         FOUR_tv4 = kaka1;
         FOUR_tv5 = kaka2;
-
-        this.l = l;
-        this.f = f;
     }
 
     //////브금./////
@@ -619,7 +612,7 @@ public class StartStory {
             case 9: pageCHOICE();
                 break;
             case 26: pageCHOICE();
-            break;
+                break;
             case 45: pageCHOICE();
                 break;
             case 47: pageCHOICE();
@@ -638,8 +631,7 @@ public class StartStory {
                 break;
             case 89: pageCHOICE();
                 break;
-            case 100:
-                pageCHOICE();
+            case 100: pageCHOICE();
                 break;
             case 117: pageCHOICE();
                 break;
@@ -647,7 +639,6 @@ public class StartStory {
                 break;
             case 164: pageCHOICE();
                 break;
-
         }
         Application.getSavePageDB().putInt("saveP",page);
         Application.getSavePageDB().putInt("saveV",viewNum);
@@ -3513,9 +3504,9 @@ public class StartStory {
                         THREE_tv1.setText(R.string.page26002);
                     break;
                 case 2:
-                    THREE_imgbtn1.setVisibility(View.VISIBLE);THREE_imgbtn2.setVisibility(View.VISIBLE);
-                    THREE_imgbtn1.setBackgroundResource(R.drawable.choice26001_1);
-                    THREE_imgbtn2.setBackgroundResource(R.drawable.choice26001_2);
+                    THREE_imgbtn2.setVisibility(View.VISIBLE);THREE_imgbtn3.setVisibility(View.VISIBLE);THREE_imgbtn1.setVisibility(View.GONE);
+                    THREE_imgbtn2.setBackgroundResource(R.drawable.choice26001_1);
+                    THREE_imgbtn3.setBackgroundResource(R.drawable.choice26001_2);
                     break;
 
             }
@@ -3616,7 +3607,7 @@ public class StartStory {
         else if(page ==74) {
             switch (paragraph) {// 카톡 글미으로 바꾸는 건??
                 case 1:THREE_img1.setBackgroundResource(R.drawable.interview);
-                    THREE_tv2.setText(R.string.page74003);
+                    THREE_tv1.setText(R.string.page74003);
                     break;
                 case 2 :
                     THREE_imgbtn1.setVisibility(View.VISIBLE);
@@ -3673,8 +3664,8 @@ public class StartStory {
                     THREE_tv1.setText(R.string.page100002);
                 break;
                 case 2 :
-                    THREE_tv2.setText(R.string.page100003);
-                    THREE_tv2.append(l+f);THREE_tv2.append("아, 요즘 뭐하느라 맨날 그렇게 나가니??");
+                    THREE_tv1.setText(R.string.page100003);
+                    THREE_tv1.append(l+f);THREE_tv2.append("아, 요즘 뭐하느라 맨날 그렇게 나가니??");
                     break;
                 case 3:
                     THREE_imgbtn1.setBackgroundResource(R.drawable.choice_100001_1);

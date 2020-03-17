@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -22,7 +23,7 @@ public class T1_choice extends AppCompatActivity {
 
     int changeCode;
     StartStory startStory3;
-    int getPage; int getViewNum; int restart;
+    int getPage; int restart;
     MusicActivity mediaPlayer = Application.getMusicActivity();
 
     int c=0; int p=0; int n; int a;
@@ -32,10 +33,22 @@ public class T1_choice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_t1_choice);
 
+        initializeView();
+        getData();
+
+        startStory3.getTHREE(c_img1,c_tv1,c_tv2,c_imgbtn1,c_imgbtn2,c_imgbtn3);
+        nextOnClick();
+
+        btnClick();
+    }
+
+    public void getData() {
+
         Intent i = getIntent();
 
-        restart = i.getIntExtra("Restart",1);//1 --> 기본/ 2 --> 이어하기
-        getPage = i.getIntExtra("getPage",0);
+        restart = i.getIntExtra("Restart", 1);//1 --> 기본/ 2 --> 이어하기
+        getPage = i.getIntExtra("getPage", 0);
+
 
         System.out.println("RESTART " + restart);
 
@@ -46,18 +59,8 @@ public class T1_choice extends AppCompatActivity {
             n=getPage;
             System.out.println("getPage ===="+getPage+"n ====="+n);
             restart=1;
-
         }
 
-        initializeView();
-
-        startStory3 = new StartStory();
-        startStory3.getTHREE(c_img1,c_tv1,c_tv2,c_imgbtn1,c_imgbtn2,c_imgbtn3);
-        startStory3.viewNumIsTHREE();
-
-        nextOnClick();
-
-        btnClick();
     }
 
     public void btnClick() {
@@ -564,6 +567,7 @@ public class T1_choice extends AppCompatActivity {
         c_tv1 = findViewById(R.id.t1_c_tv1);
         c_tv2 = findViewById(R.id.t1_c_tv2);
 
+        startStory3 = new StartStory();
         startStory3.setViewNum(3);
     }
 
@@ -601,6 +605,8 @@ public class T1_choice extends AppCompatActivity {
             default: //아무것도 안함.
         }
     }
+
+
 
     @Override
     public void onBackPressed() {

@@ -47,7 +47,7 @@ public class T1_text extends AppCompatActivity {
         getData();
 
         startStory = new StartStory();
-        startStory.getONE(otv1,otv2,otv3/*,l ,f*/ );
+        startStory.getONE(otv1,otv2,otv3);
 
         nextOnClick();// 다음 누르면 이야기 전개됨
 
@@ -75,8 +75,7 @@ public class T1_text extends AppCompatActivity {
     public void getData() {
 
         i1 = getIntent();//second 에서 받아옴.
-         l =  Application.getL();
-         f =  Application.getF();
+
         System.out.println("TExtL ================== "+l + "\n2 F = "+ f+"\n");
         restart = i1.getIntExtra("Restart",1);//1 --> 기본/ 2 --> 이어하기
         getPage = i1.getIntExtra("getPage",0);
@@ -92,13 +91,6 @@ public class T1_text extends AppCompatActivity {
             System.out.println("getPage ===="+getPage+"n ====="+n);
             restart=1;
         }
-
-/*        changeCode = i1.getExtras().getInt("changeCode");//:: 단위.
-        System.out.println("changeCode ========= "+changeCode);*/
-        // 첫 시작 시 secondPage 화면에서 코드 넘어옴.
-        //1 : activity_t1_text, 2 : activity_t1_txt_img , 3 : activity_t1_choice
-
-
     }
 
     public void initializeLayout() {
@@ -147,8 +139,8 @@ public class T1_text extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(T1_text.this, MainActivity.class);
-                StartStory.getPage();
-                StartStory.getViewNum();
+/*                StartStory.getPage();
+                StartStory.getViewNum();*/
                 startActivity(i);
                 mediaPlayer.stopMusic();
                 finish();

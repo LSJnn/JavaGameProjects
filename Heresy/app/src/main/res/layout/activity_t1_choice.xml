@@ -24,6 +24,7 @@
 
     <TextView
         android:id="@+id/t1_c_tv1"
+        android:text="@string/page26002"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="2dp"
@@ -44,30 +45,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t1_c_tv1" />
 
+
     <ImageButton
         android:id="@+id/t1_c_btn1"
         android:layout_width="250dp"
         android:layout_height="70dp"
         android:layout_margin="2dp"
-        android:background="@drawable/choice_70001_1"
+        android:layout_marginTop="132dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/t1_c_btn2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t1_c_tv1"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
         android:id="@+id/t1_c_btn2"
         android:layout_width="250dp"
         android:layout_height="70dp"
         android:layout_margin="2dp"
-        android:layout_marginTop="2dp"
-        android:background="@drawable/choice_70001_2"
+        android:layout_marginBottom="28dp"
         android:padding="15dp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/t1_c_btn3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/t1_c_btn3" />
-
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/t1_c_btn3"
@@ -77,6 +80,7 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/nextBtn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton

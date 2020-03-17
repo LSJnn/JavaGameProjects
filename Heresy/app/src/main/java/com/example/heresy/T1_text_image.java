@@ -77,7 +77,8 @@ public class T1_text_image extends AppCompatActivity {
         ti_tv3 = findViewById(R.id.t1_ti_tv3);
         ti_tv4 = findViewById(R.id.t1_ti_tv4);
 
-        StartStory.setViewNum(2);
+        startStory2=new StartStory();
+        startStory2.setViewNum(2);
 
     }
 

@@ -51,7 +51,7 @@ public class T1_kakao extends AppCompatActivity {
         initializeLayout();
 
         startStory4 = new StartStory();
-        startStory4.getFOUR(k_tv1,k_tv2,k_tv3,k_view,l,f,kao1,kao2 );
+        startStory4.getFOUR(k_tv1,k_tv2,k_tv3,k_view,kao1,kao2 );
         nextOnClick();
 
 
