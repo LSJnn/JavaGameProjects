@@ -26,6 +26,7 @@ public class Skip_popup extends AppCompatActivity {
     private static int USE_CODE = 11111;
     private static int BUY_CODE = 11121;
     public final static int SKIP = 22424;
+    public final static int SUCCESS = 20219;
 
     StartStory startStory;
 
@@ -200,115 +201,126 @@ public class Skip_popup extends AppCompatActivity {
 
       }
       else if(27<=StartStory.getPage()&&StartStory.getPage()<=35) {
-          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_SHORT).show();
-          nChange = 1;
+          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_LONG).show();
+          nChange = 0;
       }
       else if(36<=StartStory.getPage()&&StartStory.getPage()<=44) {
           intentDO(45);
       }
       else if(46==StartStory.getPage()) {
           intentDO(47);
+      }else if(48==StartStory.getPage()){
+          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_LONG).show();
+          nChange = 0;
       }
-      else if(48<=StartStory.getPage()&&StartStory.getPage()<=54) {
+      else if(48<StartStory.getPage()&&StartStory.getPage()<=54) {
           intentDO(55);
       }
       else if(56<=StartStory.getPage()&&StartStory.getPage()<=59){
-          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_SHORT).show();
-          nChange = 1;
+          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_LONG).show();
+          nChange = 0;
       }
       else if(60<=StartStory.getPage()&&StartStory.getPage()<=61) {
           intentDO(62);
       }
       else if(63==StartStory.getPage()){
-          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_SHORT).show();
-          nChange = 1;
+          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_LONG).show();
+          nChange = 0;
       }
       else if(64<=StartStory.getPage()&&StartStory.getPage()<=65) {
           intentDO(66);
       }
       else if(67<=StartStory.getPage()&&StartStory.getPage()<=68){
-          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_SHORT).show();
-          nChange = 1;
+          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_LONG).show();
+          nChange = 0;
       }
       else if(69==StartStory.getPage()) {
           intentDO(70);
       }
       else if(71<=StartStory.getPage()&&StartStory.getPage()<=72){
-          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_SHORT).show();
-          nChange = 1;
+          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_LONG).show();
+          nChange = 0;
       }
       else if(73==StartStory.getPage()){
           intentDO(74);
       }
       else if(75<=StartStory.getPage()&&StartStory.getPage()<=76){
-          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_SHORT).show();
-          nChange = 1;
+          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_LONG).show();
+          nChange = 0;
       }
-      else if(StartStory.getPage()<=77) {
+      else if(77==StartStory.getPage()) {
           intentDO(78);
       }
       else if(79==StartStory.getPage()){
-          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_SHORT).show();
-          nChange = 1;
+          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_LONG).show();
+          nChange = 0;
       }
       else if(80<=StartStory.getPage()&&StartStory.getPage()<=88) {
           intentDO(89);
       }
       else if(90<=StartStory.getPage()&&StartStory.getPage()<=94) {
-          intentDO(85);
+          intentDO(95);
       }
       else if(95<=StartStory.getPage()&&StartStory.getPage()<=99) {
           intentDO(100);
       }
       else if(101<=StartStory.getPage()&&StartStory.getPage()<=103){
-          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_SHORT).show();
-          nChange = 1;
+          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_LONG).show();
+          nChange = 0;
       }
       else if(104<=StartStory.getPage()&&StartStory.getPage()<=116) {
           intentDO(117);
+      }else if(118 == StartStory.getPage()){
+          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_LONG).show();
+          nChange = 0;
       }
-      else if(118<=StartStory.getPage()&&StartStory.getPage()<=130){
-          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_SHORT).show();
-          nChange = 1;
+      else if(118<StartStory.getPage()&&StartStory.getPage()<=130){
+          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_LONG).show();
+          nChange = 0;
       }
       else if (131<=StartStory.getPage()&&StartStory.getPage()<=146) {
           intentDO(147);
       }
       else if(148<=StartStory.getPage()&&StartStory.getPage()<=151) {
-          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_SHORT).show();
-          nChange = 1;
+          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_LONG).show();
+          nChange = 0;
       }
       else if(152<=StartStory.getPage()&&StartStory.getPage()<=163) {
           intentDO(164);
       }
       else if(165<=StartStory.getPage()&&StartStory.getPage()<=168) {
-          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_SHORT).show();
-          nChange = 1;
+          Toast.makeText(getApplicationContext(), "엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_LONG).show();
+          nChange = 0;
       }
       else if(169<=StartStory.getPage()&&StartStory.getPage()<=185){
-          Toast.makeText(getApplicationContext(), "라스트 엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_SHORT).show();
-          nChange=1;
+          Toast.makeText(getApplicationContext(), "라스트 엔딩 지점입니다. 스킵이 불가합니다.", Toast.LENGTH_LONG).show();
+          nChange=0;
       }
       else {
           //선택지 지점.(9/26/45/47/55/62/66/70/74/78/89/100/117/147/164).
           // 27-35(엔딩)48.(엔딩)56-59(엔딩) 63 67-68 71-72 75-76 79 90-94(짜장면) 101-103
           //118-130 148-151(탈출 ) 165-168
-          Toast.makeText(getApplicationContext(), "선택 지점입니다. 스킵이 불가합니다.선택해주십시오", Toast.LENGTH_SHORT).show();
-          nChange=1;
+          Toast.makeText(getApplicationContext(), "선택 지점입니다. 스킵이 불가하니 선택해주십시오", Toast.LENGTH_LONG).show();
+          nChange=0;
       }
 
         System.out.println("SkipgetVuew"+ StartStory.getPage());
 
     }
     public void intentDO(int a){
-        Intent skipp = new Intent(getApplicationContext(),T1_choice.class);
+/*        Intent skipp = new Intent();
+        skipp.putExtra("getPage",a);
+        setResult(SKIP);
+        startActivity(skipp);*/
+        finish();
+        Intent skipp = new Intent(this,T1_choice.class);
+        StartStory.setViewNum(3);
         skipp.putExtra("Restart",2);
         skipp.putExtra("getPage",a);
-       // skipp.putExtra(p);
+        skipp.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(skipp);
-        finish();
-    }
 
+    }
 
 
 }

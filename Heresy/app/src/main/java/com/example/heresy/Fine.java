@@ -14,6 +14,7 @@ public class Fine extends AppCompatActivity {
 
     ImageView fine_img1;
     TextView fine_tv1;TextView fine_tv2;
+    MusicActivity mediaPlayer;
 
     int c;
     int n;
@@ -41,6 +42,8 @@ public class Fine extends AppCompatActivity {
         fine_img1 = findViewById(R.id.fine_img1);
         fine_tv1 = findViewById(R.id.fine_tv1);
         fine_tv2 = findViewById(R.id.fine_tv2);
+
+        mediaPlayer=Application.getMusicActivity();
     }
 
     public void nextOnClick(){
@@ -73,6 +76,9 @@ public class Fine extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(Fine.this, MainActivity.class);
                 i.putExtra("page",n);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                if(mediaPlayer!=null){
+                    mediaPlayer.stopMusic();}
                 finish();
 
             }

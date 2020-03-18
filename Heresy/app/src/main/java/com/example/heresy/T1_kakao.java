@@ -1,5 +1,6 @@
 package com.example.heresy;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -100,7 +101,7 @@ public class T1_kakao extends AppCompatActivity {
         k_view = findViewById(R.id.k_include);
         mediaPlayer = Application.getMusicActivity();
 
-        startStory4.setViewNum(4);
+      //  startStory4.setViewNum(4);
         System.out.println("initializeVIew!!!!!!!!!!!!!!!!!!!!!1");
     }
 
@@ -144,7 +145,8 @@ public class T1_kakao extends AppCompatActivity {
                 Intent i = new Intent(T1_kakao.this, MainActivity.class);
                 StartStory.getPage();
                 StartStory.getViewNum();
-                mediaPlayer.stopMusic();
+                if(mediaPlayer!=null){mediaPlayer.stopMusic();}
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
                 finish();
 
@@ -174,6 +176,7 @@ public class T1_kakao extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(T1_kakao.this, Skip_popup.class);
                 //팝업--> 현재 보유개수. 사용/구매버튼.
+                i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(i);
             }
         });
@@ -742,10 +745,13 @@ public class T1_kakao extends AppCompatActivity {
     public void onBackPressed() {
 
         Intent i = new Intent(T1_kakao.this,MainActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
 
          StartStory.getViewNum();
          StartStory.getPage();
-        mediaPlayer.stopMusic();
+         if(mediaPlayer!=null) {
+             mediaPlayer.stopMusic();
+         }
        // setShared();
         System.out.println("PAGE 4 ============" +StartStory.getViewNum());
         System.out.println("VIewNUM 4 ============" +StartStory.getPage());
@@ -754,9 +760,7 @@ public class T1_kakao extends AppCompatActivity {
 
 
     }
-/*    public void setShared(){
-        Application.msf.setInt(getApplicationContext(),"page",StartStory.getPage());
-        Application.msf.setInt(getApplicationContext(),"view",StartStory.getViewNum());
-    }*/
+
+
 
 }

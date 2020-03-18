@@ -23,11 +23,12 @@
         android:id="@+id/tv"
         android:layout_width="280dp"
         android:layout_height="60dp"
+        android:gravity="center"
         android:textAlignment="center"
-        android:textSize="20sp"
-        android:text=" text"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/iv"
         app:layout_constraintEnd_toEndOf="@+id/iv"
-        app:layout_constraintStart_toStartOf="@+id/iv" />
+        app:layout_constraintStart_toStartOf="@+id/iv"
+        app:layout_constraintTop_toTopOf="@+id/iv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -46,9 +46,13 @@ public class EndingAdapter extends BaseAdapter {
         //EndingItems 배열의 position 에 위치한 endingItems 를 받아 옴.
         //배열 어디에 endingItmes 값을 저장할지 위치 가져옴.
         EndingItem endingItems = EndingItemArray.get(position);
+        EndingItem e = new EndingItem();
         //아이템TV 에 받아온 아이템내용을 setText 함.
+        if(e.getChanter()==-1){
+            endingTV.setTextSize(40);
+            System.out.println("Adapter -1");
+        }
         endingTV.setText(endingItems.getEnding());
-
 
         return convertView;
     }

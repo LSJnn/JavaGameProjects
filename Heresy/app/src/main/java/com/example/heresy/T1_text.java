@@ -1,11 +1,13 @@
 package com.example.heresy;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -26,15 +28,16 @@ public class T1_text extends AppCompatActivity {
     ////////////////////////필요 객체////////////////////////////////////////////////////////////
 
     int changeCode;
-    int getPage ;int getViewNum;
+    int getPage ;
 
     String l; String f;
-    int recentPage;// 최근 페이지.
-    mySharedPreferences sf; Intent i1; int restart;
+    Intent i1; int restart;
 
     int n; int p=0; int c=0; int a;// paragraph 조정. 나누기 3 --> 나머지 1=001/ 2 = 002/ 3= 003
     StartStory startStory;
     MusicActivity mediaPlayer;
+
+    public static final int SKIP_WINDOW = 2103;
 
 
     @Override
@@ -69,14 +72,13 @@ public class T1_text extends AppCompatActivity {
         mediaPlayer = Application.getMusicActivity();
         System.out.println("initializeVIew!!!!!!!!!!!!!!!!!!!!!1");
 
-        startStory.setViewNum(1);
+       // startStory.setViewNum(1);
 
     }
     public void getData() {
 
         i1 = getIntent();//second 에서 받아옴.
 
-        System.out.println("TExtL ================== "+l + "\n2 F = "+ f+"\n");
         restart = i1.getIntExtra("Restart",1);//1 --> 기본/ 2 --> 이어하기
         getPage = i1.getIntExtra("getPage",0);
 
@@ -118,7 +120,7 @@ public class T1_text extends AppCompatActivity {
                 break;
             case 5 :
                 Intent i0 = new Intent(T1_text.this,Success.class);
-                i0.putExtra("page",n);
+                i0.putExtra("page",n-1);//?? 엔딩 갈 떄 +1 되서 감.//35.
                 i0.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i0);
                 finish();
@@ -139,10 +141,12 @@ public class T1_text extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(T1_text.this, MainActivity.class);
-/*                StartStory.getPage();
-                StartStory.getViewNum();*/
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
-                mediaPlayer.stopMusic();
+                if (mediaPlayer!=null) {
+                    mediaPlayer.stopMusic();
+                }
+                startActivity(i);
                 finish();
 
             }
@@ -160,7 +164,7 @@ public class T1_text extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(T1_text.this,Now.class);
-                intent.putExtra("page",StartStory.getPage());
+                intent.putExtra("page",Application.getSavePageDB().getInt("saveP"));
                 System.out.println("page ========"+StartStory.getPage());
                 startActivity(intent);
             }
@@ -171,6 +175,7 @@ public class T1_text extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(T1_text.this, Skip_popup.class);
                 //팝업--> 현재 보유개수. 사용/구매버튼.
+                i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(i);
             }
         });
@@ -349,10 +354,14 @@ public class T1_text extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Intent ib = new Intent(T1_text.this, MainActivity.class);
-        StartStory.getPage();
-        StartStory.getViewNum();
-        mediaPlayer.stopMusic();
-       // setShared();
+        ib.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+/*        StartStory.getPage();
+        StartStory.getViewNum();*/
+
+        if(mediaPlayer!=null) {
+            mediaPlayer.stopMusic();
+        }
+
         System.out.println("PAGE 1 ============" +StartStory.getPage());
         System.out.println("VIewNUM 1 ============" +StartStory.getViewNum());
         startActivity(ib);
@@ -360,8 +369,6 @@ public class T1_text extends AppCompatActivity {
 
 
     }
-    public void setShared(){
-        Application.msf.setInt(getApplicationContext(),"page",StartStory.getPage());
-        Application.msf.setInt(getApplicationContext(),"view",StartStory.getViewNum());
-    }
+
+
 }

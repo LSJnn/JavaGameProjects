@@ -728,7 +728,7 @@ public class StartStory {
                     break;
                 case 2 : ONE_tv2.setText(R.string.page35002);
                     break;
-                case 3 : changeCode = 5;
+                case 3 : changeCode = 5;//1 35 3
             }
         }
         else if (page == 37) {
@@ -1471,9 +1471,9 @@ public class StartStory {
                     TWO_tv3.setText("");
                     TWO_tv4.setText("");
                     TWO_tv2.setText( R.string.page16002);
+                    break;
                 case 2 :
-                    TWO_tv3.setText(l + f);
-                    TWO_tv3.append(" 친구가 취업 준비부터\n 여러가지 상황들 때문에\n 심적으로 힘들어 보여요~");
+                    TWO_tv3.setText(l + f+" 친구가 \n취업 준비부터\n 여러가지 상황들 때문에\n 심적으로 힘들어 보여요~");
                     break;
                 case 3:
                     TWO_tv4.setText(l + f+" : 네 아무래도 그렇죠..?");
@@ -1547,7 +1547,8 @@ public class StartStory {
             TWO_img1.setImageResource(R.drawable.pizza);
             switch (paragraph) {
                 case 1:
-                    mediaPlayer.stopMusic();
+                    if(mediaPlayer!=null){
+                        mediaPlayer.stopMusic();}
                     mediaPlayer.plahBgHoly();
                     TWO_tv2.setText(R.string.page21002);
                     break;
@@ -1620,7 +1621,8 @@ public class StartStory {
             TWO_img1.setImageResource(R.drawable.firework);
             switch (paragraph) {
                 case 1:
-                    mediaPlayer.stopMusic();
+                    if(mediaPlayer!=null){
+                        mediaPlayer.stopMusic();}
                     mediaPlayer.playBgAppre();
                     TWO_tv2.setText(R.string.page27002);
                     break;
@@ -1636,7 +1638,8 @@ public class StartStory {
             TWO_img1.setImageResource(R.drawable.firework);
             switch (paragraph) {
                 case 1:
-                    mediaPlayer.stopMusic();
+                    if(mediaPlayer!=null){
+                        mediaPlayer.stopMusic();}
                     mediaPlayer.playAfter();
                     TWO_tv2.setText(R.string.page32002);
                     break;
@@ -1879,7 +1882,8 @@ public class StartStory {
             TWO_img1.setImageResource(R.drawable.home);
             switch (paragraph) {
                 case 1:
-                    mediaPlayer.stopMusic();
+                    if(mediaPlayer!=null){
+                        mediaPlayer.stopMusic();}
                     mediaPlayer.plahBgHoly();
                     TWO_tv3.setText(l+f);
                     TWO_tv3.append(" : 엄마!! 엄마 있어??");
@@ -1928,7 +1932,8 @@ public class StartStory {
             TWO_img1.setImageResource(R.drawable.edu);
             switch (paragraph) {
                 case 1:
-                    mediaPlayer.stopMusic();
+                    if(mediaPlayer!=null){
+                        mediaPlayer.stopMusic();}
                     mediaPlayer.playBgSleep();
                     TWO_tv2.setText(l+f+" : 어휴 쌤~ \n저는 말할데도 없어요!!");
                     break;
@@ -1941,19 +1946,19 @@ public class StartStory {
             TWO_img1.setImageResource(R.drawable.edu);
             switch (paragraph) {
                 case 1:
-                    TWO_tv3.setText("");TWO_tv2.setText("");
-                    TWO_tv4.setText(R.string.page61001);
+                    TWO_tv3.setText("");TWO_tv4.setText("");
+                    TWO_tv2.setText(R.string.page61001);
                     break;
                 case 2:
-                    TWO_tv1.setVisibility(View.GONE);TWO_tv4.setText("");
-                    TWO_tv2.setText(R.string.page61002);
+                    TWO_tv3.setText(R.string.page61002);
                     break;
                 case 3:
-                    TWO_tv3.setText(R.string.page61003);
+                    TWO_tv3.setText("");TWO_tv4.setText("");
+                    TWO_tv2.setText(R.string.page61003);
                     break;
                 case 4:
-                    TWO_tv4.setText(l+f);
-                    TWO_tv4.append(" : 우와 면접도 봐요? \n좋은 데인가보다");
+                    TWO_tv3.setText(l+f);
+                    TWO_tv3.append(" : 우와 면접도 봐요? \n좋은 데인가보다");
                     break;
                 case  5: changeCode = 3;
                 break;
@@ -2075,7 +2080,8 @@ public class StartStory {
             TWO_img1.setBackgroundResource(R.drawable.teacher);
             switch (paragraph) {
                 case 1:
-                    mediaPlayer.stopMusic();
+                    if(mediaPlayer!=null){
+                        mediaPlayer.stopMusic();}
                     mediaPlayer.playBgSome();
                     TWO_tv3.setText(R.string.page81002);
                     break;
@@ -2570,7 +2576,8 @@ public class StartStory {
             TWO_img1.setImageResource(R.drawable.tea);
             switch (paragraph) {
                 case 1:
-                    mediaPlayer.stopMusic();
+                    if(mediaPlayer!=null){
+                        mediaPlayer.stopMusic();}
                     mediaPlayer.playAfter();
                     TWO_tv3.setText("");TWO_tv4.setText("");
                     TWO_tv2.setText(l+f);TWO_tv2.append(": 거기 교육받고 그러는 거\n" +
@@ -2916,7 +2923,8 @@ public class StartStory {
             TWO_img1.setBackgroundResource(R.drawable.teacher);
             switch (paragraph) {
                 case 1:
-                    mediaPlayer.stopMusic();
+                    if(mediaPlayer!=null){
+                        mediaPlayer.stopMusic();}
                     mediaPlayer.playBgCue();
                     TWO_tv2.setText("");
                     TWO_tv3.setText("");
@@ -2953,7 +2961,8 @@ public class StartStory {
             TWO_img1.setBackgroundResource(R.drawable.church);
             switch (paragraph) {
                 case 1:
-                    mediaPlayer.stopMusic();
+                    if(mediaPlayer!=null){
+                        mediaPlayer.stopMusic();}
                     mediaPlayer.playBgSpe();
                     TWO_tv2.setText(R.string.page154002);
                     break;
@@ -3398,7 +3407,8 @@ public class StartStory {
             TWO_img1.setBackgroundResource(R.drawable.everyday);
             switch (paragraph) {
                 case 1:
-                    mediaPlayer.stopMusic();
+                    if(mediaPlayer!=null){
+                        mediaPlayer.stopMusic();}
                     mediaPlayer.playBgBap();
                     TWO_tv4.setText("");TWO_tv3.setText("");
                     TWO_tv2.setText(R.string.page177002);
@@ -3498,15 +3508,14 @@ public class StartStory {
             }
         }
         else if(page ==26){
-            THREE_img1.setImageResource(R.drawable.firework);
             switch (paragraph){// 카톡 글미으로 바꾸는 건??
-                case 1:
+                case 1:THREE_img1.setImageResource(R.drawable.firework);
                         THREE_tv1.setText(R.string.page26002);
                     break;
                 case 2:
-                    THREE_imgbtn2.setVisibility(View.VISIBLE);THREE_imgbtn3.setVisibility(View.VISIBLE);THREE_imgbtn1.setVisibility(View.GONE);
-                    THREE_imgbtn2.setBackgroundResource(R.drawable.choice26001_1);
-                    THREE_imgbtn3.setBackgroundResource(R.drawable.choice26001_2);
+                    THREE_imgbtn1.setVisibility(View.VISIBLE);THREE_imgbtn2.setVisibility(View.VISIBLE);THREE_imgbtn3.setVisibility(View.GONE);
+                    THREE_imgbtn1.setBackgroundResource(R.drawable.choice26001_1);
+                    THREE_imgbtn2.setBackgroundResource(R.drawable.choice26001_2);
                     break;
 
             }
@@ -3554,7 +3563,7 @@ public class StartStory {
         }
         else if(page ==62){
             switch (paragraph){// 카톡 글미으로 바꾸는 건??
-                case 1:
+                case 1:THREE_img1.setImageResource(R.drawable.edu);
                     THREE_tv1.setText(R.string.page62001);
                     break;
                 case 2:
@@ -3625,7 +3634,7 @@ public class StartStory {
                     THREE_tv1.setText(R.string.page78002);
                     break;
                 case 2:
-                    THREE_tv2.setText(R.string.page78003);
+                    THREE_tv1.setText(R.string.page78003);
                     break;
                 case 3 :
                     THREE_imgbtn1.setVisibility(View.VISIBLE);
@@ -3658,7 +3667,8 @@ public class StartStory {
         else if(page ==100){
             switch (paragraph){
                 case 1 :
-                    mediaPlayer.stopMusic();
+                    if(mediaPlayer!=null){
+                        mediaPlayer.stopMusic();}
                     mediaPlayer.playBgSleep();
                 THREE_img1.setBackgroundResource(R.drawable.home);
                     THREE_tv1.setText(R.string.page100002);
@@ -3702,7 +3712,8 @@ public class StartStory {
         else if(page ==164){
             switch (paragraph){
                 case 1 :
-                    mediaPlayer.stopMusic();
+                    if(mediaPlayer!=null){
+                        mediaPlayer.stopMusic();}
                     mediaPlayer.playBgQuiet();
                     THREE_img1.setBackgroundResource(R.drawable.church);
                     THREE_tv1.setText("엄마 : "+f+"아\n 엄마도 새별지가 틀린 걸\n 알겠는데 너는 어떠니");
@@ -3883,7 +3894,8 @@ public class StartStory {
         else if(page ==41) {
                 switch (paragraph) {
                     case 1:
-                        mediaPlayer.stopMusic();
+                        if(mediaPlayer!=null){
+                            mediaPlayer.stopMusic();}
                         mediaPlayer.playBgSleep();
                         FOUR_tv1.setText(R.string.page41001);
                         break;
@@ -3943,7 +3955,8 @@ public class StartStory {
         else if(page ==110) {
             switch (paragraph) {
                 case 1:
-                    mediaPlayer.stopMusic();
+                    if(mediaPlayer!=null){
+                        mediaPlayer.stopMusic();}
                     mediaPlayer.playBgBlue();
                     kakao = 1;
                     break;

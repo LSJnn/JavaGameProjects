@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -78,7 +79,7 @@ public class T1_text_image extends AppCompatActivity {
         ti_tv4 = findViewById(R.id.t1_ti_tv4);
 
         startStory2=new StartStory();
-        startStory2.setViewNum(2);
+        //startStory2.setViewNum(2);
 
     }
 
@@ -477,7 +478,7 @@ public class T1_text_image extends AppCompatActivity {
                 break;
             case 5 :
                 Intent i0 = new Intent(T1_text_image.this,Success.class);
-                i0.putExtra("page",n);
+                i0.putExtra("page",n-1);
                 i0.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i0);
                 finish();
@@ -493,7 +494,9 @@ public class T1_text_image extends AppCompatActivity {
                 Intent i = new Intent(T1_text_image.this, MainActivity.class);
                 StartStory.getPage();
                 StartStory.getViewNum();
-                mediaPlayer.stopMusic();
+                if(mediaPlayer!=null){mediaPlayer.stopMusic();
+                }
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
                 finish();
 
@@ -504,7 +507,9 @@ public class T1_text_image extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(T1_text_image.this, Skip_popup.class);
                 //팝업--> 현재 보유개수. 사용/구매버튼.
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i);
+
             }
         });
 
@@ -533,7 +538,9 @@ public class T1_text_image extends AppCompatActivity {
 
         StartStory.getPage();
         StartStory.getViewNum();
-        mediaPlayer.stopMusic();
+        if(mediaPlayer!=null) {
+            mediaPlayer.stopMusic();
+        }
 
         System.out.println("PAGE 2 ============" +StartStory.getPage());
         System.out.println("VIewNUM 2 ============" +StartStory.getViewNum());
@@ -544,11 +551,17 @@ public class T1_text_image extends AppCompatActivity {
 
     }
 
-    public void setShared(){
-        Application.msf.setInt(getApplicationContext(),"page",StartStory.getPage());
-        Application.msf.setInt(getApplicationContext(),"view",StartStory.getViewNum());
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        int a = getIntent().getIntExtra("getPage",-1);
+        Intent intent = new Intent(this,T1_choice.class);
+        intent.putExtra("Restart",2);
+        intent.putExtra("getPage",a);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+
     }
-
-
-
 }

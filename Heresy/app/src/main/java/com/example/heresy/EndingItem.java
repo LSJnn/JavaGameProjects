@@ -2,6 +2,9 @@ package com.example.heresy;
 
 import android.graphics.drawable.Drawable;
 import android.media.Image;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,10 +17,12 @@ public class EndingItem {
     private int chapter;
     private String ending;
     int position;
-
     public EndingItem(int chapter){
         this.chapter= chapter;
     }
+
+    public EndingItem(){}
+
     public EndingItem(int chapter,int position){
         this.chapter= chapter;
         this.position = position;
@@ -27,6 +32,9 @@ public class EndingItem {
         this.chapter = chapter;
     }
 
+    public int getChanter(){
+        return chapter;
+    }
 
     public String getEnding(){
 
@@ -58,8 +66,8 @@ public class EndingItem {
                 break;
             case 12: ending = "평생을 새별지의 노예로 살다 인생 망함";
                 break;
-
-            case -1: ending =position+"? ? ? ? ? ?";
+            default: ending ="? ? ? ? ? ?";
+                System.out.println("-1 입니다.");
         }
         return ending;
     }

@@ -1,5 +1,6 @@
 package com.example.heresy;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -23,13 +24,14 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 public class Success extends AppCompatActivity {
 
     private InterstitialAd interstitialAd;
+    private final int ENTER = 201;
 
     ImageButton ending;ImageButton now;
     ImageView newEnding;
     ImageButton back;
     int page;
     MusicActivity mediaPlayer;
-    static boolean enter=false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,13 +58,13 @@ public class Success extends AppCompatActivity {
 
         Intent i = getIntent();
         page = i.getIntExtra("page",-1);
-        enter = i.getBooleanExtra("enter",false);
+        System.out.println("page========"+page);
 
         if(page!=-1){
             startBlink();
-        }
-
-        if(enter=true){
+            newEnding.setVisibility(View.VISIBLE);
+            System.out.println("startssssssss");
+        }else{
             stopBlink();
         }
 
@@ -87,13 +89,18 @@ public class Success extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(Success.this, MainActivity.class);
                 mediaPlayer = Application.getMusicActivity();
-                mediaPlayer.stopMusic();
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                if(mediaPlayer!=null){
+                    mediaPlayer.stopMusic();
+                }
+
                 if(interstitialAd.isLoaded()){
                     interstitialAd.show();
                 }else {
                     Log.d("TAG", "로드 실패.");
                 }
-                startActivity(i);
+
                 finish();
 
             }
@@ -105,7 +112,7 @@ public class Success extends AppCompatActivity {
                 Intent intent = new Intent(Success.this, Endings.class);
                 intent.putExtra("page",page);
                 System.out.println("page ="+page);
-                startActivity(intent);
+                startActivityForResult(intent , ENTER);
 
             }
         });
@@ -129,6 +136,24 @@ public class Success extends AppCompatActivity {
     public void stopBlink(){
         Animation stopAnim = AnimationUtils.loadAnimation(getApplication(),R.anim.blink_stop_anim);
         newEnding.startAnimation(stopAnim);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode==1){
+            stopBlink();
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(Success.this,MainActivity.class);
+        if(mediaPlayer!=null){mediaPlayer.stopMusic();}
+        System.out.println("PAGE 1 ============" +StartStory.getPage());
+        System.out.println("VIewNUM 4 ============" +StartStory.getViewNum());
+        finish();
+
     }
 
 }

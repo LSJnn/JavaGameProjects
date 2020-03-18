@@ -70,8 +70,11 @@ public class T1_choice extends AppCompatActivity {
                 Intent i = new Intent(T1_choice.this,MainActivity.class);
 /*                StartStory.getPage();
                 StartStory.getViewNum(); 어차피 set해져있으.*/
-                setShared();
-                mediaPlayer.stopMusic();
+
+                if(mediaPlayer!=null){
+                    mediaPlayer.stopMusic();}
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
                 finish();
             }
@@ -100,7 +103,8 @@ public class T1_choice extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(T1_choice.this, Skip_popup.class);
-                //팝업--> 현재 보유개수. 사용/구매버튼.
+                //팝업--> 현재 보유개수. 사용/구매버튼
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i);
             }
         });
@@ -437,7 +441,8 @@ public class T1_choice extends AppCompatActivity {
                             System.out.println("changeCode ============="+changeCode);
                             Application.setZ(true);
                             n=90;//짜장.
-                            mediaPlayer.stopMusic();
+                            if(mediaPlayer!=null){
+                                mediaPlayer.stopMusic();}
                             mediaPlayer.playBgSleep();
                             initializeLayout();
                             System.out.println("n==="+n);
@@ -568,7 +573,7 @@ public class T1_choice extends AppCompatActivity {
         c_tv2 = findViewById(R.id.t1_c_tv2);
 
         startStory3 = new StartStory();
-        startStory3.setViewNum(3);
+        //startStory3.setViewNum(3);
     }
 
     public void initializeLayout() {
@@ -611,12 +616,11 @@ public class T1_choice extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Intent i = new Intent(T1_choice.this,MainActivity.class);
-        mediaPlayer.stopMusic();
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-         StartStory.getPage();
-         StartStory.getViewNum();
+        if(mediaPlayer!=null){
+        mediaPlayer.stopMusic();}
 
-        // setShared();
 
         System.out.println("PAGE 1 ============" +StartStory.getPage());
         System.out.println("VIewNUM 4 ============" +StartStory.getViewNum());
@@ -625,10 +629,5 @@ public class T1_choice extends AppCompatActivity {
 
     }
 
-    public void setShared(){
-        Application.msf.setInt(getApplicationContext(),"page",StartStory.getPage());
-        Application.msf.setInt(getApplicationContext(),"view",StartStory.getViewNum());
-
-    }
 
 }

@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity{
         AdView main=findViewById(R.id.main_banner);
         AdRequest adRequest = new AdRequest.Builder().build();
         main.loadAd(adRequest);
-
+/////////////////////////////////광고///////////////////////////////////////
         this.initializeMain();
 
         this.setStartOnClick();
@@ -112,13 +112,12 @@ public class MainActivity extends AppCompatActivity{
         ending = findViewById(R.id.ending);
         tinyDB = new TinyDB(this);
         Application.setSavePageDB(tinyDB);
-        Application.getSavePageDB().putInt("skip",0);
-        Application.getSavePageDB().putInt("ad",4);
+       // Application.getSavePageDB().putInt("skip",0);
+       // Application.getSavePageDB().putInt("ad",4);
 
         mediaPlayer = new MusicActivity(this);
         Application.setMusicActivity(mediaPlayer);
         out=1;
-
         if(tinyDB.getInt("saveP")!=0){
             getViewNum=Application.getSavePageDB().getInt("saveV");
             getPage=Application.getSavePageDB().getInt("saveP");
@@ -211,7 +210,7 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onRestart() {
         super.onRestart();
-        mediaPlayer.stopMusic();
+        if(mediaPlayer!=null){mediaPlayer.stopMusic();}
         System.out.println("restart");
     }
 

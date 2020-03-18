@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Heresy</string>
-    <string name="page7001">나는 4년제 대학에 다니고 있는 \n평범한 대학생 </string>
+    <string name="page7001">나는 4년제 대학에 다니고 있는 평범한 대학생\n </string>
     <string name="page7002">방학임에도 불구하고 \n취업준비나 인간관계나 \n스트레스가 이만저만이 아니다."</string>
     <string name="page8001">가진이는 \n초등학생 때부터 쭉 \n친한 친구다.</string>
     <string name="page7003">너무 지치고 <font color='#FF0000'>힘들다..</font></string>
@@ -24,7 +24,7 @@
     <string name="page15005">다음은 \n집, 나무, 우물\n…그리고 뱀을 그려볼게요</string>
     <string name="page15006">...</string>
     <string name="page15007"> : 다 그렸어요!</string>
-    <string name="page16002">선생님 : 음.. 지금\n </string>
+    <string name="page16002">선생님 : 음.. 지금... </string>
     <string name="page16003"> 친구가 \n취업 준비부터\n여러가지 상황들 때문에\n심적으로 힘들어 보여요~</string>
     <string name="page16004"> : 네 \n아무래도 그렇죠...</string>
     <string name="page16005">선생님 : 혹시 부모님이 약간\n엄하신 편인가요?</string>
@@ -48,17 +48,17 @@
     <string name="page22005">가진 : 피자 진짜 맛있다ㅋㅋ.</string>
     <string name="page23002">해가 지고 한강 특유의 \n선선한 분위기가 어우러져\n힘들었던 요즘 \n큰 위로가 되었다.
     </string>
-    <string name="page24002"> 상담쌤 : 얘들아 잠깐만 쌤 \n 화장실 좀갔다올게</string>
+    <string name="page24002"> 상담쌤 : 얘들아 잠깐만\n쌤 화장실 좀 갔다올게</string>
     <string name="page24003">가진 : 쌤 저도 같이 가요!!</string>
     <string name="page24004"> : 제가 자리 지키고 있을게요~</string>
     <string name="page25002">쌤과 가진이가 같이 \n화장실을 가고 돗자리 위에 \n핸드폰이 하나 보인다.\n선생님의 것으로 추정되는데….
 </string>
     <string name="page26002"> 메시지 알림이 울리면서 \n미리보기가 살짝 보인다.</string>
-    <string name="page27002">(<b> 3구역 보고방?</b> 익명으로 돼있는 톡방이네 )</string>
+    <string name="page27002">(<b> 3구역 보고방?</b> \n익명으로 돼있는 톡방이네 )</string>
     <string name="page27003"> 원래 같으면 안 읽는게 정상이지만 \n뭔가 쎄한 느낌이 들어 \n나도 모르게 클릭해버렸다.</string>
     <string name="page28002">뭐야 웬 만남 결과?</string>
     <string name="page28003">지금 만나고 있는거 나랑 가진이잖아</string>
-    <string name="page28004">더 올려봐야겠다</string>
+    <string name="page28004">..더 올려봐야겠다</string>
     <string name="page29002">송가진????????인도자 섭외???</string>
     <string name="page29003">오늘이 28일이잖아..</string>
     <string name="page29004">..설마 내 얘기...??</string>
