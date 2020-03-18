@@ -169,7 +169,8 @@
 	@@ 쟁점 앱을 백그라운드로 했을 때에도 음악이 재생됨. 어떻게 정지 시키지..?
 	- onPause/ onResume 했는데도 재생됨. ..? 
 	
-3월 15일 : 1) splash 화면 적용-- 동영상 : MediaPlayer 로 적용. 예정.
+3월 15일 : 해야할 것.
+	   1) splash 화면 적용-- 동영상 : MediaPlayer 로 적용. 예정.
 
 	   2) 캐시 시스템 연동 시키기. --> 이와 함께 스킵 기능 연동시키기.
 	   	- @음악.. 은 메인에서 어디로 하든 메인테마가 재생됨.
@@ -182,7 +183,7 @@
 	   	==> 2번 뷰에서 back Pressed 수정하다 못함. 134 필요 
 		==> 생명주기 참고. onCreate() --> onStart --> onResume --> {onUserLeaveHint()}--> onPause --> onStop --> onRestart -->onStart
 		
-		==> 1: gif 파일 필요. 가로 세로 맞는.
+		==> 1: gif 파일 필요. 가로 세로 맞는.	-- 동영상.
 		    4: 뒤로가기 문제 해결. 	--> 텍스트뷰 입력안하면 알람뜨게하기.
 
 		    2: 캐시.. 도 16일 진행-광고 같이.
@@ -190,3 +191,18 @@
 		    + 5: 이전 페이지 . --  : 차라리 요약정리 식으로 ~부터 ~ 구간이면. setText. --> getPage 만 정리하면 됨.
 		    
 3월 16일 : 		
+	--- 모든 걸 총괄하는 StartStory 에서 tinyDB 저장하면된다~~~!!!!//여기서 ㅣ/f/page/VUewNUm 등등 ㅠㅠㅠ
+	--- tinyDB 로 리스트도 저장가능// https://github.com/kcochibili/TinyDB--Android-Shared-Preferences-Turbo
+	- adMob 광고 sdk 설치 및 테스트 광고 삽입.
+	
+3월 17일 : 배너 광고 삽입/ 전면광고 삽입/ 커스텀 광고 삽입.
+	 : 스킵권 레이아웃 구성. - 다이얼로그 테마 적용시킴.
+	 
+	 @에러 발생 : changeCode 로 viewNum 을 다음으로 넘김. but page는 아직 넘어가지 않은 경우 발생.
+	 	- 뷰가 변하고 넥스트 안누르고 종료될 경우. --> // @다이얼로그 생성으로 알려주기.
+		
+3월 18일 : 스킵 기능 구현. 
+	 : 인텐트 시 스택 문제 발생. --> addFlag 를 통해 조정. 
+	 : 엔딩 목록 에러 발견 - 최근 엔딩이 저장되는 대신, 그 전에 달성했던 엔딩이 사라짐.
+	 	--> EndingItemArray 저장 --> EndingItem를 list 형태로 저장.=> 간단/효율
+
