@@ -8,6 +8,7 @@
     android:background="@drawable/main_background">
 
     <TextView
+        android:id="@+id/tvSuccess"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -27,7 +28,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:adUnitId="ca-app-pub-6192078009124891/2799565065"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -67,7 +68,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:visibility="visible"
+        android:visibility="invisible"
         android:id="@+id/newEnding"
         android:layout_width="60dp"
         android:layout_height="50dp"

@@ -52,9 +52,8 @@
         android:fontFamily="@font/malgun"
         android:gravity="center"
         android:textAlignment="viewStart"
-        android:textSize="14sp"
+        android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="@+id/kakao_h1"
-        app:layout_constraintEnd_toEndOf="@+id/kakao_h1"
         app:layout_constraintStart_toStartOf="@+id/kakao_h1" />
 
     <ImageView

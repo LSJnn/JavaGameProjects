@@ -27,8 +27,8 @@
 
     <ImageView
         android:id="@+id/kakao38_m"
-        android:layout_width="220dp"
-        android:layout_height="50dp"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
         android:layout_marginTop="256dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
@@ -55,18 +55,17 @@
         android:layout_marginStart="70dp"
         android:layout_marginLeft="70dp"
         android:fontFamily="@font/malgun"
-        android:gravity="start"
+        android:gravity="center"
         android:textAlignment="textStart"
-        android:textSize="16sp"
+        android:textSize="14dp"
         app:layout_constraintBottom_toBottomOf="@+id/kakao38_h1"
-        app:layout_constraintEnd_toEndOf="@+id/kakao38_h1"
-        app:layout_constraintStart_toStartOf="@+id/kakao_h1" />
+        app:layout_constraintEnd_toEndOf="@+id/kakao38_h1" />
 
 
     <ImageView
         android:id="@+id/kakao38_h2"
-        android:layout_width="170dp"
-        android:layout_height="50dp"
+        android:layout_width="230dp"
+        android:layout_height="60dp"
         android:layout_marginStart="64dp"
         android:layout_marginLeft="64dp"
         android:layout_marginTop="172dp"

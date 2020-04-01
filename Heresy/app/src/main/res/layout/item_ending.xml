@@ -31,4 +31,14 @@
         app:layout_constraintStart_toStartOf="@+id/iv"
         app:layout_constraintTop_toTopOf="@+id/iv" />
 
+    <ImageView
+        android:id="@+id/newEnding"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/new_ending"
+        android:layout_margin="10dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

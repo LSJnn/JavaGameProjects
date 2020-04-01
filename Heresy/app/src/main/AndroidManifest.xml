@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.heresy">
+    package="com.heresy.heresy">
 
     <application
-        android:name=".Application"
+        android:name="com.heresy.heresy.Application"
         android:allowBackup="true"
         android:fontFamily="@font/hanchorong_n"
         android:icon="@mipmap/ic_launcher"
@@ -11,9 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyNoActionBarTheme">
-        <activity android:name=".Dialouge_Use"
+
+        <activity android:name="com.heresy.heresy.Dialouge_Use"
             android:theme="@style/Dialouge" ></activity>
-        <activity android:name=".Dialouge_Own_zero"
+        <activity android:name="com.heresy.heresy.Dialouge_Own_zero"
             android:theme="@style/Dialouge" />
 
         <meta-data
@@ -21,35 +22,35 @@
             android:value="ca-app-pub-6192078009124891~5702234038" />
 
         <activity
-            android:name=".Now"
+            android:name="com.heresy.heresy.Now"
             android:theme="@style/Dialouge" />
         <activity
-            android:name=".SplashActivity"
+            android:name="com.heresy.heresy.SplashActivity"
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Fine" />
+        <activity android:name="com.heresy.heresy.Fine" />
         <activity
-            android:name=".Skip_popup"
+            android:name="com.heresy.heresy.Skip_popup"
             android:theme="@style/Dialouge" />
         <activity
-            android:name=".SkipPage"
+            android:name="com.heresy.heresy.SkipPage"
             android:theme="@style/Dialouge" />
-        <activity android:name=".T1_kakao" />
-        <activity android:name=".T1_text" />
-        <activity android:name=".T1_text_image" />
-        <activity android:name=".T1_choice" />
-        <activity android:name=".Success" />
-        <activity android:name=".Endings" />
-        <activity android:name=".Story" />
-        <activity android:name=".SecondPage" />
-        <activity android:name=".MainActivity" />
+        <activity android:name="com.heresy.heresy.T1_kakao" />
+        <activity android:name="com.heresy.heresy.T1_text" />
+        <activity android:name="com.heresy.heresy.T1_text_image" />
+        <activity android:name="com.heresy.heresy.T1_choice" />
+        <activity android:name="com.heresy.heresy.Success" />
+        <activity android:name="com.heresy.heresy.Endings"
+            />
+        <activity android:name="com.heresy.heresy.Story" />
+        <activity android:name="com.heresy.heresy.SecondPage" />
+        <activity android:name="com.heresy.heresy.MainActivity" />
     </application>
 
 </manifest>

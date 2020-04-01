@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="12dp"
+    android:clickable="false"
     tools:context=".Skip_popup">
 
 
@@ -29,7 +30,7 @@
 
     <ImageButton
         android:id="@+id/skip_basic"
-        android:layout_width="150dp"
+        android:layout_width="140dp"
         android:layout_height="90dp"
         android:background="@drawable/skip_basic"
         app:layout_constraintBottom_toBottomOf="@+id/skip_bg"
@@ -80,6 +81,7 @@
         android:layout_height="70dp"
         android:layout_marginLeft="12dp"
         android:background="@drawable/skip_use"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buy"
         app:layout_constraintStart_toStartOf="@+id/skip_bg"

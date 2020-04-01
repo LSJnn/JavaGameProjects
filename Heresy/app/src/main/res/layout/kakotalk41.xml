@@ -44,8 +44,8 @@
 
     <ImageView
         android:id="@+id/kakao41_h1"
-        android:layout_width="230dp"
-        android:layout_height="80dp"
+        android:layout_width="210dp"
+        android:layout_height="70dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/kakao41_h1"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,19 +55,17 @@
 
     <TextView
         android:id="@+id/kao_tv1"
-        android:layout_width="130dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/malgun"
         android:gravity="start"
         android:textAlignment="textStart"
-        android:textSize="16sp"
+        android:textSize="13dp"
         app:layout_constraintBottom_toBottomOf="@+id/kakao41_h1"
-        app:layout_constraintEnd_toEndOf="@+id/kakao41_h1"
-        app:layout_constraintStart_toStartOf="@+id/kakao_h1" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/kakao41_h2"
@@ -83,7 +81,7 @@
 
     <ImageView
         android:id="@+id/kakao41_h3"
-        android:layout_width="170dp"
+        android:layout_width="172dp"
         android:layout_height="50dp"
         android:layout_marginStart="84dp"
         android:layout_marginLeft="84dp"

@@ -10,11 +10,10 @@
 
     <ImageView
         android:id="@+id/kakao_bg"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="500dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
         android:background="@drawable/kakao28_bg"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -77,28 +76,30 @@
 
     <ImageView
         android:id="@+id/kakao58_h3"
-        android:layout_width="230dp"
-        android:layout_height="65dp"
+        android:layout_width="240dp"
+        android:layout_height="75dp"
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="412dp"
         android:background="@drawable/kakao58_h3"
         android:visibility="invisible"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
         android:id="@+id/kao_tv1"
-        android:layout_width="180dp"
+        android:layout_width="190dp"
         android:layout_height="40dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/malgun"
         android:gravity="start"
         android:textAlignment="textStart"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/kakao58_h3"
-        app:layout_constraintEnd_toEndOf="@+id/kakao58_h3" />
-
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/kakao_bg"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

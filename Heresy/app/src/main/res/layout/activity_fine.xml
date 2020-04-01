@@ -23,14 +23,14 @@
         android:id="@+id/fine_tv1"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:padding="15dp"
         android:textAlignment="center"
         android:textSize="26dp"
-        app:layout_constraintBottom_toBottomOf="@+id/t1_ti_img1"
         app:layout_constraintEnd_toEndOf="@+id/fine_img1"
+        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="@+id/fine_img1"
-        app:layout_constraintTop_toTopOf="@+id/fine_img1"
-        app:layout_constraintVertical_bias="0.184" />
+        app:layout_constraintTop_toTopOf="@+id/fine_img1" />
 
     <TextView
         android:id="@+id/fine_tv2"
@@ -50,10 +50,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/fine_banner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="BANNER"
+        android:visibility="invisible"
+        app:adUnitId="ca-app-pub-6192078009124891/2799565065"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+    </com.google.android.gms.ads.AdView>
+
     <ImageButton
         android:id="@+id/backbtn"
         android:layout_width="100dp"
-        android:layout_height="55dp"
+        android:layout_height="53dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="12dp"
         android:background="@drawable/back"
@@ -63,30 +77,32 @@
     <ImageButton
         android:id="@+id/now"
         android:layout_width="100dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/now"
+        app:layout_constraintBottom_toBottomOf="@+id/backbtn"
         app:layout_constraintEnd_toStartOf="@+id/backbtn"
-        app:layout_constraintStart_toEndOf="@+id/skip"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toEndOf="@+id/endingBtn"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/skip"
-        android:layout_width="100dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/skip"
-        app:layout_constraintEnd_toStartOf="@id/now"
-        app:layout_constraintStart_toEndOf="@id/endingBtn"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/endingBtn"
-        android:layout_width="70dp"
-        android:layout_height="55dp"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="12dp"
         android:background="@drawable/ending"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/newEnding"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:background="@drawable/new_ending"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

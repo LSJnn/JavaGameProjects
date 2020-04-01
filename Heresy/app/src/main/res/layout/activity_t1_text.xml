@@ -4,38 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".T1_text"
-    android:background="@drawable/main_background">
+    android:background="@drawable/main_background"
+    tools:context=".T1_text">
 
     <TextView
         android:id="@+id/t1_o_tv1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp"
+        android:layout_marginTop="98dp"
+        android:layout_margin="15dp"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/t1_o_tv2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/t1_o_tv2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="15dp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/nextBtn"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/now" />
 
     <TextView
-        android:id="@+id/t1_o_tv3"
-        android:layout_width="wrap_content"
+        android:id="@+id/t1_o_tv2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp"
+        android:gravity="center"
+        android:layout_margin="15dp"
         android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/t1_o_tv3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t1_o_tv1" />
+
+    <TextView
+        android:id="@+id/t1_o_tv3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/nextBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t1_o_tv2" />
 
@@ -84,13 +90,11 @@
         android:id="@+id/endingBtn"
         android:layout_width="60dp"
         android:layout_height="50dp"
-        android:layout_marginTop="16dp"
         android:layout_marginLeft="12dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/ending"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
