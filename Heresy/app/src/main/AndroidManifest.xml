@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.heresy.heresy">
 
+
     <application
         android:name="com.heresy.heresy.Application"
         android:allowBackup="true"

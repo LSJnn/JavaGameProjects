@@ -122,7 +122,7 @@ public class T1_text_image extends AppCompatActivity {
         }else if(n==33){
             a=3;
         }else if(n ==36){
-            a = 4;
+            a = 5;
         }else if(n ==40){
             a = 5;
         }
@@ -581,7 +581,7 @@ public class T1_text_image extends AppCompatActivity {
         //홈갔다가 재시작. .. 다이얼로그?
         System.out.println("RESTART!!!");
         // 꺼져서. 재생안되있으면 새로 재생.
-        if(mediaPlayer!=null){
+        if(!mediaPlayer.isPlaying()){
             mediaPlayer.stopMusic();
                 startStory2.music(StartStory.getPage());
                 System.out.println("null!!!restart");

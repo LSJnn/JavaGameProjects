@@ -1669,13 +1669,15 @@ public class StartStory {
                 case 1:
                     TWO_tv2.setText(R.string.page36002);
                     break;
-                case 2:
+                case 2:TWO_tv2.append(" \n쌤,가진 : 우리 왔어");
+                break;
+                case 3 :
                     TWO_tv3.setText(R.string.page36003);
                     break;
-                case 3:TWO_tv3.setText("");
+                case 4:TWO_tv3.setText("");
                     TWO_tv2.setText(l+f+" : 그냥 불빛이 너무 예뻐서\n구경하고 있었어ㅎ\n빨리왔네ㅎㅎ");
                     break;
-                case 4:
+                case 5:
                     changeCode = 1;
                     break;
             }

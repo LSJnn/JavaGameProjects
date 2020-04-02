@@ -186,6 +186,7 @@ public class T1_choice extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //n 은 장 수 --> 7로 유지되야함. 123 이 끝날때 까지.
+
                 c++;
 
                 Nis();
@@ -587,6 +588,8 @@ public class T1_choice extends AppCompatActivity {
                 i1.putExtra("n",n);
                 i1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i1);
+                Application.getSavePageDB().putInt("saveP",n);
+                Application.getSavePageDB().putInt("saveV",1);
                 home=1;
                 finish();
                 break;
@@ -596,6 +599,8 @@ public class T1_choice extends AppCompatActivity {
                 i2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i2);
                 home=1;
+                Application.getSavePageDB().putInt("saveP",n);
+                Application.getSavePageDB().putInt("saveV",2);
                 finish();
                 break;
             case 4:
@@ -603,6 +608,8 @@ public class T1_choice extends AppCompatActivity {
                 Intent i4 = new Intent(T1_choice.this,T1_kakao.class);
                 i4.putExtra("n",n);
                 i4.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                Application.getSavePageDB().putInt("saveP",n);
+                Application.getSavePageDB().putInt("saveV",4);
                 startActivity(i4);
                 home=1;
                 finish();
@@ -612,6 +619,8 @@ public class T1_choice extends AppCompatActivity {
                 i0.putExtra("page",n);
                 i0.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 System.out.println("page ====="+n);
+                Application.getSavePageDB().putInt("saveP",n);
+                Application.getSavePageDB().putInt("saveV",5);
                 home=1;
                 startActivity(i0);
                 finish();
