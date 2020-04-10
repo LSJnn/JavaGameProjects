@@ -1,10 +1,14 @@
 package com.heresy.s_heresy;
 
+import android.content.Context;
+import android.os.AsyncTask;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 
 public class StartStory {
 
