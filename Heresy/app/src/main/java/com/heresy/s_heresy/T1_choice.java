@@ -1,4 +1,4 @@
-package com.heresy.heresy;
+package com.heresy.s_heresy;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,17 +25,18 @@ public class T1_choice extends AppCompatActivity {
     MusicActivity mediaPlayer = Application.getMusicActivity();
     int home;
 
-    int c=0; int p=0; int n; int a;
+    int c=1; int p=0; int n; int a;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_t1_choice);
-
+        Thread.setDefaultUncaughtExceptionHandler(new ErrorHandler(this));
         initializeView();
         getData();
 
         startStory3.getTHREE(c_img1,c_tv1,c_tv2,c_imgbtn1,c_imgbtn2,c_imgbtn3);
+        startStory3.setStory(3,n,c);
         nextOnClick();
 
         btnClick();
@@ -120,7 +121,7 @@ public class T1_choice extends AppCompatActivity {
         if(n==9){
             a = 3;
         }else if(n ==26){
-            a = 3;
+            a = 4;
         }
         else if(n ==45){
             a = 3;
@@ -153,7 +154,7 @@ public class T1_choice extends AppCompatActivity {
             a = 6;
         }
         else if(n ==117){
-            a = 3;
+            a = 4;
         }
         else if(n ==147){
             a = 3;
@@ -219,7 +220,7 @@ public class T1_choice extends AppCompatActivity {
                         }
                     });
                 }
-                else if(n==26&&p==2){
+                else if(n==26&&p==3){
                     next.setClickable(false);
 
                     c_imgbtn1.setOnClickListener(new View.OnClickListener() {
@@ -449,8 +450,9 @@ public class T1_choice extends AppCompatActivity {
                             System.out.println("changeCode ============="+changeCode);
                             Application.setZ(true);
                             n=90;//짜장.
-                            initializeLayout();
                             System.out.println("n==="+n);
+                            System.out.println("isZ==="+Application.isZ());
+                            initializeLayout();
 
                         }
                     });
@@ -490,7 +492,7 @@ public class T1_choice extends AppCompatActivity {
                 }
                 else if(n==117&&p==3){
                     next.setClickable(false);
-                    c_imgbtn1.setOnClickListener(new View.OnClickListener() {
+                    c_imgbtn2.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             changeCode=1;
@@ -500,7 +502,7 @@ public class T1_choice extends AppCompatActivity {
                         }
                     });
 
-                    c_imgbtn2.setOnClickListener(new View.OnClickListener() {
+                    c_imgbtn3.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             changeCode = 1;
@@ -637,7 +639,7 @@ public class T1_choice extends AppCompatActivity {
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         home=0;
         System.out.println("PAGE 1 ============" +StartStory.getPage());
-        System.out.println("VIewNUM 4 ============" +StartStory.getViewNum());
+        System.out.println("VIewNUM 3 ============" +StartStory.getViewNum());
         startActivity(i);
         finish();
 
@@ -671,9 +673,10 @@ public class T1_choice extends AppCompatActivity {
     protected void onRestart() {
         //홈갔다가 재시작. .. 다이얼로그?
         if(mediaPlayer!=null){
-                mediaPlayer.stopMusic();
-                startStory3.music(n);
-                System.out.println("null!!!restart");
+            mediaPlayer.stopMusic();
+                    startStory3.music(n);
+                    System.out.println("null!!!restart");
+
         }
         System.out.println("RESTART!!!");
 

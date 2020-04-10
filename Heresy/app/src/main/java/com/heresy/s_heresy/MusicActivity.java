@@ -1,17 +1,9 @@
-package com.heresy.heresy;
+package com.heresy.s_heresy;
 
 import android.content.Context;
-import android.media.AudioAttributes;
-import android.media.AudioFocusRequest;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.provider.MediaStore;
-import android.view.Window;
-
-import androidx.lifecycle.Lifecycle;
-
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
+import android.util.Log;
 
 public class MusicActivity extends MediaPlayer{
 
@@ -48,10 +40,12 @@ public class MusicActivity extends MediaPlayer{
                        break;
 
                    case AudioManager.AUDIOFOCUS_GAIN:
-                       if(playAudioFocus && !isPlaying()){
+                       if(playAudioFocus){
                            // 포커스 있는데 재생 안됨.
+                           System.out.println("GOAIN _ 포커스 있음.");
+                           Log.d("TAG","GOAIN _ 포커스 있음.");
                            mp.start();
-                       } else if(isPlaying()) {
+
                            // 재생되고 있을 때. --> transit 로 잠시 잃었을때.
                            mp.setVolume(1.0f, 1.0f);
                        }
@@ -81,7 +75,10 @@ public class MusicActivity extends MediaPlayer{
                        }
                        break;
                    case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK :
-
+                       if(mp!=null){
+                           playAudioFocus = true;
+                           mp.pause();
+                       }
                        break;
 
                }

@@ -1,4 +1,4 @@
-package com.heresy.heresy;
+package com.heresy.s_heresy;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,7 +25,7 @@ public class T1_text_image extends AppCompatActivity {
     int getPage;
     int home;
 
-    int c=0;int p=0; int n; int a;
+    int c=1;int p=0; int n; int a;
     int restart;
     MusicActivity mediaPlayer = Application.getMusicActivity();
 
@@ -33,7 +33,7 @@ public class T1_text_image extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_t1_txt_img);
-
+        Thread.setDefaultUncaughtExceptionHandler(new ErrorHandler(this));
         i = getIntent();
         initializeView();
         startStory2.getTWO(ti_img1,ti_tv1,ti_tv2,ti_tv3,ti_tv4);
@@ -60,6 +60,7 @@ public class T1_text_image extends AppCompatActivity {
 
 
         System.out.println("N = "+n);
+        startStory2.setStory(2,n,c);
 
         nextOnClick();
 
@@ -105,7 +106,7 @@ public class T1_text_image extends AppCompatActivity {
             a=4;
         }
         else if(n==21){
-            a=2;
+            a=3;
         }else if(n==22){
             a=3;
         }else if(n==23){
@@ -115,16 +116,16 @@ public class T1_text_image extends AppCompatActivity {
         }else if(n==25){
             a=3;
         }else if(n==27){
-            a=3;
+            a=4;
         }
         else if(n==32){
-            a=2;
+            a=3;
         }else if(n==33){
             a=3;
         }else if(n ==36){
-            a = 5;
+            a = 6;
         }else if(n ==40){
-            a = 5;
+            a = 7;
         }
         else if(n ==43){
             a = 5;
@@ -149,25 +150,25 @@ public class T1_text_image extends AppCompatActivity {
             a = 3;
         }
         else if( n ==53){
-            a = 4;
+            a = 5;
         }
         else if( n ==54){
             a = 4;
         }
         else if( n ==56){
-            a = 6;
+            a = 7;
         }
         else if( n ==57){
             a = 4;
         }
         else if( n ==60){
-            a = 2;
+            a = 3;
         }
         else if( n ==61){
             a = 5;
         }
         else if( n ==67){
-            a = 5;
+            a = 6;
         }
         else if( n ==69){
             a =6;
@@ -197,7 +198,7 @@ public class T1_text_image extends AppCompatActivity {
             a = 4;
         }
         else if( n ==86){
-            a = 3;
+            a = 4;
         }
         else if( n ==87){
             a = 5;
@@ -206,7 +207,7 @@ public class T1_text_image extends AppCompatActivity {
             a = 7;
         }
         else if( n ==90){
-            a = 3;
+            a = 4;
         }
         else if( n ==91){
             a = 5;
@@ -218,67 +219,67 @@ public class T1_text_image extends AppCompatActivity {
             a = 6;
         }
         else if( n ==95){
-            a = 3;
+            a = 4;
         }
         else if( n ==96){
             a = 4;
         }
         else if( n ==97){
-            a = 4;
+            a = 5;
         }
         else if( n ==98){
             a = 6;
         }
         else if( n ==101){
-            a = 5;
+            a = 6;
         }
         else if( n ==102){
             a = 5;
         }
         else if( n ==104){
-            a = 4;
+            a = 7;
         }
         else if( n ==106){
-            a = 3;
+            a = 4;
         }
         else if( n ==107){
-            a = 3;
+            a = 5;
         }
         else if( n ==108){
             a = 5;
         }
         else if( n ==109){
-            a = 6;
+            a = 7;
         }
         else if( n ==120){
-            a = 5;
+            a = 6;
         }
         else if( n ==121){
-            a = 6;
+            a = 8;
         }
         else if( n ==125){
-            a = 6;
+            a = 7;
         }
         else if( n ==126){
             a = 6;
         }
         else if( n ==127){
-            a = 4;
+            a = 5;
         }
         else if( n ==128){
-            a = 7;
+            a = 9;
         }
         else if( n ==131){
-            a = 5;
+            a = 6;
         }
         else if( n ==132){
             a = 3;
         }
         else if( n ==133){
-            a = 3;
+            a = 4;
         }
         else if( n ==134){
-            a = 4;
+            a = 5;
         }
         else if( n ==135){
             a = 3;
@@ -299,19 +300,19 @@ public class T1_text_image extends AppCompatActivity {
             a = 4;
         }
         else if( n ==142){
-            a = 4;
+            a = 5;
         }
         else if( n ==143){
-            a = 4;
+            a = 5;
         }
         else if( n ==144){
             a = 4;
         }
         else if( n ==145){
-            a = 7;
+            a = 8;
         }
         else if( n ==154){
-            a = 5;
+            a = 6;
         }
         else if( n ==155){
             a = 4;
@@ -359,25 +360,25 @@ public class T1_text_image extends AppCompatActivity {
             a = 3;
         }
         else if( n ==173){
-            a = 3;
+            a = 4;
         }
         else if( n ==174){
             a = 3;
         }
         else if( n ==175){
-            a = 5;
+            a = 6;
         }
         else if( n ==176){
             a = 3;
         }
         else if( n ==177){
-            a = 3;
+            a = 4;
         }
         else if( n ==178){
             a = 3;
         }
         else if( n ==180){
-            a = 3;
+            a = 4;
         }
         else if( n ==181){
             a = 9;
@@ -405,19 +406,6 @@ public class T1_text_image extends AppCompatActivity {
                 n =52;
             }else if(n==50){// 불교 -- 따라가기
                 n=52;
-            }else if(n==90){
-                if(mediaPlayer!=null) {
-                    mediaPlayer.stopMusic();
-                }
-                mediaPlayer.playBgSleep();
-                n++;
-            }else if(n ==95&&Application.isZ()){
-                //먹으면.
-                if(mediaPlayer!=null) {
-                    mediaPlayer.stopMusic();
-                }
-                mediaPlayer.playBgSome();
-                n++;
             }
             else if(n==109&&Application.isZ()==false){//안먹으면 131로
                 n=131;//109페이지. 먹으면 그냥 그대로
@@ -564,6 +552,7 @@ public class T1_text_image extends AppCompatActivity {
         if(home == 0){
             if(mediaPlayer!=null) {
                 mediaPlayer.stopMusic();
+                mediaPlayer.release();
             }
         }
         super.onPause();
@@ -581,11 +570,10 @@ public class T1_text_image extends AppCompatActivity {
         //홈갔다가 재시작. .. 다이얼로그?
         System.out.println("RESTART!!!");
         // 꺼져서. 재생안되있으면 새로 재생.
-        if(!mediaPlayer.isPlaying()){
             mediaPlayer.stopMusic();
                 startStory2.music(StartStory.getPage());
                 System.out.println("null!!!restart");
-        }
+
         super.onRestart();
 
     }

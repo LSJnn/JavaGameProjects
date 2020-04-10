@@ -5,13 +5,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="500dp"
+    android:layout_height="400dp"
     >
 
     <ImageView
         android:id="@+id/kakao_bg"
         android:layout_width="wrap_content"
-        android:layout_height="500dp"
+        android:layout_height="400dp"
         android:background="@drawable/kakao28_bg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,10 +20,10 @@
     <ImageView
         android:id="@+id/kakao113_m1"
         android:layout_width="240dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/kakao113_m1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -34,10 +34,10 @@
     <ImageView
         android:id="@+id/kakao113_m2"
         android:layout_width="180dp"
-        android:layout_height="75dp"
+        android:layout_height="65dp"
         android:layout_marginTop="176dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/kakao113_m2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -46,10 +46,10 @@
 
     <ImageView
         android:id="@+id/kakao113_h1"
-        android:layout_width="180dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_width="205dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="84dp"
         android:background="@drawable/kakao113_h1"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,8 +59,8 @@
 
     <ImageView
         android:id="@+id/kakao113_h2"
-        android:layout_width="260dp"
-        android:layout_height="75dp"
+        android:layout_width="280dp"
+        android:layout_height="85dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="252dp"

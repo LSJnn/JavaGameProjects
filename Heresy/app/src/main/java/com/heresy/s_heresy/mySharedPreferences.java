@@ -1,4 +1,4 @@
-package com.heresy.heresy;
+package com.heresy.s_heresy;
 
 import android.content.Context;
 import android.content.SharedPreferences;

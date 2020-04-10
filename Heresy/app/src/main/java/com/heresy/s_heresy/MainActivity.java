@@ -1,19 +1,14 @@
-package com.heresy.heresy;
+package com.heresy.s_heresy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.BroadcastReceiver;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
-import android.service.dreams.DreamService;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.initialization.InitializationStatus;
@@ -51,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         //메인배너
         AdView main=findViewById(R.id.main_banner);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -67,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
         MobileAds.setRequestConfiguration(requestConfiguration);
 
 /////////////////////////////////광고///////////////////////////////////////
-        this.initializeMain();
-        this.setStartOnClick();
+        initializeMain();
+        setStartOnClick();
 
         checkVIsibility();
 
@@ -98,20 +92,17 @@ public class MainActivity extends AppCompatActivity {
 
         if (0 < getViewNum && getViewNum < 5) {
             loadgame.setVisibility(View.VISIBLE);
-        } else { // 없거나 엔딩봤을때.5,6
+        } else {
             loadgame.setVisibility(View.GONE);
         }
     }
 
-    //crate- start-resume-홈킴- usefhint(꺼졌다 신호.) - pause- stop-restart-start/유저에 의해 홈버튼 누르기 직전 호출. // 액티비티가 백그라운드 가기 직전 호출.
-
-
     public void initializeMain() {
+        tinyDB = new TinyDB(this);
         start = findViewById(R.id.start);
         newgame = findViewById(R.id.newgame);
         loadgame = findViewById(R.id.loadgame);
         ending = findViewById(R.id.ending);
-        tinyDB = new TinyDB(this);
 
         Application.setSavePageDB(tinyDB);
 
@@ -120,14 +111,16 @@ public class MainActivity extends AppCompatActivity {
         out=0;
         //광고
 
-        if(tinyDB.getInt("saveP")!=0){
+        if(Application.getSavePageDB().getInt("saveP")!=0){
             //page 에 전 기록이 저장되어 있으면. // 없으면. 0.
             //현재 페이지 표시변수.
             getViewNum=Application.getSavePageDB().getInt("saveV");
+            Application.getSavePageDB().getInt("saveV");
             getPage=Application.getSavePageDB().getInt("saveP");
+
+            System.out.println("INIT저장 ㅣ getVIewNUm ========"+getViewNum);
+            System.out.println("INIT저장 : getPage========"+getPage);
         }
-        System.out.println("INIT저장 ㅣ getVIewNUm ========"+getViewNum);
-        System.out.println("INIT저장 : getPage========"+getPage);
 
         pageToEnding = getIntent().getIntExtra("page",-1);
 
@@ -166,7 +159,6 @@ public class MainActivity extends AppCompatActivity {
                 loadgame.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
                         if (getViewNum == 1) {
                             intent = new Intent(MainActivity.this, T1_text.class);
                         } else if (getViewNum == 2) {
@@ -214,14 +206,11 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     protected void onDestroy() {
+
         System.out.println("DESYROY!!!!!!");
         if(mediaPlayer!=null){
             mediaPlayer.release();
         }
-        tinyDB.putInt("saveP",StartStory.getPage());
-        tinyDB.putInt("saveV",StartStory.getViewNum());
-
-        System.out.println("getPage ======"+ StartStory.getPage());
         super.onDestroy();
 
     }

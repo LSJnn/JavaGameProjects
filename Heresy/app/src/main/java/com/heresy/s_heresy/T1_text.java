@@ -1,4 +1,4 @@
-package com.heresy.heresy;
+package com.heresy.s_heresy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,7 +21,7 @@ public class T1_text extends AppCompatActivity {
 
     Intent i1; int restart;
 
-    int n; int p=0; int c=0; int a;// paragraph 조정. 나누기 3 --> 나머지 1=001/ 2 = 002/ 3= 003
+    int n; int p=0; int c=1; int a;// paragraph 조정. 나누기 3 --> 나머지 1=001/ 2 = 002/ 3= 003
     StartStory startStory;
     MusicActivity mediaPlayer;
 
@@ -32,13 +32,14 @@ public class T1_text extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_t1_text);
-
+        Thread.setDefaultUncaughtExceptionHandler(new ErrorHandler(this));
         initializeVIew();
 
         getData();
 
         startStory.getONE(otv1,otv2,otv3);
-
+        // 1로 시작하기 위해.
+        startStory.setStory(1,n,c);
         nextOnClick();// 다음 누르면 이야기 전개됨
 
         btnClick();
@@ -187,7 +188,7 @@ public class T1_text extends AppCompatActivity {
         if(n==7){
             a = 4;
         }if(n==34){
-            a = 2;
+            a = 3;
         }if(n==35){
             a=3;
         }
@@ -250,7 +251,7 @@ public class T1_text extends AppCompatActivity {
             a =3;
         }
         if(n ==116){
-            a =3;
+            a =6;
         }
         if(n ==118){
             a =5;
@@ -258,10 +259,10 @@ public class T1_text extends AppCompatActivity {
         if(n ==119){
             a =6;
         }
-        if(n ==128){
+        if(n ==129){
             a =4;
         }
-        if(n ==129){
+        if(n ==130){
             a =7;
         }
         if(n ==140){
@@ -338,6 +339,7 @@ public class T1_text extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //n 은 장 수 --> 7로 유지되야함. 123 이 끝날때 까지.
+
                 c++;
                 Nis();
                 PageIs(a);
@@ -386,7 +388,7 @@ public class T1_text extends AppCompatActivity {
     protected void onRestart() {
         //홈갔다가 재시작. .. 다이얼로그?
         if(mediaPlayer!=null){
-                mediaPlayer.stopMusic();
+            mediaPlayer.stopMusic();
                 startStory.music(n);
                 System.out.println("null!!!restart");
         }

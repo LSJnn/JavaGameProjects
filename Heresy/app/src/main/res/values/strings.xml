@@ -56,8 +56,8 @@
     <string name="page26002"> 메시지 알림이 울리면서 \n미리보기가 살짝 보인다.</string>
     <string name="page27002">(<b> 3구역 보고방?</b> \n익명으로 돼있는 톡방이네 )</string>
     <string name="page27003"> 원래 같으면 안 읽는게 정상이지만 \n뭔가 쎄한 느낌이 들어 \n나도 모르게 클릭해버렸다.</string>
-    <string name="page28002">뭐야 웬 만남 결과?</string>
-    <string name="page28003">지금 만나고 있는거 나랑 가진이잖아</string>
+    <string name="page28002">뭐야 웬 만남 결과?..\n</string>
+    <string name="page28003">지금 만나고 있는 거..나랑 가진이잖아\n</string>
     <string name="page28004">..더 올려봐야겠다</string>
     <string name="page29002">송가진????????인도자 섭외???</string>
     <string name="page29003">오늘이 28일이잖아..</string>
@@ -72,8 +72,7 @@
     <string name="page32003">치가 떨리고 믿을 수 없었다.\n눈물이 난다.</string>
     <string name="page33003">마주할 자신이 없다.\n자리를 떠야겠다.</string>
     <string name="page34001">나는 집으로 돌아왔고\n가진이와 선생님의 부재중 전화, \n쌓여있는 메시지를 모두 다 무시했다.</string>
-    <string name="page34002">다소 허무함과 회의감이 들긴 했지만\n가진이와의 인연은 여기까지라고\n생각했고 깔끔하게
-\n연락을 끊었다.</string>
+    <string name="page34002">다소 허무함과 회의감이 든다.\n 그렇게 친했던 아이가 나를...</string>
     <string name="page35001">모든 게 한 여름밤의 꿈같다..</string>
     <string name="page35002">힘들지만 잘한거라고 생각한다.</string>
     <string name="page36002">부시럭 부시럭…\n</string>
@@ -87,7 +86,7 @@
     심리적으로 안정된 것 같아서 쌤이 정말 기뻐!!
     <string name="page39003"> 나 : ㅠㅠ쌤이 신경 많이 써주셨죠</string>
     <string name="page39004">
-상담쌤 : 힘들거나 그런거 있으면\n언제든지 말해.\n\n다 들어줄테니까.</string>
+상담쌤 : 힘들거나 그런거 있으면\n언제든지 말해.</string>
     <string name="page39005">나 : 감사해요..!</string>
     <string name="page41001">그러던 어느 날 선생님한테 \n의미심장한 연락이 왔다.</string>
 
@@ -102,7 +101,7 @@
     <string name="page44002">상담쌤 : 흠 .. 공부에도 여러 종류가 있는데 그 공자 알지?
 </string>
     <string name="page44003">공자가 쓴 책이랑, 불교경전, 아니면
-        아 맞다 제일 유명한게 <font color='#FF0000'>성경</font> 아닌가?</string>
+        아 맞다 제일 유명한게 \n<font color='#FF0000'>성경</font> 아닌가?</string>
     <string name="page44004">이렇게 3개중에 골라서 연관지어서 공부한다고 생각하면 돼
 </string>
     <string name="page45002">이 중에서 고르자면\n 뭐가 제일 나으려나?</string>
@@ -385,7 +384,7 @@
     <string name="page89002">교육 강사 : 자 여러분
 \n오늘 교육도 다들 잘 받으셨겠다.
 \n다같이 짜장면 먹으러 가실까요??</string>
-    <string name="page89003">교육생들 : 아메엔~~!!</string>
+    <string name="page89003">\n교육생들 : 아메엔~~!!</string>
 
 
     <string name="page90002">교육 강사 :  오늘 다들 열심히 하셨으니까 맛있게 드세요~!!</string>
@@ -393,7 +392,7 @@
     <string name="page90004">(웅성웅성웅성 빨리먹자
 \n수근수근 이수근)</string>
 
-    <string name="page91002">내 앞에는 처음보는 남학생이 있었다.</string>
+    <string name="page91002">내 앞에는 처음 보는 \n남학생이 있었다.</string>
     <string name="page91003">짜장면을 먹으려던 찰나
 \n나와 눈이 마주쳤다</string>
     <string name="page91004">도환 : ㅎㅎ안녕하세요!</string>
@@ -436,7 +435,7 @@
 구원으로 이어지는 것이죠?</string>
     <string name="page96003">
 그렇다면 뭐에요. \n그 과정에서
-필요한 \n선의의 거짓말.
+필요한 \n선의의 거짓말.\n
 그것들은 거짓말이 아닌 거에요</string>
     <string name="page96004">오히려 우리한테 감사해야 하는것이죠. 그들은.</string>
     <string name="page96005">열정남 : (응당 그래야한다는 톤)아메엔~~~~!
@@ -498,10 +497,7 @@
     <string name="page103006">오히려 홀가분 한 것 같다.
 </string>
 
-    <string name="page104002">아빠 : 그래? 고생이 많네 우리 딸\n
-아빠가 잔소리 하는 것 같아도
-다\n 우리 딸 생각해서 하는 소리인 거 알지? 취업 때문에 부담 갖지 말고..
-.</string>
+    <string name="page104002">아빠 : 그래? 고생이 많네 우리 딸\n</string>
     <string name="page104003">(이래도 되는걸까\n마음 한 켠이 불편해진다)</string>
 
     <string name="page105001">결국 센터 사람들의 등쌀에
@@ -516,9 +512,9 @@
     <string name="page106003">요한계시록을 정확하게 알고 \n그대로 실천하고 준비해야만이 \n구원받고  천국 갈 수 있는거에요\n 여러분.</string>
     <string name="page106004">열정남 : (희망찬 톤)아멘~~~~~~!</string>
 
-    <string name="page107002">교육강사 : 여러분.세상 사람들이 교회나 성당밖에서 성경 배우면
+    <string name="page107002">교육강사 : 여러분. 세상 사람들이 교회나 성당 밖에서 성경 배우면
 이단이나 사이비라고 하죠?\n 그런 말에 현혹되지 마십시오.</string>
-    <string name="page107003">예수님도 그 옛날엔 이단이라고 불리고 핍박받았습니다.\n 하지만 지금 보세요 \n메시아라고 찬양받고 있지않습니까?!</string>
+    <string name="page107003">예수님도 그 옛날엔 이단이라고 불리고 핍박받았습니다.</string>
     <string name="page107004">열정남 : (약간 구슬픈 다운톤) 아메엔~!..</string>
 
     <string name="page100802">그동안 기성교회에서도 힘드셨죠 많이.. 힘드셨을 줄로 압니다</string>
@@ -533,16 +529,16 @@
     <string name="page109004">같은조 언니2 : 어 진짜 ㅇㅈㅇㅈ</string>
     <string name="page109005">같은조 언니1 : </string>
 
-    <string name="page110002">도환이가 끝나고 잠깐 보자고 하네\n 무슨 일이지…..</string>
+    <string name="page110002">도환이가 끝나고 잠깐 보자고 하네\n 무슨 일이지…</string>
 
 
-    <string name="page111001">도환 : 누나 휴학소식 들었어요
+    <string name="page111001">도환 : 누나 휴학소식 들었어요\n
 하.. 그냥 하지말지..</string>
-    <string name="page111004">누나.. 요즘 여기 수상한 점이
+    <string name="page111004">누나..\n 요즘 여기 수상한 점이\n
 한 두 가지가 아닌 거 것 같아요..</string>
-    <string name="page111003">제가 교회에서 배웠던 교리와
-너무 다른 것 같아요.
-전도할 때 거짓말을 하라는 것도
+    <string name="page111003">제가 교회에서 배웠던 교리와\n
+너무 다른 것 같아요.\n
+전도할 때 거짓말을 하라는 것도\n
 이해가 안가요..</string>
 
     <string name="page112001">도환 : 처음에는 다들 열정적이고
@@ -562,37 +558,30 @@
     <string name="page113003">일반 교회에서도 그 정도로
 신앙있는 사람 있기도 드문데,, </string>
 
-    <string name="page114001">도환 : 그리고 누나 가진이누나랑
+    <string name="page114001">도환 : 그리고 누나 가진이 누나랑
 같이 들어온 거라고 하지않았어요?</string>
     <string name="page114002">그 누나 저번에 신촌 근처에서
 전도하고 있던데요?</string>
-    <string name="page114003">설문조사 하고가라고 하면서
-이거 전형적인 새별지 포교 수법이잖아요 </string>
+    <string name="page114003">설문조사 하고 가라고 하면서..\n
+        이거.. \n<font color ='#FF0000'>전형적인 새별지 포교 수법</font>이잖아요 </string>
 
-    <string name="page115001">도환 : 하.. 저는
-같은 교회 정말 믿고 따르는
-집사님께서 여기를 소개해주신건데
+    <string name="page115001">도환 : 하.. 저는 정말 믿고 따르는
+        \n같은 교회 집사님께서 소개해주신건데\n
 이렇게 되면 ..</string>
     <string name="page115002">정말 믿기 힘들지만..</string>
     <string name="page115003">그 집사님이 새별지라는 거잖아요..
 ….</string>
 
-    <string name="page116001">도환 : 저번에 누나 교육 못 온 적 있잖아요
-원래 교육 끝나면 잠깐 모여서
-교제시간 갖는 거
-그날 누나네 조만 안하고 흩어졌어요.
-우연일수도 있겠지만..</string>
+    <string name="page116001">도환 : 전에도.. 누나 한 번 교육 \n들으러 못 온 날 있잖아요\n
+</string>
     <string name="page116002">그러니까
 제가 내일 안 갈게요.
-누나가 우리 조 모이는지
+누나가 우리 조 모이는지\n
 안 모이는지 봐줘요.</string>
-    <string name="page116003">누나도 지금 여기서
-휴학까지 하게 만들었잖아요..</string>
+
 
     <string name="page117001">도환이의 말을 들으니\n
-너무 혼란스럽다.\n
-이제야 자리를 좀 잡아가는가 싶었는데\n
-어떡하면 좋을까?</string>
+너무 혼란스럽다.\n</string>
 
     <string name="page118001">나 : 힘들게 결정 내려서 여기까지 왔고
 나는 언니들이랑도
@@ -625,23 +614,22 @@
     <string name="page120003">그래서 우리를 진리에 도달할 수
 없도록 막는 거에요.</string>
     <string name="page120004">열정남 : (마치 그들과 싸워
-이겨야 한다는 듯한 결연한 톤)아메엔~~~~!!</string>
+이겨야 한다는 듯한 결연한 톤) \m 아메엔~~~~!!</string>
 
-    <string name="page121001">교제시간을 위해 조끼리 모이는 중…</string>
+    <string name="page121001">교제시간을 위해 \n조끼리 모이는 중…</string>
     <string name="page121001_1">도환이네 조 신도들이
     슬그머니 일어나더니 밖으로 나갔다. </string>
     <string name="page121002">나 : (어?저분들....!
 왜 그냥 나가지?)</string>
-    <string name="page121003">(그럼 진짜로 도환이 빼고
-나머지 저분들은
+    <string name="page121003">(그럼 진짜로 도환이 빼고\n
+나머지 저분들은\n
 새별지 원래 신도라는 거야?)</string>
     <string name="page121004">(미친 거 아니야 진짜)</string>
     <string name="page121005">(여태 다 연기한 거라고???)</string>
 
-    <string name="page123001">새별지가 얼마나 악명높고
-쓰레기같은 사이비인지 알기에
-분명 상처입은 나이지만
-가진이에게 마지막 연락을 해보았다.</string>
+    <string name="page123001">새별지가 얼마나 악명높고\n
+쓰레기같은 사이비인지 알기에\n
+</string>
 
 
     <string name="page125002">가진 : 엉 왜? 너도 재밌게 다니고 있잖아
@@ -651,33 +639,32 @@
     <string name="page125005">그게 무슨 소리야~????</string>
 
     <string name="page126002"><b>교주 김만춘 따르는 사이비!!!</b></string>
-    <string name="page126003">가진 : (표정 싹 바뀌면서)
+    <string name="page126003">가진 : (표정 싹 바뀌면서)\n
 ㅋㅋ너 그거 어떻게 알았냐?</string>
-    <string name="page126004">가진 : 난 6만6천명 안에 들어서
+    <string name="page126004">가진 : 난 6만6천명 안에 들어서\n
 천국 갈거야ㅎㅎㅎ</string>
-    <string name="page126005">너 같은 애들 전도해서 내가
+    <string name="page126005">너 같은 애들 전도해서 내가\n
 구원받을 거라구ㅎㅎㅎㅎ</string>
 
-    <string name="page127002">가진 : 너는 이미 영이 죽었어
-그건 뭐 어쩔 수 없네. 제명이야~
-너한테 내가 비진리 영을 옮으면 안되니까 </string>
+    <string name="page127002">가진 : 너는 이미 영이 죽었어\n
+그건 뭐 어쩔 수 없네. </string>
     <string name="page127003">내 연락처 지우거나
 차단 해줄래?</string>
-    <string name="page127004">가진 : 글쎄~? 한 5년 전까지는 그랬었나?ㅎ
+    <string name="page127004">가진 : 글쎄~? \n한 5년 전까지는 그랬었나?ㅎ\n
         기억이 안 나네 ㅎ</string>
 
     <string name="page128001">가진 : 야 너 미쳤어?</string>
     <string name="page128002">가진 :너 미쳤니?!! 미친거지 ?!</string>
     <string name="page128003">어떻게 감히 메시아의 이름을
-망령되이 일컬을 수가 있어!!!!
+망령되이 일컬을 수가 있어!!!!\n\n
 부들부들부들!</string>
     <string name="page128004">(가진의 눈에 핏발이 선다.)</string>
     <string name="page128005">나 : 하.. 너랑은 여기까지인 것 같다.\n 너랑 있던 지난 시간이 너무 아까워.
-(일어서서 나감)</string>
+</string>
 
-    <string name="page129002">집에 가는 동안
+    <string name="page129002">집에 가는 동안\n
 하염없이 울었던 것 같다.</string>
-    <string name="page129003">친구가 저렇게 될 때 까지도
+    <string name="page129003">친구가 저렇게 될 때 까지도\n
 눈치 채지 못했던 내가 밉고
 </string>
     <string name="page129004">새별지에 들어갈 뻔한 나도 밉고
@@ -1000,7 +987,7 @@
     <string name="page172004">…….</string>
 
     <string name="page173002">경찰관 : 신고가 들어와서요.</string>
-    <string name="page173003">(속삭이며)너가 </string>
+    <string name="page173003">(속삭이며)네가 </string>
 
     <string name="page174002">경찰관 : 어머니\n
 보시면 아시겠지만\n

@@ -1,4 +1,4 @@
-package com.heresy.heresy;
+package com.heresy.s_heresy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -43,6 +43,7 @@ public class Endings extends AppCompatActivity {
         tinyDB = Application.getSavePageDB();
         exit= findViewById(R.id.exit);
         startStory = new StartStory();
+        star= 0;
 
         /////엔딩 설정.
         final Intent i = getIntent();
@@ -74,6 +75,7 @@ public class Endings extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+                star=1;
             }
         });
 
@@ -85,6 +87,7 @@ public class Endings extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         finish();
+        star=1;
     }
 
     public void defaultEnding(){
@@ -139,7 +142,7 @@ public class Endings extends AppCompatActivity {
                 endingItemArrayList.add(9,new EndingItem(9));
                 break;
                 //여기부터,
-            case 141:
+            case 131:
                 endingItemArrayList.remove(10);
                 endingItemArrayList.add(10,new EndingItem(10));
                 break;
@@ -160,19 +163,18 @@ public class Endings extends AppCompatActivity {
     protected void onPause() {
         //액티비티가 다른데로 넘어갈때 - 다이얼로그 / 다른 뷰로.
         //홈으로 갈떄 --> 이때만 음악 멈춤.
-            if(mediaPlayer!=null) {
+        if(star!=1) {
+            if (mediaPlayer != null) {
                 mediaPlayer.stopMusic();
-                super.onPause();
             }
+        }
+        super.onPause();
         System.out.println("PAUSE!!!");
     }
 
     @Override
     protected void onDestroy() {
         System.out.println("DESTROY!!!");
-        if(mediaPlayer!=null){
-            mediaPlayer.release();
-        }
         super.onDestroy();
     }
 

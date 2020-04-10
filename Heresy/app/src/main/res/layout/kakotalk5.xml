@@ -5,13 +5,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="450dp"
+    android:layout_height="500dp"
     >
 
     <ImageView
         android:id="@+id/kakao_bg"
         android:layout_width="wrap_content"
-        android:layout_height="450dp"
+        android:layout_height="500dp"
         android:background="@drawable/kakao28_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
         android:id="@+id/kakao_bgtxt"
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="10dp"
         android:layout_marginLeft="28dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/kako28_bgt"
@@ -36,6 +36,7 @@
         android:layout_marginTop="76dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:visibility="invisible"
         android:background="@drawable/kakao30_m"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -57,7 +58,7 @@
 
     <ImageView
         android:id="@+id/kakao30_h"
-        android:layout_width="200dp"
+        android:layout_width="180dp"
         android:layout_height="55dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"

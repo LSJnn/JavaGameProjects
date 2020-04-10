@@ -1,18 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="80dp"
-    android:layout_marginBottom="50dp"
+    android:layout_marginTop="10dp"
     android:layout_marginLeft="12dp"
-    android:layout_marginRight="12dp">
+    android:layout_marginRight="12dp"
+    android:orientation="vertical">
 
     <TextView
+        android:id="@+id/error_msg"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="아래의 내용을 캡쳐해서 보내주세요"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/error_img"
+        android:layout_width="match_parent"
+        android:layout_height="590dp"
+        android:background="@drawable/main_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/error_msg"/>
+
+    <TextView
+        android:id="@+id/error_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="엔딩을 보셨습니다.\n 다시 시작해 주십시오."
-        android:textSize="45sp"
-        android:layout_gravity="center"
-        />
+        android:layout_gravity="start"
+        android:textSize="14dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginRight="12dp"
+        app:layout_constraintTop_toTopOf="@id/error_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

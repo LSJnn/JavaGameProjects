@@ -1,4 +1,4 @@
-package com.heresy.heresy;
+package com.heresy.s_heresy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.lang.reflect.Array;
+import java.util.List;
 
 public class T1_kakao extends AppCompatActivity {
     //프레임 레이아웃은 갈아끼는 방식으로. 매번. 어쩔 수 없다.
@@ -26,7 +29,7 @@ public class T1_kakao extends AppCompatActivity {
     String f; String l; int restart;
 
     StartStory startStory4;
-    int c=0; int p=0; int n; int a ; // Nis 에 사용. Page 설정.
+    int c=1; int p=0; int n; int a ; // Nis 에 사용. Page 설정.
     int getPage; int home;
 
     LayoutInflater layoutInflater;
@@ -39,13 +42,17 @@ public class T1_kakao extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_t1_kakao);
-
-        getData();
-
+        Thread.setDefaultUncaughtExceptionHandler(new ErrorHandler(this));
         initializeView();
+        getData();
         initializeLayout();
 
         startStory4.getFOUR(k_tv1,k_tv2,k_tv3,k_view,kao1,kao2 );
+        startStory4.setStory(4,n,c);
+
+        if(n!=8&n!=20&n!=38&n!=41){
+            changeView(1);
+        }
         nextOnClick();
 
 
@@ -70,6 +77,7 @@ public class T1_kakao extends AppCompatActivity {
         }else if(restart==2){
             n=getPage;
             if(mediaPlayer!=null){
+                System.out.println("null 임.");
                 mediaPlayer.stopMusic();
                 startStory4.music(n);
             }
@@ -98,7 +106,6 @@ public class T1_kakao extends AppCompatActivity {
         mediaPlayer = Application.getMusicActivity();
         home=0;
 
-      //  startStory4.setViewNum(4);
         System.out.println("initializeVIew!!!!!!!!!!!!!!!!!!!!!1");
     }
 
@@ -135,17 +142,17 @@ public class T1_kakao extends AppCompatActivity {
                 startActivity(i0);
                 home=1;
                 finish();
-            default: //아무것도 안함.
+            default://아무것도 안함.
         }
     }
 
     public void Nis(){
         if(n==8){
-            a = 7;
+            a = 8;
         }if(n==10){
-            a = 6;
+            a = 7;
         }if(n==20){
-            a=5;
+            a=6;
         }
         if(n==28){//+1; d왜? 뷰 지우려고.
             a=6;
@@ -153,37 +160,37 @@ public class T1_kakao extends AppCompatActivity {
         if(n==29){
             a=8;
         }if(n==30){
-            a=3;
+            a=4;
         }
         if(n==31){
-            a=6;
+            a=7;
         }
         if(n==38){  // 여기도 아마 +1 해야할 듯..
-            a=5;
+            a=6;
         }
         if(n == 39){
-            a = 4;
-        }
-        if(n == 41){
-            a = 8;
-        }
-        if(n==42){
             a = 5;
         }
-        if(n==58){
+        if(n == 41){
+            a = 9;
+        }
+        if(n==42){
             a = 6;
         }
+        if(n==58){
+            a = 7;
+        }
         if(n==110){
-            a = 4;
+            a = 5;
         }
         if(n==122){
-            a = 4;
+            a = 5;
         }
         if(n==123){
-            a = 4;
+            a = 7;
         }
         if(n==124){
-            a = 4;
+            a = 5;
         }
         if(n==179){
             a = 7;
@@ -208,7 +215,6 @@ public class T1_kakao extends AppCompatActivity {
         if(p==a){// codeChange 메소드.
             n++;
             c=0;
-            removeVIew();
             changeCode=startStory4.changeCode;
             System.out.println("changeCode ============="+changeCode);
         }
@@ -222,10 +228,8 @@ public class T1_kakao extends AppCompatActivity {
         View.OnClickListener nextOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("버튼버ㅡㅌㄴ버튼!!!!!!!!!!!!!!!!!!!!!1");
-                System.out.println(getPage+"---------page-------------");
-                System.out.println(n+"--------n--------------");
-
+                System.out.println(getPage+"---------page4-------------");
+                System.out.println(n+"--------n4--------------");
                 c++;
                 Nis();
                 PageIs(a);
@@ -240,8 +244,6 @@ public class T1_kakao extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(T1_kakao.this, MainActivity.class);
-                StartStory.getPage();
-                StartStory.getViewNum();
                 home=0;
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
@@ -337,6 +339,11 @@ public class T1_kakao extends AppCompatActivity {
         System.out.println("START");
         home=0;
         super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     public void kakao1(){
@@ -485,15 +492,6 @@ public class T1_kakao extends AppCompatActivity {
         k_img2 = findViewById(R.id.kakao179_h2);
     }
 
-
-
-    public void removeVIew(){
-        if(k_view.getChildCount()>0){
-            k_view.removeAllViews();
-        }
-
-    }
-
     public void changeView(int kakao) {
         layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -502,19 +500,21 @@ public class T1_kakao extends AppCompatActivity {
             switch (kakao) {
                 case 2:
                     k_view.setVisibility(View.VISIBLE);
+                    break;
+                case 3:
                     k_img1.setVisibility(View.VISIBLE);
                     kao1.setText(f+" 뭐해");
                     break;
-                case 3:
+                case 4:
                     k_img2.setVisibility(View.VISIBLE);
                     break;
-                case 4:
+                case 5:
                     k_img3.setVisibility(View.VISIBLE);
                     break;
-                case 5:
+                case 6:
                     k_img4.setVisibility(View.VISIBLE);
                     break;
-                case 6:
+                case 7:
                     k_img5.setVisibility(View.VISIBLE);
                     break;
             }
@@ -524,12 +524,14 @@ public class T1_kakao extends AppCompatActivity {
             switch (kakao) {
                 case 1:
                     k_view.setVisibility(View.VISIBLE);
+                    break;
+                case 2 :
                     k_img1.setVisibility(View.VISIBLE);
                     break;
-                case 2:
+                case 3:
                     k_img2.setVisibility(View.VISIBLE);
                     break;
-                case 3:
+                case 4:
                     k_img3.setVisibility(View.VISIBLE);
                     break;
             }
@@ -539,13 +541,15 @@ public class T1_kakao extends AppCompatActivity {
             switch (kakao) {
                 case 1:
                     k_view.setVisibility(View.VISIBLE);
+                    break;
+                case 2 :
                     k_img1.setVisibility(View.VISIBLE);
                     kao1.setText(f);kao1.append(" 오늘 뭐해?");
                     break;
-                case 2:
+                case 3:
                     k_img2.setVisibility(View.VISIBLE);
                     break;
-                case 3:
+                case 4:
                     k_img3.setVisibility(View.VISIBLE);
                     break;
             }
@@ -555,9 +559,11 @@ public class T1_kakao extends AppCompatActivity {
             switch (kakao) {
                 case 1:
                     k_view.setVisibility(View.VISIBLE);
+                    break;
+                case 2 :
                     k_img1.setVisibility(View.VISIBLE);
                     break;
-                case 2:
+                case 3:
                     k_img2.setVisibility(View.VISIBLE);
                     break;
             }
@@ -568,9 +574,11 @@ public class T1_kakao extends AppCompatActivity {
             switch (kakao) {
                 case 1:
                     k_view.setVisibility(View.VISIBLE);
-                    k_img1.setVisibility(View.VISIBLE);
                     break;
                 case 2:
+                    k_img1.setVisibility(View.VISIBLE);
+                    break;
+                case 3:
                     k_img2.setVisibility(View.VISIBLE);
                     break;
             }
@@ -581,13 +589,16 @@ public class T1_kakao extends AppCompatActivity {
             switch (kakao) {
                 case 1:k_tv1.setText("");
                     k_view.setVisibility(View.VISIBLE);
+                    break;
+                case 2 :
+                    k_img1.setVisibility(View.VISIBLE);
                     kao1.setText("[만남 결과 보고]\n" +
                             "인도자 : 송가진\n" +
                             "대상자 :  ");kao1.append(l+f);
                     kao1.append("\n" +
                             "협력자 : 최상담\n");
                     break;
-                case 2  :
+                case 3  :
                     k_img2.setVisibility(View.VISIBLE);
                     break;
             }
@@ -598,15 +609,17 @@ public class T1_kakao extends AppCompatActivity {
             switch (kakao) {
                 case 1:k_tv1.setText("");
                     k_view.setVisibility(View.VISIBLE);
-                    k_img1.setVisibility(View.VISIBLE);
                     break;
                 case 2:
-                    k_img2.setVisibility(View.VISIBLE);
+                    k_img1.setVisibility(View.VISIBLE);
                     break;
                 case 3:
-                    k_img3.setVisibility(View.VISIBLE);
+                    k_img2.setVisibility(View.VISIBLE);
                     break;
                 case 4:
+                    k_img3.setVisibility(View.VISIBLE);
+                    break;
+                case 5:
                     k_img4.setVisibility(View.VISIBLE);
                     break;
             }
@@ -617,31 +630,34 @@ public class T1_kakao extends AppCompatActivity {
             switch (kakao) {
                 case 1:
                     k_view.setVisibility(View.VISIBLE);
+                    break;
+                case 2:
                     k_img1.setVisibility(View.VISIBLE);
                     kao1.setText(f);kao1.append("!! \n오늘도 화이팅!");
                     break;
-                case 2:
+                case 3:
                     k_img2.setVisibility(View.VISIBLE);
                     break;
-                case 3:
+                case 4:
                     k_img3.setVisibility(View.VISIBLE);
                     break;
             }
 
         }
         else if (n == 39) {
-
             kakao39();
             switch (kakao) {
                 case 1:
                     k_view.setVisibility(View.VISIBLE);
+                    break;
+                case 2 :
                     k_img1.setVisibility(View.VISIBLE);
                     kao1.setText(f+"아~ 항상 \n 너를 위해 기도해~");
                     break;
-                case 2:
+                case 3:
                     k_img2.setVisibility(View.VISIBLE);
                     break;
-                case 3:
+                case 4:
                     k_img3.setVisibility(View.VISIBLE);
                     break;
             }
@@ -652,23 +668,25 @@ public class T1_kakao extends AppCompatActivity {
             switch (kakao) {
                 case 1:
                     k_view.setVisibility(View.VISIBLE);
-                    k_img1.setVisibility(View.VISIBLE);
-                    kao1.setText(f);
-                    kao1.append("아 오늘 꿈에 \n너가 나왔다.");
                     break;
                 case 2:
-                    k_img2.setVisibility(View.VISIBLE);
+                    k_img1.setVisibility(View.VISIBLE);
+                    kao1.setText(f);
+                    kao1.append("아 오늘 꿈에 네가 나왔다.");
                     break;
                 case 3:
-                    k_img3.setVisibility(View.VISIBLE);
+                    k_img2.setVisibility(View.VISIBLE);
                     break;
                 case 4:
-                    k_img4.setVisibility(View.VISIBLE);
+                    k_img3.setVisibility(View.VISIBLE);
                     break;
                 case 5:
-                    k_img5.setVisibility(View.VISIBLE);
+                    k_img4.setVisibility(View.VISIBLE);
                     break;
                 case 6:
+                    k_img5.setVisibility(View.VISIBLE);
+                    break;
+                case 7:
                     k_img6.setVisibility(View.VISIBLE);
                     break;
             }
@@ -679,16 +697,18 @@ public class T1_kakao extends AppCompatActivity {
             switch (kakao) {
                 case 1:
                     k_view.setVisibility(View.VISIBLE);
-                    k_img1.setVisibility(View.VISIBLE);
                     break;
                 case 2:
+                    k_img1.setVisibility(View.VISIBLE);
+                    break;
+                case 3:
                     k_img2.setVisibility(View.VISIBLE);
                     //kao1.setText("너는 잘 모를 수도 있지만\n 영적으로 튼튼해야 모든 일이\n 잘 풀릴 수 있어.");
                     break;
-                case 3:
+                case 4:
                     k_img3.setVisibility(View.VISIBLE);
                     break;
-                case 4:
+                case 5:
                     k_img4.setVisibility(View.VISIBLE);
                     break;
             }
@@ -699,18 +719,20 @@ public class T1_kakao extends AppCompatActivity {
             switch (kakao) {
                 case 1:
                     k_view.setVisibility(View.VISIBLE);
-                    k_img1.setVisibility(View.VISIBLE);
                     break;
                 case 2:
-                    k_img2.setVisibility(View.VISIBLE);
+                    k_img1.setVisibility(View.VISIBLE);
                     break;
                 case 3:
-                    k_img3.setVisibility(View.VISIBLE);
+                    k_img2.setVisibility(View.VISIBLE);
                     break;
                 case 4:
-                    k_img4.setVisibility(View.VISIBLE);
+                    k_img3.setVisibility(View.VISIBLE);
                     break;
                 case 5:
+                    k_img4.setVisibility(View.VISIBLE);
+                    break;
+                case 6:
                     k_img5.setVisibility(View.VISIBLE);
                     kao1.setText("뭐하냐 ");kao1.append(l+f);kao1.append("~~~ 얘 어떡함 ;;; \n빨리 나오셈;;");
                     break;
@@ -722,9 +744,11 @@ public class T1_kakao extends AppCompatActivity {
             switch (kakao) {
                 case 1:
                     k_view.setVisibility(View.VISIBLE);
-                    k_img1.setVisibility(View.VISIBLE);
                     break;
                 case 2:
+                    k_img1.setVisibility(View.VISIBLE);
+                    break;
+                case 3:
                     k_img2.setVisibility(View.VISIBLE);
                     break;
             }
@@ -734,15 +758,17 @@ public class T1_kakao extends AppCompatActivity {
             switch (kakao) {
                 case 1:
                     k_view.setVisibility(View.VISIBLE);
+                    break;
+                case 2 :
                     k_img1.setVisibility(View.VISIBLE);
                     break;
-                case 2:
+                case 3:
                     k_img2.setVisibility(View.VISIBLE);
                     break;
-                case 3:
+                case 4:
                     k_img3.setVisibility(View.VISIBLE);
                     break;
-                case 4:
+                case 5:
                     k_img4.setVisibility(View.VISIBLE);
                     break;
 
@@ -754,15 +780,17 @@ public class T1_kakao extends AppCompatActivity {
             switch (kakao) {
                 case 1:
                     k_view.setVisibility(View.VISIBLE);
-                    k_img1.setVisibility(View.VISIBLE);
                     break;
                 case 2:
-                    k_img2.setVisibility(View.VISIBLE);
+                    k_img1.setVisibility(View.VISIBLE);
                     break;
                 case 3:
-                    k_img3.setVisibility(View.VISIBLE);
+                    k_img2.setVisibility(View.VISIBLE);
                     break;
                 case 4:
+                    k_img3.setVisibility(View.VISIBLE);
+                    break;
+                case 5:
                     k_img4.setVisibility(View.VISIBLE);
                     break;
 
@@ -773,12 +801,14 @@ public class T1_kakao extends AppCompatActivity {
             switch (kakao) {
                 case 1:
                     k_view.setVisibility(View.VISIBLE);
-                    k_img1.setVisibility(View.VISIBLE);
                     break;
                 case 2:
+                    k_img1.setVisibility(View.VISIBLE);
+                    break;
+                case 3:
                     k_img2.setVisibility(View.VISIBLE);
                     break;
-                case 3 : k_img3.setVisibility(View.VISIBLE);
+                case 4 : k_img3.setVisibility(View.VISIBLE);
                     break;
             }
 

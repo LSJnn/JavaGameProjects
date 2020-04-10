@@ -1,4 +1,4 @@
-package com.heresy.heresy;
+package com.heresy.s_heresy;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,7 +19,6 @@ public class Skip_popup extends AppCompatActivity {
     ImageButton exit;
     int skip;
     int ad;
-    public static int adchange;
     int home;
 
     private static int USE_CODE = 11111;
@@ -36,6 +35,7 @@ public class Skip_popup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_skip_popup);
 
+        Thread.setDefaultUncaughtExceptionHandler(new ErrorHandler(this));
         get = getIntent();//들어옴.
         startStory = new StartStory();
         skip=Application.getSavePageDB().getInt("skip");
@@ -116,11 +116,11 @@ public class Skip_popup extends AppCompatActivity {
             System.out.println("skip ====" + skip);
             System.out.println("ad ====" + ad);
 
-            if (ad == 5) {
+/*            if (ad==5) {
                 Toast.makeText(getApplicationContext(),"광고 티켓 5장이 스킵권 1장으로 변경되었습니다.",Toast.LENGTH_SHORT).show();
                 Application.getSavePageDB().putInt("skip", skip + 1);
                 Application.getSavePageDB().putInt("ad", 0);
-            }
+            }*/
 
             System.out.println("디비 저장" + Application.getSavePageDB().getInt("skip"));
             own.setText(Application.getSavePageDB().getInt("skip") + " 장");
@@ -287,6 +287,7 @@ public class Skip_popup extends AppCompatActivity {
         System.out.println("SkipgetVuew"+ StartStory.getPage());
 
     }
+
     public void intentDO(int a){
 
         finish();
@@ -322,10 +323,7 @@ public class Skip_popup extends AppCompatActivity {
     }
 
     @Override
-    protected void onRestart() {
-        if(mediaPlayer!=null) {
-            startStory.music(StartStory.getPage());
-        }
-        super.onRestart();
+    protected void onResume() {
+        super.onResume();
     }
 }
