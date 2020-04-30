@@ -19,7 +19,7 @@ public class SecondPage extends AppCompatActivity {
 
     int home;
 
-    MusicActivity mediaPlayer =Application.getMusicActivity();
+    //MusicActivity mediaPlayer =Application.getMusicActivity();
     StartStory startStory;
 
     @Override
@@ -98,13 +98,14 @@ public class SecondPage extends AppCompatActivity {
         //홈으로 갈떄 --> 이때만 음악 멈춤.
         System.out.println("HOME+++++++"+home);
         if(home == 0){
-            if(mediaPlayer!=null) {
+           /* if(mediaPlayer!=null) {
                 mediaPlayer.stopMusic();
                 super.onPause();
-            }
+            }*/
         }else{
             super.onPause();
         }
+        super.onPause();
         System.out.println("PAUSE!!!");
     }
 
@@ -117,11 +118,11 @@ public class SecondPage extends AppCompatActivity {
     @Override
     protected void onRestart() {
         //홈갔다가 재시작. .. 다이얼로그?
-        if(mediaPlayer!=null){
+     /*   if(mediaPlayer!=null){
                 mediaPlayer.stopMusic();
                 startStory.music(StartStory.getPage());
                 System.out.println("null!!!restart");
-        }
+        }*/
         System.out.println("RESTART!!!");
 
         super.onRestart();

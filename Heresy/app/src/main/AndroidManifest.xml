@@ -2,9 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.heresy.s_heresy">
 
-
     <application
-        android:name="com.heresy.s_heresy.Application"
+        android:name=".Application"
         android:allowBackup="true"
         android:fontFamily="@font/hanchorong_n"
         android:icon="@mipmap/ic_launcher"
@@ -12,10 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyNoActionBarTheme">
+        <service
+            android:name=".MusicService"
+            android:enabled="true"
+            android:exported="true"></service>
 
-        <activity android:name="com.heresy.s_heresy.Dialouge_Use"
-            android:theme="@style/Dialouge" ></activity>
-        <activity android:name="com.heresy.s_heresy.Dialouge_Own_zero"
+        <receiver android:name=".Receiver" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_CLOSE_SYSTEM_DIALOGS"></action>
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".Dialouge_Use"
+            android:theme="@style/Dialouge" />
+        <activity
+            android:name=".Dialouge_Own_zero"
             android:theme="@style/Dialouge" />
 
         <meta-data
@@ -23,35 +34,35 @@
             android:value="ca-app-pub-6192078009124891~5702234038" />
 
         <activity
-            android:name="com.heresy.s_heresy.Now"
+            android:name=".Now"
             android:theme="@style/Dialouge" />
         <activity
-            android:name="com.heresy.s_heresy.SplashActivity"
+            android:name=".SplashActivity"
             android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.heresy.s_heresy.Fine" />
+        <activity android:name=".Fine" />
         <activity
-            android:name="com.heresy.s_heresy.Skip_popup"
+            android:name=".Skip_popup"
             android:theme="@style/Dialouge" />
         <activity
-            android:name="com.heresy.s_heresy.SkipPage"
+            android:name=".SkipPage"
             android:theme="@style/Dialouge" />
-        <activity android:name="com.heresy.s_heresy.T1_kakao" />
-        <activity android:name="com.heresy.s_heresy.T1_text" />
-        <activity android:name="com.heresy.s_heresy.T1_text_image" />
-        <activity android:name="com.heresy.s_heresy.T1_choice" />
-        <activity android:name="com.heresy.s_heresy.Success" />
-        <activity android:name="com.heresy.s_heresy.Endings"
-            />
-        <activity android:name="com.heresy.s_heresy.ErrorStory" />
-        <activity android:name="com.heresy.s_heresy.SecondPage" />
-        <activity android:name="com.heresy.s_heresy.MainActivity" />
+        <activity android:name=".T1_kakao" />
+        <activity android:name=".T1_text" />
+        <activity android:name=".T1_text_image" />
+        <activity android:name=".T1_choice" />
+        <activity android:name=".Success" />
+        <activity android:name=".Endings" />
+        <activity android:name=".ErrorStory" />
+        <activity android:name=".SecondPage" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

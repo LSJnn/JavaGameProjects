@@ -181,6 +181,59 @@ public class MusicActivity extends MediaPlayer{
         System.out.println("mp = bap");
    }
 
+    public void music(int p){
+
+        if(-1<=p&&p<=21){
+            playBgSleep();
+        }else if(p<=40) {
+            if(26<p&&p<32){
+                playBgAppre();
+            }else if(32<=p&&p<=35){
+                playAfter();
+            }else {
+                plahBgHoly();
+            }
+        } else if (p<=83){
+            if (55<p&&p<=59){
+                plahBgHoly();
+            }else{
+                playBgSleep();
+            }
+        }else if(p<110){
+            if(90<=p&&p<=95){
+                playBgSleep();
+            }else {
+                playBgSome();
+            }
+        }
+        else if(p<=117){
+            playBgSleep();
+        }
+        else if(p<=128){
+            playBgBlue();
+        }else if(p<=131){
+            playAfter();
+        }else if(p<=144){
+            playBgBlue();
+        }else if(p<=154){
+            playBgCue();
+        }else if(p<=164){
+            playBgSpe();
+        } else if(p<=168){
+            playBgQuiet();
+        } else if(p<=176){
+            playBgSome();
+        }else if(p<=185){
+            playBgBap();
+        }
+        else {
+            System.out.println("기본 시작.");
+        }
+        System.out.println("지그믕ㄴ"+StartStory.getPage());
+
+    }
+
+
 
 
 

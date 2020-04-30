@@ -27,7 +27,7 @@ public class T1_text_image extends AppCompatActivity {
 
     int c=1;int p=0; int n; int a;
     int restart;
-    MusicActivity mediaPlayer = Application.getMusicActivity();
+    //MusicActivity mediaPlayer = Application.getMusicActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +50,10 @@ public class T1_text_image extends AppCompatActivity {
 
         }else if(restart==2){
             n=getPage;
-            if(mediaPlayer!=null){
+           /* if(mediaPlayer!=null){
                 mediaPlayer.stopMusic();
                 startStory2.music(n);
-            }
+            }*/
             System.out.println("getPage ===="+getPage+"n ====="+n);
             restart=1;
         }
@@ -492,7 +492,7 @@ public class T1_text_image extends AppCompatActivity {
                 Intent i = new Intent(T1_text_image.this, MainActivity.class);
 /*                StartStory.getPage();
                 StartStory.getViewNum();*/
-                if(mediaPlayer!=null){mediaPlayer.stopMusic(); }
+                //if(mediaPlayer!=null){mediaPlayer.stopMusic(); }
                 home=0;
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
@@ -550,10 +550,10 @@ public class T1_text_image extends AppCompatActivity {
         //액티비티가 다른데로 넘어갈때 - 다이얼로그 / 다른 뷰로.
         //홈으로 갈떄 --> 이때만 음악 멈춤.
         if(home == 0){
-            if(mediaPlayer!=null) {
+            /*if(mediaPlayer!=null) {
                 mediaPlayer.stopMusic();
                 mediaPlayer.release();
-            }
+            }*/
         }
         super.onPause();
         System.out.println("PAUSE!!!");
@@ -570,9 +570,9 @@ public class T1_text_image extends AppCompatActivity {
         //홈갔다가 재시작. .. 다이얼로그?
         System.out.println("RESTART!!!");
         // 꺼져서. 재생안되있으면 새로 재생.
-            mediaPlayer.stopMusic();
+            /*mediaPlayer.stopMusic();
                 startStory2.music(StartStory.getPage());
-                System.out.println("null!!!restart");
+                System.out.println("null!!!restart");*/
 
         super.onRestart();
 

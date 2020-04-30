@@ -22,7 +22,7 @@ public class Fine extends AppCompatActivity {
     TextView fine_tv1;TextView fine_tv2;
     AdView adview; ImageView newEnding;
     StartStory startStory= new StartStory();
-    MusicActivity mediaPlayer = Application.getMusicActivity();
+    //MusicActivity mediaPlayer = Application.getMusicActivity();
     int home;
     TinyDB tinyDB = Application.getSavePageDB();
 
@@ -65,7 +65,7 @@ public class Fine extends AppCompatActivity {
         fine_tv1 = findViewById(R.id.fine_tv1);
         fine_tv2 = findViewById(R.id.fine_tv2);
 
-        mediaPlayer=Application.getMusicActivity();
+        //mediaPlayer=Application.getMusicActivity();
         Application.getSavePageDB().putInt("saveV",6);
     }
 
@@ -159,10 +159,10 @@ public class Fine extends AppCompatActivity {
         //홈으로 갈떄 --> 이때만 음악 멈춤.
         System.out.println("HOME+++++++"+home);
         if(home == 0){
-            if(mediaPlayer!=null) {
+   /*         if(mediaPlayer!=null) {
                 mediaPlayer.stopMusic();
                 super.onPause();
-            }
+            }*/
             System.out.println("mediaPlayer == null");
             super.onPause();
         }else{
@@ -182,11 +182,11 @@ public class Fine extends AppCompatActivity {
     protected void onRestart() {
         //홈갔다가 재시작. .. 다이얼로그?
         newEnding.setVisibility(View.INVISIBLE);
-        if(mediaPlayer!=null){
+ /*       if(mediaPlayer!=null){
             mediaPlayer.stopMusic();
             startStory.music(StartStory.getPage());
             System.out.println("null!!!restart");
-        }
+        }*/
         System.out.println("RESTART!!!");
 
         super.onRestart();

@@ -5,14 +5,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
+import android.widget.Toast;
 
 public class Receiver extends BroadcastReceiver {
-    int a;
     static int b;
     static IntentFilter intentFilter;
 
-    public Receiver(int a) {
-        this.a= a;
+    public Receiver() {
         intentFilter = new IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
     }
 
@@ -28,20 +27,7 @@ public class Receiver extends BroadcastReceiver {
                 String reason = intent.getStringExtra("reason");
                 System.out.println("reason ======="+reason);
 
-                    if(reason!="recentapps") {
-                        a = 2;
-                        b = a;
-                        System.out.println(reason + " , a=====" + a);
-                    }else {
-                        System.out.println(reason + " , a=====" + a);
-                    }
+                System.out.println("-----------RECEIVER 에서 받음----------");
         }
-
-    public int getB() {
-        return b;
-    }
-    public void setB(int a){
-        b=a;
-    }
 
 }

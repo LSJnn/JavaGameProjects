@@ -312,12 +312,9 @@ public class StartStory {
                 pageTINUM();
                 break;
             case 27 :
-/*                MainActivity.mediaPlayer.reset();*/
-//                MainActivity.mediaPlayer.plahBgHoly();
                 pageTINUM();
                 break;
             case 32 :
-  //              MainActivity.mediaPlayer.playAfter();
                 pageTINUM();
                 break;
             case 33 :
@@ -363,14 +360,12 @@ public class StartStory {
                 pageTINUM();
                 break;
             case 56  :
-//                MainActivity.mediaPlayer.plahBgHoly();
                 pageTINUM();
                 break;
             case 57  :
                 pageTINUM();
                 break;
             case 60  :
-//                MainActivity.mediaPlayer.playBgSleep();
                 pageTINUM();
                 break;
             case 61  :
@@ -395,7 +390,6 @@ public class StartStory {
                 pageTINUM();
                 break;
             case 81  :
- //               MainActivity.mediaPlayer.playBgSome();
                 pageTINUM();
                 break;
             case 83  :
@@ -482,7 +476,6 @@ public class StartStory {
             case 125  :
                 pageTINUM();
             case 126 :
-                //MainActivity.mediaPlayer.playAfter();
                 pageTINUM();
             case 127  :
                 pageTINUM();
@@ -530,11 +523,9 @@ public class StartStory {
                 pageTINUM();
                 break;
             case 145  :
-               // MainActivity.mediaPlayer.playBgCue();
                 pageTINUM();
                 break;
             case 154  :
-                //MainActivity.mediaPlayer.playBgSpe();
                 pageTINUM();
                 break;
             case  155 :
@@ -571,7 +562,7 @@ public class StartStory {
                 pageTINUM();
                 break;
             case 169  :
-                //MainActivity.mediaPlayer.playBgSome();
+
                 pageTINUM();
                 break;
             case 170  :
@@ -596,7 +587,6 @@ public class StartStory {
                 pageTINUM();
                 break;
             case 177  :
-                //MainActivity.mediaPlayer.playBgBap();
                 pageTINUM();
                 break;
             case 178  :
@@ -3290,6 +3280,9 @@ public class StartStory {
             TWO_img1.setBackgroundResource(R.drawable.church);
             switch (paragraph) {
                 case 1:
+                    if(mediaPlayer!=null){
+                        mediaPlayer.stopMusic();}
+                    mediaPlayer.playBgQuiet();
                     TWO_tv2.setText(l+f+": 엄마... 미안해");
                     break;
                 case 2:
@@ -4205,10 +4198,10 @@ public class StartStory {
         return kakao;
     }
 
-    public void music(int p){
-/*        if(mediaPlayer!=null){
+   /* public void music(int p){
+*//*        if(mediaPlayer!=null){
             mediaPlayer.pause();
-        }*/
+        }*//*
         if(-1<=p&&p<=21){
             mediaPlayer.playBgSleep();
         }else if(p<=40) {
@@ -4258,6 +4251,6 @@ public class StartStory {
         }
         System.out.println("지그믕ㄴ"+getPage());
 
-    }
+    }*/
 
 }

@@ -25,7 +25,7 @@ public class Skip_popup extends AppCompatActivity {
     private static int BUY_CODE = 11121;
 
     StartStory startStory;
-    MusicActivity mediaPlayer;
+    //MusicActivity mediaPlayer;
 
     Intent get;
 
@@ -40,7 +40,7 @@ public class Skip_popup extends AppCompatActivity {
         startStory = new StartStory();
         skip=Application.getSavePageDB().getInt("skip");
         ad=Application.getSavePageDB().getInt("ad");
-        mediaPlayer=Application.getMusicActivity();
+/*        mediaPlayer=Application.getMusicActivity();*/
 
         own = findViewById(R.id.tvOwn);
         own2 = findViewById(R.id.tvOwn2);
@@ -315,9 +315,9 @@ public class Skip_popup extends AppCompatActivity {
     protected void onPause() {
 
         if(home==0) {
-            if (mediaPlayer != null) {
+/*            if (mediaPlayer != null) {
                 mediaPlayer.stopMusic();
-            }
+            }*/
         }
         super.onPause();
     }

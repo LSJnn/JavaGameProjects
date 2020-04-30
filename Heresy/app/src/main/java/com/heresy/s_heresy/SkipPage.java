@@ -326,9 +326,9 @@ public class SkipPage extends AppCompatActivity implements PurchasesUpdatedListe
     protected void onPause() {
         rewardedVideoAd.pause();
         if(home==0) {
-            if (Application.getMusicActivity() != null) {
+/*            if (Application.getMusicActivity() != null) {
                 Application.getMusicActivity().stopMusic();
-            }
+            }*/
         }
         System.out.println("PAUSE RESULT +=="+rewarded);
         super.onPause();
@@ -339,20 +339,20 @@ public class SkipPage extends AppCompatActivity implements PurchasesUpdatedListe
         if(!hasFocus){//화면 내려감.
             System.out.println("포커스 꺼짐.");
             if(home==0) {// 중지 필요.
-                if(Application.getMusicActivity()!=null){
+/*                if(Application.getMusicActivity()!=null){
                     Application.getMusicActivity().stopMusic();
-                }
+                }*/
                 System.out.println("home=0 // 포커스 꺼짐.");
             }
         } else{
             if(getFin()==1){
                 SkipPage.this.finish();
-                if(Application.getMusicActivity()!=null){
+/*                if(Application.getMusicActivity()!=null){
                     Application.getMusicActivity().stopMusic();
                     setHome(0);
                     StartStory s = new StartStory();
                     s.music(StartStory.getPage());
-                }
+                }*/
             }
             System.out.println("포커스 얻음.");
             //1인 상태로 내려감.-음악재생 안된 경우. : 어차피 뒤로 갈 때 1 됨.

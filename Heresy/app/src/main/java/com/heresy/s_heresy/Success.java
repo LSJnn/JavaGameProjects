@@ -28,7 +28,7 @@ public class Success extends AppCompatActivity {
     ImageView newEnding;
     ImageButton back; TextView successTv;
     int page;
-    MusicActivity mediaPlayer = Application.getMusicActivity();
+    //MusicActivity mediaPlayer = Application.getMusicActivity();
     StartStory startStory;
     int home;
     private InterstitialAd interstitialAd = new InterstitialAd(this);
@@ -196,10 +196,10 @@ public class Success extends AppCompatActivity {
         System.out.println("HOME+++++++"+home);
 
         if(home == 0){
-            if(mediaPlayer!=null) {
+         /*   if(mediaPlayer!=null) {
                 mediaPlayer.stopMusic();
                 super.onPause();
-            }
+            }*/
             System.out.println("mediaPlayer == null");
             super.onPause();
         }else{
@@ -219,10 +219,10 @@ public class Success extends AppCompatActivity {
     @Override
     protected void onRestart() {
         //홈갔다가 재시작. .. 다이얼로그?
-        if(mediaPlayer!=null){
+        /*if(mediaPlayer!=null){
             mediaPlayer.stopMusic();
                  startStory.music(StartStory.getPage());
-            }
+            }*/
                 System.out.println("null!!!restart");
 
         System.out.println("RESTART!!!");

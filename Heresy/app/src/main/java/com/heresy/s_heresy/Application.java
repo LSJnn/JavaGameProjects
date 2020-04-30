@@ -1,11 +1,19 @@
 package com.heresy.s_heresy;
 
+import android.media.MediaPlayer;
+
 public class Application extends android.app.Application{
 
     public static boolean Z = false;
     public static int skip;
     public static MusicActivity musicActivity;
     public static TinyDB savePageDB;
+
+    @Override
+    public void onCreate() {
+
+        super.onCreate();
+    }
 
     public static void setSavePageDB(TinyDB savePageDB) {
         Application.savePageDB = savePageDB;

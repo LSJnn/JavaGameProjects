@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         Application.setSavePageDB(tinyDB);
 
         mediaPlayer = new MusicActivity(this);
-        Application.setMusicActivity(mediaPlayer);
+       // Application.setMusicActivity(mediaPlayer);
         out=0;
         //광고
 
@@ -195,9 +195,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         if(out==0) {
             //화면 보호기. --> 맨 위에서 바로 onPause 로 들어감.
-            if (mediaPlayer != null) {
+/*            if (mediaPlayer != null) {
                 mediaPlayer.stopMusic();
-            }
+            }*/
         }
             super.onPause();
         System.out.println("out ====="+out);
@@ -208,9 +208,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
 
         System.out.println("DESYROY!!!!!!");
-        if(mediaPlayer!=null){
+/*        if(mediaPlayer!=null){
             mediaPlayer.release();
-        }
+        }*/
         super.onDestroy();
 
     }
@@ -218,9 +218,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
-        if(mediaPlayer!=null) {
+/*        if(mediaPlayer!=null) {
             mediaPlayer.stopMusic();
-        }
+        }*/
         System.out.println("RESTART!!! B+==========="+out);
     }
 

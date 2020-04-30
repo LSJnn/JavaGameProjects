@@ -22,7 +22,7 @@ public class T1_choice extends AppCompatActivity {
     int changeCode;
     StartStory startStory3;
     int getPage; int restart;
-    MusicActivity mediaPlayer = Application.getMusicActivity();
+   // MusicActivity mediaPlayer = Application.getMusicActivity();
     int home;
 
     int c=1; int p=0; int n; int a;
@@ -57,10 +57,10 @@ public class T1_choice extends AppCompatActivity {
             System.out.println("재시작합니다.");
         }else if(restart==2){
             n=getPage;
-            if(mediaPlayer!=null){
+     /*       if(mediaPlayer!=null){
                 mediaPlayer.stopMusic();
                 startStory3.music(n);
-            }
+            }*/
             System.out.println("getPage ===="+getPage+"n ====="+n);
             restart=1;
         }
@@ -653,9 +653,9 @@ public class T1_choice extends AppCompatActivity {
         System.out.println("HOME+++++++"+home);
 
         if(home == 0){
-            if(mediaPlayer!=null) {
+        /*    if(mediaPlayer!=null) {
                 mediaPlayer.stopMusic();
-            }
+            }*/
             super.onPause();
         }else{
             super.onPause();
@@ -672,12 +672,11 @@ public class T1_choice extends AppCompatActivity {
     @Override
     protected void onRestart() {
         //홈갔다가 재시작. .. 다이얼로그?
-        if(mediaPlayer!=null){
+/*        if(mediaPlayer!=null){
             mediaPlayer.stopMusic();
                     startStory3.music(n);
                     System.out.println("null!!!restart");
-
-        }
+        }*/
         System.out.println("RESTART!!!");
 
         super.onRestart();

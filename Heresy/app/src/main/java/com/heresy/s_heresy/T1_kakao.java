@@ -76,11 +76,11 @@ public class T1_kakao extends AppCompatActivity {
             System.out.println("재시작합니다.");
         }else if(restart==2){
             n=getPage;
-            if(mediaPlayer!=null){
+        /*    if(mediaPlayer!=null){
                 System.out.println("null 임.");
                 mediaPlayer.stopMusic();
                 startStory4.music(n);
-            }
+            }*/
             System.out.println("getPage ===="+getPage+"n ====="+n);
             restart=1;
         }
@@ -103,7 +103,7 @@ public class T1_kakao extends AppCompatActivity {
         startStory4 = new StartStory();
 
         k_view = findViewById(R.id.k_include);
-        mediaPlayer = Application.getMusicActivity();
+       // mediaPlayer = Application.getMusicActivity();
         home=0;
 
         System.out.println("initializeVIew!!!!!!!!!!!!!!!!!!!!!1");
@@ -304,13 +304,14 @@ public class T1_kakao extends AppCompatActivity {
         System.out.println("HOME+++++++"+home);
 
         if(home == 0){
-            if(mediaPlayer!=null) {
+/*            if(mediaPlayer!=null) {
                 mediaPlayer.stopMusic();
             }
-            super.onPause();
+            super.onPause();*/
         }else{
-            super.onPause();
+
         }
+        super.onPause();
         System.out.println("PAUSE!!!");
     }
 
@@ -323,11 +324,11 @@ public class T1_kakao extends AppCompatActivity {
     @Override
     protected void onRestart() {
         //홈갔다가 재시작. .. 다이얼로그?
-        if(mediaPlayer!=null){
+     /*   if(mediaPlayer!=null){
                 mediaPlayer.stopMusic();
                 startStory4.music(n);
                 System.out.println("null!!!restart");
-        }
+        }*/
         System.out.println("RESTART!!!");
 
         super.onRestart();

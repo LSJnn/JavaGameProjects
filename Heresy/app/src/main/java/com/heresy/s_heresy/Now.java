@@ -127,19 +127,19 @@ public class Now extends AppCompatActivity {
     @Override
     protected void onPause() {
         if(home==0) {
-            if (Application.getMusicActivity() != null) {
+        /*    if (Application.getMusicActivity() != null) {
                 Application.getMusicActivity().stopMusic();
-            }
+            }*/
         }
         super.onPause();
     }
 
     @Override
     protected void onRestart() {
-        if(Application.getMusicActivity()!=null){
+/*        if(Application.getMusicActivity()!=null){
             StartStory startStory = new StartStory();
             startStory.music(StartStory.getPage());
-        }
+        }*/
         super.onRestart();
     }
 

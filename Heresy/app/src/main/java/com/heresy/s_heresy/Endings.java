@@ -21,7 +21,7 @@ public class Endings extends AppCompatActivity {
     ArrayList<Integer> endingArray;//종료 후 엔딩페이지 저장할 값들.
 
     ArrayList<Integer> endingPages;//종료 후 엔딩페이지 저장할 값들.
-    MusicActivity mediaPlayer = Application.getMusicActivity();
+   /* MusicActivity mediaPlayer = Application.getMusicActivity();*/
     StartStory startStory;
 
 
@@ -164,9 +164,9 @@ public class Endings extends AppCompatActivity {
         //액티비티가 다른데로 넘어갈때 - 다이얼로그 / 다른 뷰로.
         //홈으로 갈떄 --> 이때만 음악 멈춤.
         if(star!=1) {
-            if (mediaPlayer != null) {
+  /*          if (mediaPlayer != null) {
                 mediaPlayer.stopMusic();
-            }
+            }*/
         }
         super.onPause();
         System.out.println("PAUSE!!!");
@@ -181,10 +181,10 @@ public class Endings extends AppCompatActivity {
     @Override
     protected void onRestart() {
         //홈갔다가 재시작. .. 다이얼로그?
-            if(!mediaPlayer.isPlaying()){
+/*            if(!mediaPlayer.isPlaying()){
                 startStory.music(StartStory.getPage());
                 System.out.println("null!!!restart");
-        }
+        }*/
         System.out.println("RESTART!!!");
 
         super.onRestart();

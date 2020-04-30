@@ -57,7 +57,7 @@ public class T1_text extends AppCompatActivity {
         back = findViewById(R.id.backbtn);
         next = findViewById(R.id.nextBtn);
         ending = findViewById(R.id.endingBtn);
-        mediaPlayer = Application.getMusicActivity();
+/*        mediaPlayer = Application.getMusicActivity();*/
         System.out.println("initializeVIew!!!!!!!!!!!!!!!!!!!!!1");
 
         home= 0;
@@ -81,11 +81,11 @@ public class T1_text extends AppCompatActivity {
             System.out.println("재시작합니다.");
         }else if(restart==2){
             n=getPage;
-            if(mediaPlayer!=null){
+/*            if(mediaPlayer!=null){
                 System.out.println("2.");
                 mediaPlayer.stopMusic();
                 System.out.println("stop.");
-                startStory.music(n);}
+                startStory.music(n);}*/
             System.out.println("getPage ===="+getPage+"n ====="+n);
             restart=1;
         }
@@ -369,9 +369,9 @@ public class T1_text extends AppCompatActivity {
         //홈으로 갈떄 --> 이때만 음악 멈춤.
         System.out.println("T1_TEXT -HOME=+++++++"+home);
         if(home == 0){
-            if(mediaPlayer!=null) {
+/*            if(mediaPlayer!=null) {
                 mediaPlayer.stopMusic();
-            }
+            }*/
         }
         home=0;
         super.onPause();
@@ -387,11 +387,11 @@ public class T1_text extends AppCompatActivity {
     @Override
     protected void onRestart() {
         //홈갔다가 재시작. .. 다이얼로그?
-        if(mediaPlayer!=null){
+/*        if(mediaPlayer!=null){
             mediaPlayer.stopMusic();
                 startStory.music(n);
                 System.out.println("null!!!restart");
-        }
+        }*/
         System.out.println("T1_RESTART!!!");
 
         super.onRestart();
